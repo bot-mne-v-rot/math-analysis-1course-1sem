@@ -8,14 +8,14 @@ script:
 - mkdir _build
 - travis_wait 3 pdflatex -output-directory _build ./MatanColloc02.tex
 - travis_wait 3 pdflatex -output-directory _build ./MatanColloc02.tex
-before_deploy:
-- ls
-deploy:
-  provider: releases
-  api_key:
-    secure: R8fQzn13lqXVd9NW1em5wWXuQl5uhacEsyG2nI3v2g+4VrOfSy4MWyL/9BG4y8FBjubj+D85duNzveJnFDpLhTZJotOlafhLxDHPYooDb5apWEwPQn/741R+Uf8pHAA1bM7ooqf3fmudvqpyEi4zFHzzuO2+x5sApeCo2cnEce/xwRc8Vr/xmuu41ddnoZA1ndjcTsvOVFsSGtluxD+U8GxCUMVYA1ou6ATRSOQLGDoVt4egJlkb9htnD820b/7w+02sfUPFUcpi6MEKYYWz17kdM6QzAFBKVvaZtHcKOmC4WBMzh3YgDk4TnBFYlHd+I1uCrguxWQoh1UgF3jUoaICSq1r/4yzicBcXMqka4Ae0XrJUMTDWDsKg5/3rpIvdWwmfIZGu8cLZyMJqEAHyQ+V2ykaIU7Yae6G4lw7nH2+9uHo2+PIMcLvh4fqnEOZARn3Y3vnEY2TGnE7/517ZXiMWV9XlvfaFg1dtt0nZ7G7sMnpetf/KrnI1QmSHqoP6Bmb62PQLGK8WE00wtlibdew7CKnmlzT19StVyynByVaM1dwbrkoLGmDzH8oY5yxSIdfm3Q2oFI3RWwK4+VAj1iZt8rklmPuOjiD9p/VSSdlmJon1+NPLTPTXdfRvcOkeME/vmoEWjzEoUXRGUgEypladmrK7FxramAFLYpwqQdQ=
-  file: "_build/MatanColloc02.pdf"
-  draft: true
-  on:
-    repo: bot-mne-v-rot/math-analysis-1course-1sem
-  skip_cleanup: 'true'
+# before_deploy:
+# - ls
+# deploy:
+#   provider: releases
+#   api_key:
+#     secure: R8fQzn13lqXVd9NW1em5wWXuQl5uhacEsyG2nI3v2g+4VrOfSy4MWyL/9BG4y8FBjubj+D85duNzveJnFDpLhTZJotOlafhLxDHPYooDb5apWEwPQn/741R+Uf8pHAA1bM7ooqf3fmudvqpyEi4zFHzzuO2+x5sApeCo2cnEce/xwRc8Vr/xmuu41ddnoZA1ndjcTsvOVFsSGtluxD+U8GxCUMVYA1ou6ATRSOQLGDoVt4egJlkb9htnD820b/7w+02sfUPFUcpi6MEKYYWz17kdM6QzAFBKVvaZtHcKOmC4WBMzh3YgDk4TnBFYlHd+I1uCrguxWQoh1UgF3jUoaICSq1r/4yzicBcXMqka4Ae0XrJUMTDWDsKg5/3rpIvdWwmfIZGu8cLZyMJqEAHyQ+V2ykaIU7Yae6G4lw7nH2+9uHo2+PIMcLvh4fqnEOZARn3Y3vnEY2TGnE7/517ZXiMWV9XlvfaFg1dtt0nZ7G7sMnpetf/KrnI1QmSHqoP6Bmb62PQLGK8WE00wtlibdew7CKnmlzT19StVyynByVaM1dwbrkoLGmDzH8oY5yxSIdfm3Q2oFI3RWwK4+VAj1iZt8rklmPuOjiD9p/VSSdlmJon1+NPLTPTXdfRvcOkeME/vmoEWjzEoUXRGUgEypladmrK7FxramAFLYpwqQdQ=
+#   file: "_build/MatanColloc02.pdf"
+#   draft: true
+#   on:
+#     repo: bot-mne-v-rot/math-analysis-1course-1sem
+#   skip_cleanup: 'true'
