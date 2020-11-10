@@ -6,16 +6,16 @@ cache:
   - "$HOME/.texlive"
 script:
 - mkdir _build
-- travis_wait 3 pdflatex -output-directory _build ./LinalColloc01.tex
-- travis_wait 3 pdflatex -output-directory _build ./LinalColloc01.tex
+- travis_wait 3 pdflatex -output-directory _build ./MatanColloc02.tex
+- travis_wait 3 pdflatex -output-directory _build ./MatanColloc02.tex
 before_deploy:
 - ls
 deploy:
   provider: releases
   api_key:
     secure: oNPSfbK5LrjmTRPCbde2cfzykBtK4QVrFhq39CkVReaaHhJcbBZabAuc8tCA1kLefJh25alwvkV7F17Jyvl8on70HYaPQ0izmgL2fgMpxV8nuPokTGzZfZJZIW15fq8Pgv5n3F4ZMunBZgMUiiWyrP+emU61P9gXH8TCtQKY7tMocCK8HgvDfxahsJ4EQ+d4vXhEuL6Un4v7OOnFs8XubYp9x7oW3K3spZGRYN18pioUN2lG/vPkkHGP3PUeETQKwASdlJUpr4MqrPNykk9sH9NKVF06ewy02WcihkY/O0i1DPZGiZXFrf5TVKukktp+YVZqxdv/AqeyCpkYTnhjoMPTtRdGDmoetUAzvLaL+vcE9KNIUFno07wL/QrnZzEuN24kaeQ0zVjP8AhO3VQaLzSH+h9lmiCZ1be5bWcfgrFVUbiB7cB4lvFJAzK7LnCHDyG8gwsfs3ZDR3sf7xTmUXAkugInqNcgM9XacGC3N6V86TkVOEZVCaPWCUkXogMV9pjZ0eKmWLy4xL93DJ3kL1+YXN1opoGakjSg/PtsKL/4DUyqJX6cFc08RoWFk7xnHmXb1ymOhFvlhco6AAUAN6+19mAaZS/SQ/ryHxvl6TpGqWrVgITOe6vltlJT4uszVDkV5xfkVyTcTxPLTskQcX8bwqp3BozR/7uj0kNbpCw=
-  file: "_build/LinalColloc01.pdf"
+  file: "_build/MatanColloc02.pdf"
   draft: true
   on:
-    repo: bot-mne-v-rot/algebra-1course-0.5sem
+    repo: bot-mne-v-rot/math-analysis-1course-1sem
   skip_cleanup: 'true'
