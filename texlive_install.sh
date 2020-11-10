@@ -36,6 +36,10 @@ tlmgr install   \
   inputenc      \
   babel         \
   babel-russian \
+  hyphen-russian \
+  t2 \
+  lh \
+  cm-super \
   euscript      \
   latexsym \
   showkeys \
