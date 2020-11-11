@@ -16,6 +16,7 @@ deploy:
     secure: mrKGur9ndkPcAbCuUE/fFOdRedlasHBLWQLTtGRmnnJsF1wNghH80KTiLZM/dKCmoeuRFMlng+bSfRFBXHYjansHGbFprEbzlaxC9ACPg0KwmfESC2v7M6ip2UTRYSLzD3T5AOfT1QSN7K2gq4//8ksI3dO2qNPmXutuzyr7IsI44TTJNAOHmS7SlNuMOx7fNU95EBRvbrW/jx6ewV6piM+/9nLQiYRzubK9ZCe/SivR2yX19A4PPat5FzvhP3SIpuQ2BCzASrVm1raLcIUxxNwbt5pM5KkIjB4cPviqSKTwrysPpgSohaz9U2KUkoiVelj+Kgph2m6CVcSm/CAVABj44rCstT6CPS0Bn46N3ENF/3mitaP9jTdIx25Ng2OFO3veIxnfphDymyx/VW7YLz7jOtlCv+n0wJvFKFf8lln3RQbnSh4PlrZ+Ysc84uAXdARqLYogHTXOlP8/iGR0pnjuMx0eKBge/nFfjuQEBx8UkpMIGYaac0kraoRPABkzbuUMhgSPt+9vOfq8tuxaboejeVHIcIUHlrzA8c8lW6dZOUXOIO1ULJhA4z7hZiMeLJAp6v5amxok70oFDQlnaKStbtxG6DqIvT4snyOzokf12BhqeQlQCkjFQw2KhtvJgPJ321C5txsDKcQQpb4cpJh9AzDwpUtPLEVb97lO75M=
   file: "_build/MatanColloc02.pdf"
   draft: true
+  overwrite: true
   on:
     repo: bot-mne-v-rot/math-analysis-1course-1sem
     branch:  
