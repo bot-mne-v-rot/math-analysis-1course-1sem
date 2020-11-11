@@ -18,7 +18,6 @@ deploy:
   draft: true
   on:
     repo: bot-mne-v-rot/math-analysis-1course-1sem
-    branches:    
-      only:     
+    branch:  
         - master 
   skip_cleanup: 'true'
