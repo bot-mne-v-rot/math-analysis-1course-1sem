@@ -11,7 +11,7 @@
 \begin{conj}
     $(X, \rho)$ - метрическое пространство. $K \subset X$.
     $K$ - компакт, если из любого покрытия $K$ открытыми множествами можно выбрать конечное подпокрытие 
-    (Какое бы мы не взяли покрытие открытыми множествами, можно оставить конечное количество этих откртых множеств
+    (Какое бы мы не взяли покрытие открытыми множествами, можно оставить конечное количество этих открытых множеств
     и они все равно будут покрывать $K$)
 \end{conj}
 \textbf{Примеры:} 
@@ -29,10 +29,10 @@
             $\Longrightarrow \mathcal{U}_{\alpha} = G_{\alpha}\cap Y$ - открытое множество в $Y$
 
             $K \subset Y$ и $K \subset \bigcup G_{\alpha} \Longrightarrow K \subset Y \cap \bigcup G_{\alpha} =
-            \bigcup Y \cap G_{\alpha} = \bigcap \mathcal{U}_{\alpha}$, то есть $\mathcal{U}_{\alpha}$ - 
-            покрытие $K$ и открытое множество в $Y \Longrightarrow \exists \ \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$, 
+            \bigcup (Y \cap G_{\alpha}) = \bigcup \mathcal{U}_{\alpha}$, то есть $\mathcal{U}_{\alpha}$ - 
+            покрытие $K$ открытыми множествами в $Y \Longrightarrow \exists \ \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$, 
             такие, что $K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \subset \bigcup\limits_{j = 1}^{n} G_{\alpha_j} \Longrightarrow 
-            G_{\alpha_1}, \dots, G_{\alpha_n}$ - конечное подпокрытие $K \Longrightarrow$ - компакт в $X$
+            G_{\alpha_1}, \dots, G_{\alpha_n}$ - конечное подпокрытие $K \Longrightarrow$ $K$ --- компакт в $X$
 
             ``$\Longleftarrow$'': Рассмотрим покрытие $K$ множествами $\mathcal{U}_{\alpha}$, открытыми в $Y$. Тогда $\mathcal{U}_{\alpha} = G_{\alpha} \cap Y$, 
             где $G_{\alpha}$ открыто в $X \Longrightarrow K \subset \bigcup \mathcal{U}_{\alpha} \subset \bigcup G_{\alpha} \Longrightarrow
@@ -43,6 +43,7 @@
         \end{proof}
         \item $K$ - компакт $\Longrightarrow K$ - замкнут и ограничен
         \begin{proof} \quad
+
             Проверим, что дополнение $K$ открыто. Возьмем $a \notin K$ и покажем, что 
             $B_r(a) \subset X \setminus K$ для некоторого $r > 0$. Для $x \in K$ возьмем шарик $B_{\rho(x, a)/2}(x) =: \mathcal{U}_x$
             - открытое множество $\mathcal{U}_x \cap B_{\rho(x, a)/2}(a) \neq \varnothing \Longrightarrow K \subset \bigcup\limits_{x \in K} \mathcal{U}_k$.
