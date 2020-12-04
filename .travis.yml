@@ -21,4 +21,5 @@ deploy:
     repo: bot-mne-v-rot/math-analysis-1course-1sem
     branch:  
         - master 
+        - READY
   skip_cleanup: 'true'
