@@ -1,2 +1,316 @@
 \section{Лекция за 13.11.20}
-\subsection{Тема}
+\subsection{Пределы отображений и функций}
+\begin{conj} 
+    Предел отображения 
+\end{conj}
+$(X, \rho_x), \; (Y, \rho_y)$ -- метрические пространства 
+
+$E \subset X, \; a$ -- предельная точка $E$
+
+$f : E \to Y$
+\[ \lim_{x \to a} f(x) = b \]
+\begin{itemize}
+    \item По Коши
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall x \in E \;\; 0 < \rho_x(x, a) < \delta \Rightarrow \rho_y(f(x), b) < \varepsilon \]
+    \item На языке окрестностей
+    \[ \forall \, B_{\varepsilon}(b) \;\; \exists \; \overset{\circ}{B}_{\delta}(a) : f(\overset{\circ}{B}_{\delta}(a) \cap E) \subset B_{\varepsilon}(b) \]
+    \item По Гейне
+    
+    Для любой последовательности $x_n \in E$ и $x_n \neq a$ если $\lim x_n = a$, то $\lim f(x_n) = b$
+\end{itemize}
+
+\begin{notice}
+    \begin{enumerate}
+        \item В определении не участвует значение в точке $a$.
+        \item Определение локальное.
+    \end{enumerate}
+\end{notice}
+
+\begin{conj} 
+    Предел функции 
+\end{conj}
+$f : E \to \R$
+
+$E \subset \R, \; a$ -- предельная точка $E$
+
+$b \in \R$
+\[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall x \in E \;\; 0 < |x - a| < \delta \Rightarrow |f(x) - b| < \varepsilon \]
+\begin{notice}
+    Это определение по Коши, оределеления на языке окрестностей и по Гейне аналогичны определению предела отображения.
+\end{notice}
+
+\begin{theorem-non}
+    Определения по Коши и по Гейне равносильны.
+\end{theorem-non}
+\begin{proof} \quad \\
+    Коши $\Rightarrow$ Гейне: 
+    
+    Берем последовательность из определения по Гейне:
+    \[ x_n \in E, \; x_n \neq a \;\; \lim x_n = a \]
+    Зафиксируем $\varepsilon > 0$ из определения по Коши, по нему найдем $\delta$, по $\delta$ найдем $N$ из определения по Гейне:
+    \begin{gather*}
+        \exists \, N \;\; \forall \, n \geqslant N \;\; \rho_x(x_n, a) < \delta \Rightarrow \rho_y(f(x_n), b) < \varepsilon \\
+        \Rightarrow \lim f(x_n) = b
+    \end{gather*}
+    Гейне $\Rightarrow$ Коши:
+
+    Зафиксируем $\varepsilon > 0$ и предположим, что для него не найдется $\delta > 0$.
+
+    Не подходит $\delta = 1$, т.е. найдется $x_1 \in E, \; x_1 \neq a$ такой, что $\rho_x(x_1, a) < 1$ и $\rho_y(f(x_1), b) \geqslant e$. \\
+    Не подходит $\delta = \frac{1}{2}$, т.е. найдется $x_2 \in E, \; x_2 \neq a$ такой, что $\rho_x(x_2, a) < \frac{1}{2}$ и $\rho_y(f(x_2), b) \geqslant e$. \\
+    И так далее. В общем случае: \\
+    Не подходит $\delta = \frac{1}{n}$, т.е. найдется $x_n \in E, \; x_n \neq a$ такой, что $\rho_x(x_n, a) < \frac{1}{n}$ и $\rho_y(f(x_n), b) \geqslant e$. \\
+    
+    Последовательность $x_n$ стремится к $a$, тогда последовательность $f(x_n)$ обязаана стремиться к $b$, но $\forall \, n \;\; \rho_y(f(x_n), b) \geqslant e$. Следовательно, мы пришли к противоречию.
+\end{proof}
+
+\begin{follow} 
+    Предел единственен
+\end{follow}
+\begin{proof}
+    Пусть $\lim\limits_{x \to a} f(x) = b$ и $\lim\limits_{x \to a} f(x) = c$, где $a$ -- предельная точка $E$. Возьмем последовательность $x_n \in E, \; x_n \neq a$ и $\lim x_n = a$. Тогда по определению по Гейне $\lim f(x_n) = b$ и $\lim f(x_n) = c \Rightarrow b = c$.  
+\end{proof}
+
+\begin{theorem-non}
+    Если в определении по Гейне все пределы существуют, то они равны между собой. 
+\end{theorem-non}
+\begin{proof}
+    Рассмотрим две последовательности $x_n \in E, \; x_n \neq a$ и $y_n \in E, \; y_n \neq a$ такие, что $\lim x_n = \lim y_n = a$. Покажем, что $\lim f(x_n) = \lim f(y_n)$
+    
+    Положим $b := \lim f(x_n)$ и $c := \lim f(y_n)$.
+
+    Возьмем последовательность $x_1, y_1, x_2, y_2, \dots := z_n$. Тогда $\lim z_n = a \Rightarrow \exists \, \lim f(z_n) =: d$.
+    
+    $f(x_n)$ -- подпоследовательность $f(z_n) \Rightarrow b = d$ \\
+    $f(y_n)$ -- подпоследовательность $f(z_n) \Rightarrow c = d$ \\
+    $\Rightarrow b = c$
+\end{proof}
+
+\begin{theorem-non}
+    $f : E \to Y, \; E \subset X, \; a$ -- предельная точка $E$ и $\lim\limits_{x \to a} f(x) = b$. 
+
+    Тогда для некоторого $r > 0$ $f$ ограничена на $B_r(a) \cap E$. 
+\end{theorem-non}
+\begin{proof}
+    Зафиксируем $\varepsilon = 1$ в определении по Коши. Найдем $\delta > 0$ такое, что если $x \in E$ и $0 < \rho_x(x, a) < \delta$, то $\rho_y(f(x), b) < 1$.
+
+    Рассмотрим $f$ на $B_{\delta}(a) \cap E$:
+    \[ \rho_y(f(x), b) < max \{1, \rho_y(f(a), b)\} \]
+    $\Rightarrow f$ ограничена на $B_{\delta}(a) \cap E$.
+\end{proof}
+\begin{notice}
+    Глобальной ограниченности нет. 
+
+    Рассмотрим $f(x) = \frac{1}{x}$. Тогда $\lim\limits_{x \to 1} f(x) = 1$, но $f$ очевидно не огранечена.
+\end{notice}
+
+\vspace{7mm}
+
+\begin{theorem-non}
+    Критерий Коши для отображений
+
+$f : E \to Y, \; E \subset X, \; a$ -- предельная точка $E$, и $Y$ -- полное. Тогда
+\[ \exists \, \lim_{x \to a} f(x) \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x, \, y \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(x), f(y)) < \varepsilon \]
+\end{theorem-non}
+
+\begin{proof} \quad \\
+    "$\Rightarrow$": Пусть $\lim\limits_{x \to a} f(x) = b$. Тогда из определения по Коши:
+    \begin{gather*}
+        \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(x), b) < \frac{\varepsilon}{2} \\
+        \forall \, y \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(y), b) < \frac{\varepsilon}{2} \\
+        \Rightarrow \rho_y(f(x), f(x)) < \varepsilon
+    \end{gather*}
+    "$\Leftarrow$": Возьмем последовательность $x_n \in E, \; x_n \neq a$ такую, что $\lim x_n = a$. Хотим доказать, что $\lim f(x_n)$ существует. Покажем, что $f(x_n)$ -- фундаментальная последовательность.
+
+    Возьмем $\varepsilon > 0$. По нему $\delta > 0$ из критерия Коши, а по $\delta$ найдем $N$ из предела $\lim x_n = a$ (т.е. номер, начиная с которого $x_n$ будет лежать в $\delta$-окрестности $a$). Формально:
+    \begin{gather*}
+        \exists \, N \;\; \forall \, n \geqslant N \;\; \rho_x(x_n, a) < \delta \\
+        \forall \, m \geqslant N \;\; \rho_x(x_m, a) < \delta \\
+    \end{gather*}
+    Подставив $x_n$ и $x_m$ в критерий Коши, получаем, что $\rho_y(f(x_n), f(x_m)) < \varepsilon$
+    $\Rightarrow$ $f(x_n)$ -- фундаментальная $\Rightarrow \exists \, \lim f(x_n)$.
+\end{proof}
+
+\begin{theorem-non}
+    Критерий Коши для функций
+
+$f : E \to \R, \; E \subset \R, \, a$ -- предельная точка $E$
+\[ 
+\exists \, \lim_{x \to a} f(x) \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \,\delta > 0 : 
+\begin{cases} 
+    \forall \, x \in E : \, 0 < |x - a| < \delta \\
+    \forall \, y \in E : \, 0 < |y - a| < \delta \\
+\end{cases}    
+    \Rightarrow |f(x) - f(y)| < \varepsilon
+\]
+\end{theorem-non}
+\begin{notice}
+    Данный предел будет конечным. Для отображений это очевидно, там бесконечного предела нет по определению.
+\end{notice}
+
+\begin{conj}
+    Бесконечные пределы для функций
+\end{conj}
+Определение по Гейне никак не меняется. 
+
+Опредление по Коши:
+\[ \lim_{x \to a} f(x) = +\infty \Longleftrightarrow \forall \, u \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < |x - a| < \delta \Rightarrow f(x) > u \]
+\[ \lim_{x \to a} f(x) = -\infty \Longleftrightarrow \forall \, u \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < |x - a| < \delta \Rightarrow f(x) < u \]
+
+\begin{notice}
+    Также можно определить пределы в $+\infty$ и $-\infty$. Например:
+    \[ \lim_{x \to +\infty} f(x) = b \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \, u : \; \forall \, x \in E : x > u \Rightarrow |f(x) - b| < \varepsilon   \]
+    \[ \lim_{x \to -\infty} f(x) = +\infty \Longleftrightarrow \forall \, u \;\; \exists \, v : \; \forall \, x \in E : x < v \Rightarrow f(x) > u \]
+\end{notice}
+
+\vspace{7mm}
+
+\begin{theorem-non}
+    Теорема о стабилизации знака
+$f : E \to \R, \, E \subset X, \, a$ -- предельная точка $E$
+
+Если $\lim\limits_{x \to a} f(x) = b \neq 0$, то $\exists \, r > 0$ такой, что знак функции в $\overset{\circ}{B}_r(a) \cap E$ тот же, что и у $b$.
+\end{theorem-non}
+\begin{proof}
+    Пусть $b > 0$ (случай $b < 0$ разбирается аналогично). Возьмем $\varepsilon = \frac{b}{2}$. 
+    Тогда $\exists \, \delta > 0$ такой, что если $x \in \overset{\circ}{B}_r(a) \cap E$, то $|f(x) - b| < \frac{b}{2}$,
+    а все такие $f(x)$ положительны.
+\end{proof}
+
+\begin{theorem-non}
+    Теорема о предельном переходе в неравенствах
+
+    $f, \, g : E \to \R, \, X \subset X, \, a$ -- предельная точка $E$ и $f(x) \leqslant g(x) \;\; \forall \, x$
+
+    Тогда если $b := \lim\limits_{x \to a} f(x)$ и $c := \lim\limits_{x \to a} g(x)$, то $b \leqslant c$.
+\end{theorem-non}
+\begin{proof}
+    Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$. 
+
+    Тогда $\lim f(x_n) = b$ и $\lim g(x_n) = c$. Кроме того $f(x_n) \leqslant g(x_n) \Rightarrow b \leqslant c$ (предельный переход для последовательностей).
+\end{proof}
+\begin{notice}
+    Строгий знак может не сохраниться. Например, $E = \R \setminus \{0\}, \, f(x) = 1$ и $g(x) = x^2 + 1$.
+\end{notice}
+
+\begin{theorem-non}
+    Теорема о двух миллиционерах
+
+    $f, \, g, \, h : E \to \R, \, E \subset X, \, a$ -- предельная точка $E$ и $f(x) \leqslant g(x) \leqslant h(x) \;\; \forall \, x$
+
+    Тогда если $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} h(x) =: b$, то $\lim\limits_{x \to a} g(x) = b$.
+\end{theorem-non}
+\begin{proof}
+    Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$. 
+
+    Тогда $\lim f(x_n) = \lim h(x) = b$. Кроме того $f(x_n) \leqslant g(x_n) \leqslant h(x_n) \Rightarrow \lim g(x_n) = b \\ \Rightarrow \lim g(x) = b$
+    (теорема для последовательностей)
+\end{proof}
+
+\begin{theorem-non}
+    Теорема об арифметических действиях с пределами функций
+
+    $f, \, g : E \to \R^d, \, \lambda : E \to \R, \, a$ -- предельная точка $E$
+
+    $\lim\limits_{x \to a} f(x) = b, \, \lim\limits_{x \to a} g(x) = c$ и $\lim\limits_{x \to a} \lambda(x) = \mu$, где $b, \, c \in \R^d$, a $\mu \in \R$
+    \begin{enumerate}
+        \item $\lim\limits_{x \to a} (f(x) \pm g(x)) = b \pm c$
+        \item $\lim\limits_{x \to a} \lambda(x)f(x) = \mu b$
+        \item $\lim\limits_{x \to a} ||f(x)|| = ||b||$
+        \item $\lim\limits_{x \to a} <f(x), \, g(x)> \, = \, <b, \, c>$
+        \item Если $d = 1$ и $c \neq 0$, то $\lim\limits_{x \to a} \frac{f(x)}{g(x)} = \frac{b}{c}$
+    \end{enumerate}
+\end{theorem-non}
+\begin{proof}
+    Будет доказан только первый пункт, все остальные доказываются аналогично.
+
+    Проверим определение по Гейне. Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$.
+    Тогда $\lim f(x_n) = b$ и $\lim g(x_n) = c$. \\
+    Для последовательностей мы знаем, что $\lim (f(x_n) \pm g(x_n)) = b \pm c$, следовательно $\lim\limits_{x \to a} (f(x) \pm g(x)) = b \pm c$.
+\end{proof}
+\begin{notice}
+    Для бесконечных пределов всё аналогично последовательностям.
+\end{notice}
+
+\vspace{7mm}
+
+\begin{conj}
+    Односторонние пределы
+\end{conj}
+$f : E \to Y, \, E \subset \R$
+\begin{itemize}
+    \item $a$ -- предельная точка множества $E \cap (a, +\infty) =: E_1$
+    
+    Сузим $f$ на $E_1$. Назовем получившуюся функцию $f_1$. 
+    Если у $f_1$ есть предел в точке $a$, то говорят, что у $f$ есть правосторонний предел:
+    \[ \lim_{x \to a+} f(x) = b \Longleftrightarrow \lim_{x \to a} f_1(x) = b \Longleftrightarrow 
+    \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < x - a < \delta \Rightarrow\rho_y(f(x), b) < \varepsilon \]
+    
+    \item $a$ -- предельная точка множества $E \cap (-\infty, a) =: E_2$
+    
+    Сузим $f$ на $E_2$. Назовем получившуюся функцию $f_2$.
+    Если у $f_2$ есть предел в точке $a$, то говорят, что у $f$ есть левосторонний предел:
+    \[ \lim_{x \to a-} f(x) = c \Longleftrightarrow \lim_{x \to a} f_2(x) = c \Longleftrightarrow 
+    \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < a - x < \delta \Rightarrow\rho_y(f(x), c) < \varepsilon \]
+\end{itemize}
+\begin{conj}
+    Односторонние пределы по Гейне
+\end{conj}
+\begin{itemize}
+    \item $\lim\limits_{x \to a+} f(x) = b \Longleftrightarrow$ для любой последовательности $x_n \in E, \, x_n > a$ и $\lim x_n = a$ имеем $\lim f(x_n) = b$
+    \item $\lim\limits_{x \to a-} f(x) = c \Longleftrightarrow$ для любой последовательности $x_n \in E, \, x_n < a$ и $\lim x_n = a$ имеем $\lim f(x_n) = c$
+\end{itemize}
+\underline{Пример:} $f(x) = [x], \, n \in \N$
+
+$\lim\limits_{x \to n+} f(x) = n$, но $\lim\limits_{x \to n-} f(x) = n - 1$
+
+\begin{notice}
+    $\lim\limits_{x \to a} f(x) = b \Longleftrightarrow \lim\limits_{x \to a+} f(x) = \lim\limits_{x \to a-} f(x)$
+\end{notice}
+
+\vspace{7mm}
+
+\begin{theorem-non}
+    Существование предела у монотонной ограниченной функции
+
+    $f : E \to \R, \, E \subset \R, \, a$ -- предельная точка множества $E \cap (-\infty, a)$
+
+    Если $f$ возрастает (убывает) и ограничена сверху (снизу), то существует конечный $\lim\limits_{x \to a-} f(x)$.
+\end{theorem-non}
+\begin{proof}
+    Пусть $f$ возрастает и огранечена сверху $\Rightarrow$ существует конечный $\sup f(x) =: b$, где $x \in E \cap (-\infty, a)$.
+    Докажем, что $\lim\limits_{x \to a-} f(x) = b$.
+
+    Возьмем $\varepsilon > 0$. Мы знаем, что $b - \varepsilon$ не является верхней границей, следовательно найдется $y \in E \cap (-\infty, a)$ такой, что $f(y) > b - \varepsilon$.
+
+
+    Если $y < x < a$, то $\begin{cases} f(x) \geqslant f(y) > b - \varepsilon \\ f(x) \leqslant b < b + \varepsilon \end{cases} \Rightarrow |f(x) - b| < \varepsilon \Rightarrow \lim\limits_{x \to a-} f(x) = b$
+\end{proof}
+
+\subsection{Непрерывные отображения}
+\begin{conj}
+    Непрерывность функции в точке 
+\end{conj}
+$f : E \to Y, \, E \subset X$ и $a \in E$
+
+$f$ непрерывна в точке $a$, если:
+\begin{itemize}
+    \item По Коши
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x \in E : \, \rho_x(x, a) < \delta \Rightarrow \rho_y(f(x), f(a)) < \varepsilon \]
+    \item На языке окрестностей
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \, f(B_{\delta}(a) \cap E) \subset B_{\varepsilon}(f(a)) \]
+    \item С пределами
+    
+    Если $a$ не является предельной точкой $E$, то условия не накладываются (в какой-то окрестности нет точек кроме самой $a$, следовательно функция автоматически непрерына).
+
+    Если $a$ является предельной, то $\lim\limits_{x \to a} f(x) = f(a)$.
+    \item По Гейне
+    
+    Если $x_n \in E$ и $\lim x_n = a$, то $\lim f(x_n) = f(a)$.
+\end{itemize}
+\begin{notice}
+    \begin{enumerate}
+        \item Эти определения равносильны.
+        \item Есть непрерывность слева и справа (расписывается через односторонние пределы).
+    \end{enumerate}
+\end{notice}
