@@ -92,4 +92,68 @@
     \end{axis}
     \end{tikzpicture}
 
-%% Таймкод лекции 32:00
+\subsection*{Элементарные функции}
+
+\begin{theorem-non}
+    При $0 < x < \frac{\pi}{2} \qquad \sin{x} < x < \tan{x}$
+    \begin{proof} \quad 
+        
+        \begin{tikzpicture}[scale=3.0,cap=round,>=latex]
+            % draw the coordinates
+            \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+            \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+    
+            % draw the unit circle
+            \draw[thick] (0cm,0cm) circle(1cm);
+
+            %draw angle
+            \draw[thick,orange] ([shift=(10:1cm)]-0.8,-0.171) arc (0:45:0.18cm);
+
+            %draw lines
+            \draw[blue] (0cm,0cm) -- (45:1.41cm)
+                 (45:1cm) -- (0:0.71cm)
+                 (45:1.41cm) -- (0:1cm)
+                 (0cm,0cm) -- (1cm,0cm);
+
+            %draw dots
+            \filldraw[black] (45:1cm) circle(0.4pt)
+                     (45:1.41cm) circle(0.4pt)
+                     (0cm:0cm) circle(0.4pt)
+                     (0:1cm) circle(0.4pt)
+                     (0:0.71cm) circle(0.4pt);
+
+            %draw nodes
+            \draw (-0.1cm,-0.1cm) node(z) {$0$}
+                  (0.71cm,-0.1cm) node(h) {$H$}
+                  (1.1cm,-0.1cm) node(b) {$B$}
+                  (0.55cm,0.7cm) node(a) {$A$}
+                  (0.85cm,1cm) node(c) {$C$}
+                  (0.25cm,0.1cm) node(x) {$x$};
+            
+            \foreach \x/\xtext in {
+                180/\pi}
+                    \draw (\x:0.85cm) node[fill=white] {$\xtext$};
+
+            \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+                  (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+                  (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+                  (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+        \end{tikzpicture}
+
+        $\sin{x} = AH \\
+        \tg{x} = BC \\ 
+        S_{\triangle AOB} = \frac{1}{2} OB \cdot AH = \frac{\sin{x}}{2}$
+
+        $S_{\triangle BOC} = \frac{1}{2} OB \cdot CB = \frac{\tg{x}}{2}$
+        
+        $S_{\text{сектор } AOB} = \pi \cdot \frac{x}{2\pi} = \frac{x}{2}$
+
+        $S_{\triangle AOB} = \frac{\sin{x}}{2} < S_{\text{сектор } AOB} = \frac{x}{2}< S_{\triangle BOC} = \frac{\tg{x}}{2}$
+    \end{proof} 
+    \follow \begin{enumerate}
+        \item $\abs{\sin{x}} \leqslant \abs{x} \qquad x \in \R$ и если $x \neq 0$, то неравенство строгое
+        \begin{proof}
+            
+        \end{proof}
+    \end{enumerate}
+\end{theorem-non}
