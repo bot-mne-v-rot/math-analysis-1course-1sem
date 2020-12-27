@@ -1,1 +1,56 @@
 \section{Левый и правый пределы. Предел монотонной функции}
+
+\vspace{7mm}
+
+\begin{conj}
+    Односторонние пределы
+\end{conj}
+$f : E \to Y, \, E \subset \R$
+\begin{itemize}
+    \item $a$ -- предельная точка множества $E \cap (a, +\infty) =: E_1$
+    
+    Сузим $f$ на $E_1$. Назовем получившуюся функцию $f_1$. 
+    Если у $f_1$ есть предел в точке $a$, то говорят, что у $f$ есть правосторонний предел:
+    \[ \lim_{x \to a+} f(x) = b \Longleftrightarrow \lim_{x \to a} f_1(x) = b \Longleftrightarrow 
+    \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < x - a < \delta \Rightarrow\rho_y(f(x), b) < \varepsilon \]
+    
+    \item $a$ -- предельная точка множества $E \cap (-\infty, a) =: E_2$
+    
+    Сузим $f$ на $E_2$. Назовем получившуюся функцию $f_2$.
+    Если у $f_2$ есть предел в точке $a$, то говорят, что у $f$ есть левосторонний предел:
+    \[ \lim_{x \to a-} f(x) = c \Longleftrightarrow \lim_{x \to a} f_2(x) = c \Longleftrightarrow 
+    \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < a - x < \delta \Rightarrow\rho_y(f(x), c) < \varepsilon \]
+\end{itemize}
+\begin{conj}
+    Односторонние пределы по Гейне
+\end{conj}
+\begin{itemize}
+    \item $\lim\limits_{x \to a+} f(x) = b \Longleftrightarrow$ для любой последовательности $x_n \in E, \, x_n > a$ и $\lim x_n = a$ имеем $\lim f(x_n) = b$
+    \item $\lim\limits_{x \to a-} f(x) = c \Longleftrightarrow$ для любой последовательности $x_n \in E, \, x_n < a$ и $\lim x_n = a$ имеем $\lim f(x_n) = c$
+\end{itemize}
+\underline{Пример:} $f(x) = [x], \, n \in \N$
+
+$\lim\limits_{x \to n+} f(x) = n$, но $\lim\limits_{x \to n-} f(x) = n - 1$
+
+\begin{notice}
+    $\lim\limits_{x \to a} f(x) = b \Longleftrightarrow \lim\limits_{x \to a+} f(x) = \lim\limits_{x \to a-} f(x)$
+\end{notice}
+
+\vspace{7mm}
+
+\begin{theorem-non}
+    Существование предела у монотонной ограниченной функции
+
+    $f : E \to \R, \, E \subset \R, \, a$ -- предельная точка множества $E \cap (-\infty, a)$
+
+    Если $f$ возрастает (убывает) и ограничена сверху (снизу), то существует конечный $\lim\limits_{x \to a-} f(x)$.
+\end{theorem-non}
+\begin{proof}
+    Пусть $f$ возрастает и огранечена сверху $\Rightarrow$ существует конечный $\sup f(x) =: b$, где $x \in E \cap (-\infty, a)$.
+    Докажем, что $\lim\limits_{x \to a-} f(x) = b$.
+
+    Возьмем $\varepsilon > 0$. Мы знаем, что $b - \varepsilon$ не является верхней границей, следовательно найдется $y \in E \cap (-\infty, a)$ такой, что $f(y) > b - \varepsilon$.
+
+
+    Если $y < x < a$, то $\begin{cases} f(x) \geqslant f(y) > b - \varepsilon \\ f(x) \leqslant b < b + \varepsilon \end{cases} \Rightarrow |f(x) - b| < \varepsilon \Rightarrow \lim\limits_{x \to a-} f(x) = b$
+\end{proof}

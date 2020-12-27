@@ -1,1 +1,71 @@
 \section{Три определения предела отображения в точке. Равносильность определений. Единственность предела}
+\begin{conj} 
+    Предел отображения 
+\end{conj}
+$(X, \rho_x), \; (Y, \rho_y)$ -- метрические пространства 
+
+$E \subset X, \; a$ -- предельная точка $E$
+
+$f : E \to Y$
+\[ \lim_{x \to a} f(x) = b \]
+\begin{itemize}
+    \item По Коши
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall x \in E \;\; 0 < \rho_x(x, a) < \delta \Rightarrow \rho_y(f(x), b) < \varepsilon \]
+    \item На языке окрестностей
+    \[ \forall \, B_{\varepsilon}(b) \;\; \exists \; \overset{\circ}{B}_{\delta}(a) : f(\overset{\circ}{B}_{\delta}(a) \cap E) \subset B_{\varepsilon}(b) \]
+    \item По Гейне
+    
+    Для любой последовательности $x_n \in E$ и $x_n \neq a$ если $\lim x_n = a$, то $\lim f(x_n) = b$
+\end{itemize}
+
+\begin{notice}
+    \begin{enumerate}
+        \item В определении не участвует значение в точке $a$.
+        \item Определение локальное.
+    \end{enumerate}
+\end{notice}
+
+\begin{conj} 
+    Предел функции 
+\end{conj}
+$f : E \to \R$
+
+$E \subset \R, \; a$ -- предельная точка $E$
+
+$b \in \R$
+\[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall x \in E \;\; 0 < |x - a| < \delta \Rightarrow |f(x) - b| < \varepsilon \]
+\begin{notice}
+    Это определение по Коши, оределеления на языке окрестностей и по Гейне аналогичны определению предела отображения.
+\end{notice}
+
+\begin{theorem-non}
+    Определения по Коши и по Гейне равносильны.
+\end{theorem-non}
+\begin{proof} \quad \\
+    Коши $\Rightarrow$ Гейне: 
+    
+    Берем последовательность из определения по Гейне:
+    \[ x_n \in E, \; x_n \neq a \;\; \lim x_n = a \]
+    Зафиксируем $\varepsilon > 0$ из определения по Коши, по нему найдем $\delta$, по $\delta$ найдем $N$ из определения по Гейне:
+    \begin{gather*}
+        \exists \, N \;\; \forall \, n \geqslant N \;\; \rho_x(x_n, a) < \delta \Rightarrow \rho_y(f(x_n), b) < \varepsilon \\
+        \Rightarrow \lim f(x_n) = b
+    \end{gather*}
+    Гейне $\Rightarrow$ Коши:
+
+    Зафиксируем $\varepsilon > 0$ и предположим, что для него не найдется $\delta > 0$.
+
+    Не подходит $\delta = 1$, т.е. найдется $x_1 \in E, \; x_1 \neq a$ такой, что $\rho_x(x_1, a) < 1$ и $\rho_y(f(x_1), b) \geqslant e$. \\
+    Не подходит $\delta = \frac{1}{2}$, т.е. найдется $x_2 \in E, \; x_2 \neq a$ такой, что $\rho_x(x_2, a) < \frac{1}{2}$ и $\rho_y(f(x_2), b) \geqslant e$. \\
+    И так далее. В общем случае: \\
+    Не подходит $\delta = \frac{1}{n}$, т.е. найдется $x_n \in E, \; x_n \neq a$ такой, что $\rho_x(x_n, a) < \frac{1}{n}$ и $\rho_y(f(x_n), b) \geqslant e$. \\
+    
+    Последовательность $x_n$ стремится к $a$, тогда последовательность $f(x_n)$ обязаана стремиться к $b$, но $\forall \, n \;\; \rho_y(f(x_n), b) \geqslant e$. Следовательно, мы пришли к противоречию.
+\end{proof}
+
+\begin{follow} 
+    Предел единственен
+\end{follow}
+\begin{proof}
+    Пусть $\lim\limits_{x \to a} f(x) = b$ и $\lim\limits_{x \to a} f(x) = c$, где $a$ -- предельная точка $E$. Возьмем последовательность $x_n \in E, \; x_n \neq a$ и $\lim x_n = a$. Тогда по определению по Гейне $\lim f(x_n) = b$ и $\lim f(x_n) = c \Rightarrow b = c$.  
+\end{proof}
