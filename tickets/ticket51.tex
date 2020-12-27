@@ -1,1 +1,35 @@
 \section{Определения непрерывных отображений. Их равносильность. Непрерывность функций слева и справа. Теорема о стабилизации знака}
+
+\subsection{Непрерывные отображения}
+\begin{conj}
+    Непрерывность функции в точке 
+\end{conj}
+$f : E \to Y, \, E \subset X$ и $a \in E$
+
+$f$ непрерывна в точке $a$, если:
+\begin{itemize}
+    \item По Коши
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x \in E : \, \rho_x(x, a) < \delta \Rightarrow \rho_y(f(x), f(a)) < \varepsilon \]
+    \item На языке окрестностей
+    \[ \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 : \, f(B_{\delta}(a) \cap E) \subset B_{\varepsilon}(f(a)) \]
+    \item С пределами
+    
+    Если $a$ не является предельной точкой $E$, то условия не накладываются (в какой-то окрестности нет точек кроме самой $a$, следовательно функция автоматически непрерына).
+
+    Если $a$ является предельной, то $\lim\limits_{x \to a} f(x) = f(a)$.
+    \item По Гейне
+    
+    Если $x_n \in E$ и $\lim x_n = a$, то $\lim f(x_n) = f(a)$.
+\end{itemize}
+\begin{notice}
+    \begin{enumerate}
+        \item Эти определения равносильны.
+        \item Есть непрерывность слева и справа (расписывается через односторонние пределы - TODO).
+    \end{enumerate}
+\end{notice}
+\begin{theorem-non}
+    Теорема о стабилизации знака
+\end{theorem-non}
+\begin{proof}
+    TODO
+\end{proof}
