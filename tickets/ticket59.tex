@@ -1,1 +1,75 @@
-\section{Теорема о непрерывном образе промежутка. Примеры. Непрерывность обратной функции}
+\section{Теорема о непрерывном образе промежутка. Непрерывность обратной функции}
+\begin{theorem-non}
+    Непрерывный образ промежутка - промежуток (возможно другого типа)
+
+    \begin{proof} \quad
+
+        $m:= \inf\limits_{x \in \langle a, b \rangle}{f(x)}, \; M:= \sup\limits_{x \in \langle a, b \rangle}{f(x)}$
+
+        Случай $m = M$ тривиален. Пусть $m < y < M \Longrightarrow \begin{cases}
+            \text{найдется } p \in \langle a, b \rangle, \text{ т.ч } f(p) > y \\
+            \text{найдется } q \in \langle a, b \rangle, \text{ т.ч } f(q) < y
+        \end{cases}$
+
+        Посмотрим на $f$ на $[p, q]$. По т. Больцано-Коши она принимает на нем все промежуточные значения.
+        В частности, и $y$.
+        А так как $y$ мы брали произвольный, $y \in f(\langle a, b \rangle) \Longrightarrow \\
+        (m, M) \subset f(\langle a, b \rangle)$. Также мы знаем, что $f(\langle a, b \rangle) \subset [a, b]$, что делает наше доказательство полным.
+    \end{proof}
+    \textbf{Пример:} $sin: (0, 2\pi) \longrightarrow \R$ \qquad Множество значений: $[-1, 1]$ 
+\end{theorem-non}
+\begin{theorem-non}
+    Теорема о непрерывности обратной функции. $f : \langle a, b \rangle \longrightarrow \R$
+    непрерывна, строго монотонна, $m:= \inf\limits_{x \in \langle a, b \rangle}{f(x)}, \; M:= \sup\limits_{x \in \langle a, b \rangle}{f(x)}$. 
+    Тогда $f^{-1} : \langle m, M \rangle \longrightarrow \R$ непрерывна и строго монотонна.
+    \begin{proof} \quad
+
+        \quad \underline{Строгая монотонность}: Пусть $f$ строго возрастает (с убыванием ситуация аналогичная, различие в знаках).
+        Докажем, что $x < y \Longleftrightarrow f(x) < f(y):$ \\ 
+        $x < y \Longrightarrow f(x) < f(y), \ x = y \Longrightarrow f(x) = f(y), \ 
+        x > y \Longrightarrow f(x) > f(y)$
+
+        \quad \underline{Непрерывность}: Пусть $y \in \langle m, M \rangle. f^{-1}$ строго монотонна. 
+        $A := \lim\limits_{u \rightarrow y-} f^{-1}(u) \leqslant B := f^{-1}(y) \leqslant \lim\limits_{u \rightarrow y+} f^{-1}(u) =: C$.
+        Если оба равенства, то доказана непрерывность в точке $y$.
+        
+        Если один из знаком строгий, то $A < C$.
+
+        $A = \lim\limits_{u \rightarrow y-} f^{-1}(u) = \sup\limits_{u < y} f^{-1}(u) \Longrightarrow f^{-1}(u) \leqslant A$ при $u < y$
+
+        $C = \lim\limits_{u \rightarrow y+} f^{-1}(u) = \inf\limits_{u > y} f^{-1}(u) \Longrightarrow f^{-1}(u) \geqslant C$ при $u > y$
+
+        Также мы знаем, что $f^{-1}(\langle m, M \rangle) = \langle a, b \rangle$, а это идет в разрез с вышесказанным. Значит мы пришли к противоречию
+    \end{proof}  
+\end{theorem-non}
+\textbf{``Поясняющая картинка:''} \\
+\begin{tikzpicture}
+    \begin{axis}[
+        xmin=-3,   xmax=3,
+	    ymin=-3,   ymax=3,
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = {$f(x)$},
+    ]
+    %Below the red parabola is defined
+    \addplot [
+        domain=0:10,
+        smooth,
+        color=red,
+    ]
+    {x^2 - 3};
+    \addlegendentry{$x^2 - 3, x > 0$}
+    %Here the blue parabloa is defined
+    \addplot [
+        smooth,
+        color=blue,
+        ]
+        {sqrt(x+3)};
+    \addlegendentry{$\sqrt{x+3}$}
+    \addplot [
+        smooth,
+        color=green,
+    ]
+    {x};
+    \end{axis}
+\end{tikzpicture}
