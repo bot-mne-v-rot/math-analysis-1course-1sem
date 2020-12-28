@@ -1,2 +1,62 @@
 \section{Определение натурального логарифма и $a^b$. Пределы \\ $\lim{\frac{ln(1+x)}{x}},
 \lim{(1+x)^{1/x}}$ и $\lim{(1 + \frac{1}{x})^x}$}
+$exp: \R \longrightarrow (0, +\infty)$, так как $exp(x) > (1+x)$
+
+Функция экспоненты непрерывна и строго возрастает, следовательно можем взять у нее обратную функцию:
+
+$ln: (0, +\infty) \longrightarrow \R$ \qquad непрерывна и строго возрастает
+
+\begin{theorem-non}
+   $\lim\limits_{x \rightarrow 0}{\frac{\ln{(1 + x)}}{x}} = 1$
+
+   \begin{proof} \quad
+
+        Пусть $y:= \ln{(x+1)}$
+        $y \geqslant 1 - exp(-y) = 1 - \frac{1}{exp(y)}$
+        
+        Тогда $\ln{(1 + x)} \geqslant 1 - \frac{1}{1 + x}$
+
+        $\frac{x}{x + 1} = 1 - \frac{1}{1 + x} \leqslant \ln{(1+x)} \leqslant x \Longrightarrow 
+        \begin{cases}
+            1 \leftarrow \frac{1}{1+x} \leqslant \frac{\ln{(1+x)}}{x} \leqslant 1 $ при $ x > 0 \\
+            1 \leftarrow \frac{1}{1+x} \geqslant \frac{\ln{(1+x)}}{x} \geqslant 1 $ при $ x < 0
+        \end{cases} \Longrightarrow \lim\limits_{x \rightarrow 0}{\frac{\ln{(1 + x)}}{x}} = 1$
+   \end{proof} 
+\end{theorem-non}
+
+\begin{conj}
+    $a^b := exp(b\ln{a})$ \qquad $a > 0$ и $b \in \R$
+\end{conj}
+    Если $b \in \R$ \qquad $a^n = exp(\underbrace{\ln{a} + \ln{a} + \dots + \ln{a}}_{n \text{ шт.}})
+    = exp(\ln{a}) \cdot exp(\ln{a}) \dots exp(\ln{a}) = \underbrace{a \cdot a \dots a}_{n \text{ шт.}}$
+
+    $a^{-n} = exp(-n \ln{a}) = \frac{1}{exp(n \ln(a))} = \frac{1}{a^n}$
+
+    Старое представление: $a^{\frac{m}{n}} = (\sqrt[n]{a})^{m}$ 
+
+    Новое представление: $a^{\frac{m}{n}} = exp(\frac{m}{n} \ln{a}) = exp(m \frac{\ln{a}}{n}) = (exp(\frac{\ln{a}}{n}))^m$
+
+    Чтобы теперь проверить, что два понимания эквивалентны, нам нужно, чтобы выполнялось следующее: 
+    $(exp(\frac{\ln{a}}{n}))^n = a$ 
+
+    Мы знаем, что $(exp(\frac{\ln{a}}{n}))^n = exp(n \frac{\ln{a}}{n}) = exp(\ln{a}) = a$. Проверили.
+
+\follow 
+\begin{enumerate}
+    \item $\lim\limits_{x \rightarrow 0}{(1+x)^{1/x}} = e$
+    \begin{proof} \quad
+
+        Мы знаем, что $\lim\limits_{x \rightarrow 0}{\frac{\ln{(1+x)}}{x}} = 1$
+
+        Тогда $exp \left(\lim\limits_{x \rightarrow 0}{\frac{\ln{(1+x)}}{x}} \right) = exp(1) = e$
+
+        В то же время $exp \left(\lim\limits_{x \rightarrow 0}{\frac{\ln{(1+x)}}{x}} \right) = \lim\limits_{x \rightarrow 0}{exp \left(\frac{\ln{(1+x)}}{x} \right)} = \lim\limits_{x \rightarrow 0}{(1+x)^{1/x}} = e$
+    \end{proof}
+    \item $\lim\limits_{x \rightarrow +\infty}{(1 + \frac{1}{x})^x} = \lim\limits_{x \rightarrow -\infty}{(1 + \frac{1}{x})^x} = e$
+    \begin{proof} \quad 
+
+        $\lim\limits_{x \rightarrow +\infty}{(1 + \frac{1}{x})^x} \overset{y := 1/x}{=} \lim\limits_{y \rightarrow 0+}{(1+y)^{1/y}} = e$ 
+        
+        Аналогично для $-\infty$
+    \end{proof}
+\end{enumerate}

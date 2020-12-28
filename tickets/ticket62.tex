@@ -1,1 +1,49 @@
 \section{Определение показательной и степенной функций. Пределы $\lim{\frac{a^x - 1}{x}}$ и $\lim{\frac{(1+x)^p - 1}{x}}$}
+\begin{conj}
+    Показательная функция \qquad $a^x := exp(x \ln{a}): \R \longrightarrow (0, +\infty)$
+    
+    Непрерывна и строго возрастает при $a > 1$, строго убывает при $a < 1$
+\end{conj}
+
+\begin{theorem-non}
+    $\lim\limits_{x \rightarrow 0}{\frac{a^x - 1}{x}} = \ln{a}$
+
+    \begin{proof}
+        $a^x = exp(x \ln{a}) \geqslant 1 + x \ln{a}$
+
+        $a^x = exp(x \ln{a}) = \frac{1}{exp(-x\ln{a})} \leqslant \frac{1}{1 - x \ln{a}}$
+        \begin{itemize}
+            \item[] при $x < \frac{1}{\ln{a}}$, если $a > 1$
+            \item[] при $x > \frac{1}{\ln{a}}$, если $a < 1$ 
+        \end{itemize}
+
+        $\frac{x\ln{a}}{1 - x \ln{a}} = \frac{1}{1 - x \ln{a}} - 1 \geqslant a^x - 1 \geqslant x\ln{a}$
+
+        Тогда:
+        \begin{itemize}
+            \item[] при $x > 0 \qquad \ln{a} \leqslant \frac{a^x - 1}{x} \leqslant \frac{\ln{a}}{1 - x \ln{a}} \longrightarrow \ln{a}$
+            \item[] при $x < 0 \qquad \ln{a} \geqslant \frac{a^x - 1}{x} \geqslant \frac{\ln{a}}{1 - x \ln{a}} \longrightarrow \ln{a}$
+        \end{itemize}
+    \end{proof}
+\end{theorem-non}
+
+\begin{conj}
+        Степенная функция $x^p := exp(p \ln{x}) : (0, +\infty) \longrightarrow (0, +\infty)$
+
+        Непрерывна и строго возрастает при $p > 0$, строго убывает при $p < 0$
+
+        Если $p = \frac{m}{n}$, где $n$ - нечетно, степенная функция может быть переопределена. $(-x)^p := -x^p$
+\end{conj}
+
+\begin{theorem-non}
+    $\lim\limits_{x \rightarrow 0}{\frac{(1+x)^p - 1}{x}} = p$
+    \begin{proof}
+        $(1+x)^p = exp(p \ln{1 + x}) = \frac{1}{exp(-p \ln{(1+x)})} \leqslant \frac{1}{1 - p \ln{(1+x)}}$ при $x$ близких к 0
+
+        Если $x > 0 \quad p \longleftarrow p\frac{ln(1+x)}{x} \leqslant \frac{(1+x)^p - 1}{x} \leqslant \left(\frac{1}{1 - p\ln{(1+x)}} - 1\right)\cdot \frac{1}{x} =
+        \frac{p}{1 - p\ln{(1+x)}} \cdot \frac{\ln{(1+x)}}{x} \longrightarrow p$ 
+
+        Если $x < 0 \quad p \longleftarrow p\frac{ln(1+x)}{x} \geqslant \frac{(1+x)^p - 1}{x} \geqslant
+        \frac{p}{1 - p\ln{(1+x)}} \cdot \frac{\ln{(1+x)}}{x} \longrightarrow p$ 
+    \end{proof}
+\end{theorem-non}
