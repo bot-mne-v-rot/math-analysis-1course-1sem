@@ -1,1 +1,49 @@
 \section{Арифметические действия с дифференцируемыми функциями}
+Пусть $f, g: \langle a, b \rangle \to \mathbb{R}, \; x_0 \in \langle a, b \rangle$, $f$ и $g$ дифференцируемы в точке $x_0$.
+
+Тогда:
+\begin{enumerate}
+    \item $f \pm g$ дифференцируема в точке $x_0$, и $(f \pm g)'(x_0) = f'(x_0) + g'(x_0)$
+    \item $\alpha f + \beta g$ дифференцируема в точке $x_0$, и $(\alpha f + \beta g)'(x_0) = \alpha f'(x_0) + \beta g'(x_0)$
+    \item $f * g$ дифференцируема в точке $x_0$, и $(f * g)'(x_0) = f'(x_0) * g(x_0) + f(x_0) * g'(x_0)$
+    \item $\frac{f}{g}$ дифференцируема в точке $x_0$, если $g(x_0) \neq 0$, и $(\frac{f}{g})'(x_0) = \frac{f'(x_0) * g(x_0) - f(x_0) * g'(x_0)}{g(x_0)^2}$
+\end{enumerate}
+\begin{proof} \quad \\
+    \begin{enumerate} 
+        \item Частный случай второго пункта
+        \item 
+        \begin{equation*}
+            \begin{split}
+                (\alpha f + \beta g)'(x_0) &= \lim_{x \to x_0} \frac{(\alpha f + \beta g)(x) -  (\alpha f + \beta g)(x_0)}{x - x_0} \\
+                &= \lim_{x \to x_0} \frac{\alpha f(x) - \alpha f(x_0)}{x - x_0} + \lim_{x \to x_0} \frac{\beta f(x) - \beta f(x_0)}{x - x_0} \\
+                &= \alpha f'(x_0) + \beta g'(x_0)
+            \end{split}        
+        \end{equation*}
+        \item 
+        \begin{equation*}
+            \begin{split}
+                (f * g)'(x_0) &= \lim_{x \to x_0} \frac{(f * g)(x) - (f * g)(x_0)}{x - x_0} \\
+                &= \lim_{x \to x_0} \frac{f(x)g(x) - f(x)g(x_0) + f(x)g(x_0) - f(x_0)g(x_0)}{x - x_0} \\
+                &= \lim_{x \to x_0} \frac{f(x) * (g(x) - g(x_0)) + g(x_0) * (f(x) - f(x_0))}{x - x_0} \\
+                &= \lim_{x \to x_0} f(x) * \lim_{x \to x_0} \frac{g(x) - g(x_0)}{x - x_0} + \lim_{x \to x_0} g(x_0) * \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \\
+                &= f(x_0) * g'(x_0) + g(x_0) * f'(x_0)  
+            \end{split}
+        \end{equation*}
+        \item 
+        \begin{equation*}
+            \begin{split}
+               (\frac{1}{g})'(x_0) &= \lim_{x \to x_0} \frac{\frac{1}{g(x)} - \frac{1}{g(x_0)}}{x - x_0} \\
+               &= \lim_{x \to x_0} \frac{g(x_0) - g(x)}{g(x)g(x_0)(x - x_0)} \\
+               &= -\lim_{x \to x_0} (\frac{1}{g(x)g(x_0)} * \frac{g(x) - g(x_0)}{x - x_0}) \\
+               &= - \frac{1}{g(x_0)^2} * g'(x_0) 
+            \end{split}
+            \Rightarrow 
+            \begin{split}
+                (\frac{f}{g})'(x_0) &= (f * \frac{1}{g})(x_0) \\
+                &= f'(x_0) * \frac{1}{g(x_0)} + f(x_0) * \frac{1}{g}(x_0) \\
+                &= \frac{f'(x_0)}{g(x_0)} - \frac{f(x_0)g'(x_0)}{g(x_0)^2} \\
+                &= \frac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{g(x_0)^2}
+            \end{split}
+        \end{equation*}
+    \end{enumerate}
+\end{proof}

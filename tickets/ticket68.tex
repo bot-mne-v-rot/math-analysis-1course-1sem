@@ -1,1 +1,28 @@
 \section{Теорема о дифференцируемости обратной функции}
+\begin{theorem-non}
+    Дифференцируемость обратной функции
+
+    Пусть
+    \begin{itemize}
+        \item $f: \langle a, b \rangle \to \mathbb{R}, \; x_0 \in \langle a, b \rangle$
+        \item $f$ строго монотонна и непрерывна
+        \item $f$ дифференцируема в точке $x_0$ и $f'(x_0) \neq 0$
+    \end{itemize}
+
+    Тогда $f^{-1}$ дифференцируема в точке $f(x_0)$ и $(f^{-1})'(f(x_0)) = \frac{1}{f'(x_0)}$
+\end{theorem-non}
+\begin{proof} \quad \\
+    $f(x) - f(x_0) = \varphi(x)(x - x_0)$ для некоторой $\varphi$ такой, что $\varphi$ непрерывна в точке $x_0$ и $\varphi(x_0) \neq 0$
+
+    Введем $g = f^{-1}$, тогда $y = f(x) \Leftrightarrow x = g(y)$.
+
+    \begin{gather*}
+        \Rightarrow y - y_0 = \varphi(g(y)) * (g(y) - g(y_0)) \\
+        g(y) - g(y_0) = \frac{1}{\varphi(g(y))} * (y - y_0)
+    \end{gather*}
+
+    Надо понять, что $\frac{1}{\varphi(g(y))}$ непрерывна в точке $y_0$. Это так, потому что обратная функция($g$) непрерына, а композиция непрерывных($\varphi \cdot g$) также непрерывна.
+
+    Кроме того,
+    \[ g'(y_0) = \frac{1}{\varphi(g(y_0))} = \frac{1}{\varphi(x_0)} = \frac{1}{f'(x_0)} \]
+\end{proof}

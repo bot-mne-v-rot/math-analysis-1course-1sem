@@ -1,1 +1,45 @@
 \section{Левая и правая производные. Бесконечные производные. Примеры. Геометрический смысл производной. Непрерывность дифференцируемой функции}
+\begin{conj}
+    Односторонние производные
+
+    $\quad f_{+}'(x_0) = \lim\limits_{x \ to x_0+} \frac{f(x) - f(x_0)}{x - x_0}$ - правосторонняя производная
+
+    $\quad f_{-}'(x_0) = \lim\limits_{x \ to x_0-} \frac{f(x) - f(x_0)}{x - x_0}$ - левосторонняя производная
+\end{conj}
+\begin{notice}
+    Производная сущетсвует $\Leftrightarrow$ односторонние производные существуют, и они равны.
+\end{notice}
+
+
+\textbf{Примеры}
+\begin{enumerate}
+    \item $f(x) = |x| \quad\quad f_{+}'(0) = 1 \quad\quad f_{+}'(0) = -1 \quad\quad f'(0)$ не определена
+    \item $f(x) = \{x\}, \; n \in \mathbb{Z}$
+    
+    $\quad\quad f_{+}'(n) = \lim\limits_{h \to 0+} \frac{\{h + n\} - \{n\}}{h} = \lim\limits_{h \to 0+} \frac{h}{h} = 1$
+
+    $\quad\quad f_{-}'(n) = \lim\limits_{h \to 0-} \frac{\{h + n\} - \{n\}}{h} = \lim\limits_{h \to 0-} \frac{1 - h}{h} = -\infty$
+
+    $\quad\quad f'(n)$ не определена
+    \item  $f(x) = \sqrt[3]{x}$
+    
+    $\quad\quad f'(0) = \lim\limits_{x \to 0} \frac{f(x) - f(0)}{x - 0} = \lim\limits_{x \to 0} \frac{\sqrt[3]{x}}{x} = +\infty$
+\end{enumerate}
+\begin{conj}
+    Геометрический смысл производной в точке $u$ -- угловой коэффициент касательной к $f$ в точке $u$.
+\end{conj}
+Уравнение секущей: $y = f(u) + \frac{f(v) - f(u)}{v - u}(x - u)$. 
+
+При $v \to u$ получаем: $y = f(u) + f'(u)(x - u)$ - уравнение касательной
+
+
+\textbf{Утверждение} 
+
+$\quad$ Если $f$ дифференцируема в точке $x_0$, то $f$ непрерывна в точке $x_0$.
+\begin{proof}
+    Надо показать, что $f(x) \to f(x_0)$ при $x \to x_0$.  
+    
+    Знаем, что $f(x) = f(x_0) + k(x - x_0) + o(x - x_0)$ при $x \to x_0$. 
+
+    При $x \to x_0$ имеем $k(x - x_0) \to 0$ и $o(x - x_0) \to 0 \Rightarrow f(x) \to f(x_0)$ 
+\end{proof}
