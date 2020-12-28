@@ -1,1 +1,42 @@
 \section{Производные элементарных функций}
+\begin{enumerate}
+    \item $c' = 0$
+    \item $(x^p)' = p * x^{p - 1} \quad p \in \mathbb{R}$ и $x > 0$, или $p \in \mathbb{Q}$ c нечетным знаменателем и $x \in \mathbb{R}$
+    \item $(a^x)' = a^x * \ln a$ \\
+    $\quad (e^x)' = e^x$
+    \item $(\log_a x)' = \frac{1}{x * \ln a} \quad a > 0, \; a \neq 1$ \\
+    $\quad (\ln x)' = \frac{1}{x}$
+    \item $(\sin x)' = \cos x$ \\
+    $\quad (\cos x)' = -\sin x$
+    \item $(\tan x)' = \frac{1}{\cos^2 x}$ \\
+    $\quad (ctg \, x)' = -\frac{1}{\sin^2 x} $
+    \item $(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$ \\
+    $\quad (\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}$ 
+    \item $(\arctan x)' = \frac{1}{1 + x^2}$ \\
+    $\quad (arcctg \, x)' = - \frac{1}{1 + x^2}$
+\end{enumerate}
+\begin{proof} \quad \\
+    \begin{enumerate}
+        \item Очевидно
+        \item Используем замечательный предел $\lim\limits_{x \to 0} \frac{(1 + x)^p - 1}{x} = p$
+        \[ (x^p)' = \lim_{h \to 0} \frac{(x + h)^p - x^p}{h} = x^p * \lim_{h \to 0} (\frac{(1 + \frac{h}{x})^p - 1}{\frac{h}{x}}) * \frac{1}{x} = x^p * \frac{p}{x} = p * x^{p - 1} \]
+        \item Используем замечательный предел $\lim\limits_{x \to 0} \frac{a^x - 1}{x} = \ln a$
+        \[ (a^x)' = \lim_{h \to 0} \frac{a^{x + h} - a^x}{h} = a^x * \lim_{h \to 0} \frac{a^h - 1}{h} = a^x * \ln a \]
+        \item Используем тот факт, что $\log_a y$ является обратной функцией к $a^x$
+        \[ (\log_a y)' = \frac{1}{a^x \ln a} = \frac{1}{a^{\log_a y}\ln a} = \frac{1}{y\ln a} \]
+        \item Используем формулу разности синусов $\sin x - \sin y = 2\sin(\frac{x - y}{2})\cos(\frac{x + y}{2})$ и замечательный предел $\lim\limits_{x \to 0} \frac{\sin x}{x} = 1$
+        \[ (\sin x)' = \lim_{h \to 0} \frac{\sin(x + h) - \sin(x)}{h} = \lim_{h \to 0} \frac{2\sin(\frac{h}{2})\cos(x + \frac{h}{2})}{h} = \cos x \]
+        Используем формулу разности косинусов $\cos x - \cos y = -2\sin(\frac{x + y}{2})\sin(\frac{x - y}{2})$
+        \[ (\cos x)' = \lim_{h \to 0} \frac{\cos(x + h) - \cos(x)}{h} = \lim_{h \to 0} \frac{-2\sin(x + \frac{h}{2})\sin(\frac{h}{2})}{h} = -\sin x \]
+        \item Используем посчитанные значения для $\sin$ и $\cos$
+        \[ (\tan x)' = \frac{(\sin x)' * \cos x - \sin x * (\cos x)'}{\cos^2 x} = \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \frac{1}{\cos^2 x} \]
+        \[ (ctg \, x)' = \frac{(\cos x)' * \sin x - \cos x * (\sin x)'}{\sin^2 x} = \frac{-\sin^2 x - \cos^2}{\sin^2 x} = \frac{-1}{\sin^2 x} \]
+        \item Используем формулу производной для обратной функции ($y = \sin x$)
+        \[ (\arcsin y)' = \frac{1}{(\sin x)'} = \frac{1}{\cos(\arcsin y)} = \frac{1}{\sqrt{1 - \sin^2(\arcsin(y))}} = \frac{1}{\sqrt{1 - y^2}}\] 
+        Используем формулу производной для обратной функции ($y = \cos x$)
+        \[ (\arccos y)' = \frac{1}{(\cos x)'} = \frac{1}{-\sin(\arccos y)} = \frac{1}{-\sqrt{1 - \cos(\arccos y)}} = \frac{-1}{\sqrt{1 - y^2}}  \]
+        \item Используем тот факт, что $\frac{1}{\cos^2} = 1 + \tan^2$
+        \[ (\arctan y)' = \frac{1}{(\tan x)'} = \cos^2(\arctan y) = \frac{1}{1 + \tan^2(\arctan y)} = \frac{1}{1 + y^2} \]
+        \[ (arcctg \, y)' = \frac{1}{(ctg \, x)'} = -\sin^2(arcctg \, y) = \frac{-1}{1 + ctg^2(arcctg \, y)} = \frac{-1}{1 + y^2}  \]
+    \end{enumerate}
+\end{proof}

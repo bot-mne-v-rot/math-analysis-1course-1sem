@@ -1,1 +1,58 @@
 \section{Определение производной и дифференци- руемости функции в точке. Критерий дифференцируемости}
+\begin{conj}
+    Дифференцируемость
+
+    $f: \langle a, b \rangle \to \mathbb{R}, \; x_0 \in \, \langle a, b \rangle$
+
+    $f$ дифференцируема в точке $x_0$, если существует такое $k \in \mathbb{R}$, 
+    что $f(x) = f(x_0) + k(x - x_0) + o(x - x_0)$ при $x \to x_0$
+\end{conj}
+
+\begin{conj}
+    Производная функции $f$ в точке $x_0$
+
+    \[ \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}
+    := f'(x_0) \]
+\end{conj}
+
+\begin{theorem-non}
+    Критерий дифференцируемости
+
+    $f: \langle a, b \rangle \to \mathbb{R}, \; x_0 \in \, \langle a ,b \rangle$
+
+    Следующие условия равносильны:
+    \begin{enumerate}
+        \item $f$ дифференцируема в точке $x_0$
+        \item $f$ имеет в точке $x_0$ конечную производную
+        \item существует функция $\varphi: \langle a, b \rangle \to \mathbb{R}$ такая, что
+        \begin{itemize}
+            \item $f(x) - f(x_0) = \varphi(x)(x - x_0)$
+            \item $\varphi$ непрерывна в точке $x_0$
+        \end{itemize}
+    \end{enumerate}
+    Причем, если выполнены эти условия, то $k = f'(x_0) = \varphi(x_0)$ 
+\end{theorem-non}
+\begin{proof} \quad 
+
+    $\quad 1 \Rightarrow 2:$ 
+    \begin{gather*}
+        f(x) = f(x_0) + k(x - x_0) + o(x - x_0) \Rightarrow \frac{f(x) - f(x_0)}{x - x_0} = k + o(1) \\
+        \Rightarrow \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = k \Rightarrow f'(x_0) = k
+    \end{gather*}
+
+    $\quad 2 \Rightarrow 3:$
+    \[ \varphi(x) := 
+    \begin{cases}
+        \frac{f(x) - f(x_0)}{x - x_0}, & \text{при}\ x \neq x_0 \\
+        f'(x_0), & \text{при}\ x = x_0
+    \end{cases} \; - \text{непрерывная в точке $x_0$} \]
+
+    $\quad 3 \Rightarrow 1:$
+    \begin{gather*}
+        f(x) - f(x_0) = \varphi(x)(x - x_0) \Rightarrow f(x) = f(x_0) + \varphi(x)(x - x_0)\\
+        \Rightarrow f(x) = f(x_0) + \varphi(x_0)(x - x_0) + (\varphi(x) - \varphi(x_0))* (x - x_0)
+    \end{gather*}
+    $\quad\quad$Надо показать, что $(\varphi(x) - \varphi(x_0)) * (x - x_0) = o(x - x_0)$, то есть, что $(\varphi(x) - \varphi(x_0)) \to 0$.
+
+    $\quad\quad$ Это следует из непрерывности. Следовательно, $k = \varphi(x_0)$.
+\end{proof}
