@@ -71,7 +71,8 @@ tlmgr install   \
   titlesec \
   hyphsubst \
   datetime2-russian \
-  bookmark
+  bookmark \
+  pgfplots
   
 
 # Keep no backups (not required, simply makes cache bigger)

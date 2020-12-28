@@ -1,1 +1,118 @@
-\section{Сравнение функций:отношениеэквивалент- ности, символы Ландау, свойства, примеры}
+\section{Сравнение функций: отношение эквивалентности, символы Ландау, свойства, примеры}
+\begin{conj}
+    $f, g: E \longrightarrow \R, \quad x_0$ - предельная точка $E$ 
+
+    Если существует $\varphi: E \longrightarrow \R$, т.ч. $f(x) = \varphi(x) g(x)$ при 
+    $x \in \overset{\circ}{\mathcal{U}}_{x_0} \cap E \\ 
+    (\overset{\circ}{\mathcal{U}}$ - проколотая окрестность некоторой точки$)$
+
+    \begin{enumerate}
+        \item $\varphi$ - ограничена \qquad $f = O(g)$ при $x \longrightarrow x_0$
+        \item $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 0}$ \qquad $f = o(g)$ при $x \longrightarrow x_0$
+        \item $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 1}$ \qquad $f \thicksim g$ при $x \longrightarrow x_0$
+    \end{enumerate}
+\end{conj}
+\notice ко второму пункту: Если $g(x) \neq 0$, то $\varphi(x) = \frac{f(x)}{g(x)}$.
+Если $g(x) = 0$, то обязательно $f(x) = 0$ и тогда $\varphi(x)$ - любое 
+
+$\lim\limits_{x \rightarrow x_0}{\frac{f(x)}{g(x)}} = 0$, считая, что $\frac{0}{0} = 0$
+
+\notice к третьему пункту: $\lim\limits_{x \rightarrow x_0}{\frac{f(x)}{g(x)}} = 1$, 
+считая, что $\frac{0}{0} = 1$
+
+\begin{conj} 
+    Если $\abs{f(x)} \leqslant C\abs{g(x)}$ при $x \in E$, то $f = O(g)$ на $E$
+\end{conj}
+
+\begin{conj}
+    $f = O(g)$ еще пишут $f \prec g$ или $g \succ f$
+
+    Если $f = O(g)$ и $g = O(f)$ пишут, что $f \asymp g$
+\end{conj}
+
+\textbf{Свойства:}
+\begin{enumerate}
+    \item $\thicksim - $отношение эквивалентности 
+    
+    \begin{proof}
+        $f \thicksim f \quad \varphi \equiv 1, \; f \thicksim g \Longrightarrow g \thicksim f 
+        \quad f = \varphi g$, где $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 1}
+        \Longrightarrow g = \frac{1}{\varphi} \cdot f$ и $\underset{x \longrightarrow x_0}{\frac{1}{\varphi} \longrightarrow 1}$
+
+        $f \thicksim g$ и $g \thicksim h \Longrightarrow f \thicksim h \qquad 
+        \begin{cases}
+            f = \varphi g \quad \underset{x \longrightarrow x_0}{\varphi \longrightarrow 1} \\
+            g = \psi h \quad \underset{x \longrightarrow x_0}{\psi \longrightarrow 1} 
+        \end{cases} \Longrightarrow f = \varphi \psi h$ и $\underset{x \longrightarrow x_0}{\varphi \psi \longrightarrow 1}$  
+    \end{proof}
+
+    \item $f_1 \thicksim g_1$ и $f_2 \thicksim g_2 \Longrightarrow f_1 f_2 \thicksim g_1 g_2$
+    
+    \begin{proof}
+        $f_i = {\varphi}_i g_i$, где $\underset{x \longrightarrow x_0}{{\varphi}_i \longrightarrow 1} \Longrightarrow
+        f_1 f_2 = {\varphi}_1 {\varphi}_2 g_1 g_2$ и $\underset{x \longrightarrow x_0}{{\varphi}_1 {\varphi}_2 \longrightarrow 1}$
+    \end{proof}
+
+    \item $f_1 \thicksim g_1$ и $f_2 \thicksim g_2$, если $f_2$ не обращается в 0 в проколотой окрестности 
+    $x_0$, то $\frac{f_1}{f_2} \thicksim \frac{g_1}{g_2}$
+
+    \item $f \thicksim g \Longleftrightarrow f = g + o(g) \Longleftrightarrow f = g + o(f)$
+    
+    \begin{proof}
+        $f \thicksim g \Longleftrightarrow f = \varphi g$, где $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 1} 
+        \Longleftrightarrow f = g + (\varphi - 1)g \Longleftrightarrow f = g + o(g)$, где 
+        $\underset{x \longrightarrow x_0}{(\varphi - 1) \longrightarrow 0}$
+
+        $g \thicksim f \Longleftrightarrow g = f + o(f) \Longleftrightarrow f = g + o(f)$
+    \end{proof}
+
+    \item $f = o(g) \Longrightarrow f = O(g)$ при $x \longrightarrow x_0$
+    $f \thicksim g \Longrightarrow f = O(g)$ при $x \longrightarrow x_0$
+
+    \item $f \cdot o(g) = o(fg)$
+    
+    \begin{proof}
+        Возьмем $h$ из $o(g) \Longrightarrow h = \varphi g$, где $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 0}
+        \Longrightarrow fh = \varphi \cdot fg \quad \underset{x \longrightarrow x_0}{\varphi \longrightarrow 0}$
+
+        Если $h$ из $o(fg)$, то $h = \varphi \cdot fg = f \cdot \varphi g$, где 
+        $\underset{x \longrightarrow x_0}{\varphi \longrightarrow 0}$
+    \end{proof}
+
+    \item $o(f) + o(f) = o(f) \qquad O(f) + O(f) = O(f)$
+    
+    \begin{proof} \quad
+
+        $\begin{cases}
+            g = o(f) \qquad g = \varphi f \\
+            h = o(f) \qquad h = \psi f
+        \end{cases}$, где $\begin{cases}
+            \varphi \longrightarrow 0 \\
+            \underset{x \longrightarrow x_0}{\psi \longrightarrow 0}
+        \end{cases} \Longrightarrow g + h = (\varphi + \psi)f$ и $\underset{x \longrightarrow x_0}{\varphi + \psi \longrightarrow 0}$
+    \end{proof}
+\end{enumerate}
+
+$\underset{\text{при } x \longrightarrow 0}{\textbf{Примеры:}}$
+\begin{enumerate}
+    \item $\sin{x} \thicksim x$
+    \item $\tg{x} \thicksim x$
+    
+    $\frac{\tg{x}}{x} = \frac{\sin{x}}{x} \cdot \frac{1}{\cos{x}} \longrightarrow 1$
+    \item$\ln{(1+x)} \thicksim x$
+\end{enumerate}
+\notice $\lim\limits_{x \rightarrow x_0}{f(x) = a} \Longleftrightarrow \underset{x \longrightarrow x_0}{f(x) = a + o(1)}$
+
+$\underset{\text{при } x \longrightarrow 0}{\textbf{Примеры:}}$
+\begin{enumerate}
+    \item $\sin{x} = x + o(x)$
+    \item $\tg{x} = x + o(x)$
+    \item $\ln{(1 + x)} = x + o(x)$
+    \item $a^x = 1 + x \cdot \ln{(a)} + o(x)$
+    
+    $\frac{a^x - 1}{x} - \ln{(a)} = o(1)$
+    \item $(1 + x)^p = 1 + px + o(x)$
+    
+    $\frac{(1 + x)^p - 1}{x} - p = o(1)$
+\end{enumerate}
+
