@@ -1,1 +1,37 @@
 \section{Теоремы Ферма и Ролля}
+\begin{theorem-non}
+    Теорема Ферма
+
+    Пусть
+    \begin{itemize}
+        \item $f: \langle a, b \rangle \to \mathbb{R}, \; x_0 \in (a, b), \; f$ дифференцируема в точке $x_0$
+        \item $f(x_0)$ - наименьшее (наибольшее) зачение на $\langle a, b \rangle$
+    \end{itemize}
+    Тогда $f'(x_0) = 0$.
+\end{theorem-non}
+\begin{proof}
+    Пусть $f(x_0)$ - наименьшее значение функции. Рассмотрим левую и правую производные в точке $x_0$:
+    \begin{gather*}
+        f_+'(x_0) = \lim_{x \to x_0+} \frac{f(x) - f(x_0)}{x - x_0} = \lim \frac{\geqslant 0}{> 0} = \lim (\geqslant 0) \geqslant 0 \\
+        f_-'(x_0) = \lim_{x \to x_0-} \frac{f(x) - f(x_0)}{x - x_0} = \lim \frac{\geqslant 0}{< 0} = \lim (\leqslant 0) \leqslant 0 
+    \end{gather*}   
+    Знаем, что $f$ дифференцируема, следовательно $f_+'(x_0) = f_-'(x_0)$. Это возможно, только когда $f_+'(x_0) = f_-'(x_0) = 0$, значит $f'(x_0) = 0$.
+\end{proof}
+
+\begin{theorem-non}
+    Теорема Ролля
+
+    Пусть 
+    \begin{itemize}
+        \item $f: [a, b] \to \mathbb{R}, \; f$ непрерывна на $[a, b]$ и дифференцируема на $(a, b)$
+        \item $f(a) = f(b)$
+    \end{itemize}
+    Тогда $\exists \, c \in (a, b) : f'(c) = 0$.
+\end{theorem-non}
+\begin{proof}
+    По т. Вейерштрасса найдутся $p, \; q \in [a, b]$ такие, что $f(p)$ - наибольшее значение, а $f(q)$ - наименьшее.
+    
+    Если $p \in (a, b)$ или $q \in (a, b)$, то можно применить т. Ферму и получить, что $f'(p) = 0$ или $f'(q) = 0$.
+
+    Если $p$ и $q$ концевые, то $f(p) = f(q) \Rightarrow f(x) = const \Rightarrow f'(x) = 0$ во всех точках.
+\end{proof}

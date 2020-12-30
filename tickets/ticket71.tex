@@ -1,1 +1,49 @@
 \section{Теорема Лагранжа и Коши}
+\begin{theorem-non}
+    Теорема Лагранжа
+
+    Пусть $f: [a, b] \to \mathbb{R}$ непрерывна на $[a, b]$ и дифференцируема на $(a, b)$.
+
+    Тогда $\exists \, c \in (a, b) : f(b) - f(a) = f'(c)(b - a)$.
+\end{theorem-non}
+\begin{proof}
+    Введем $g(x) = f(x) - kx$ непрерывную на $[a, b]$ и дифференцируемую на $(a, b)$. Подберем $k$ так, чтобы $g(a)$ было равно $g(b)$:
+    \begin{gather*}
+        \begin{cases}
+            g(a) = f(a) - ka \\
+            g(b) = f(b) - kb \\
+            g(a) = g(b)
+        \end{cases} 
+        \Rightarrow f(b) - kb - f(a) + ka = 0 \Rightarrow k = \frac{f(b) - f(a)}{b - a}
+    \end{gather*}
+    По т. Ролля $ \, \exists \, c \in (a, b) : g'(c) = 0$.
+    \[ g'(c) = f'(c) - k = 0 \Rightarrow f'(c) = \frac{f(b) - f(a)}{b - a} \Rightarrow f(b) - f(a) = f'(c)(b - a) \]
+\end{proof}
+\begin{notice}
+     Геометрический смысл - производная в точке $c$ равна угловому коэффициенту прямой, 
+     соединяющей точки $(a, f(a))$ и $(b, f(b))$.
+\end{notice}
+
+\begin{theorem-non}
+    Теорема Коши
+
+    Пусть
+    \begin{itemize}
+        \item $f, \; g: [a, b] \to \mathbb{R}$ непрерывны на $[a, b]$ и дифференцируемы на $(a, b)$
+        \item $g'(x) \neq 0$ при $x \in (a, b)$
+    \end{itemize}
+    Тогда $\exists \, c \in (a, b) : \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}$
+\end{theorem-non}
+\begin{proof}
+    Введем $h(x) = f(x) - kg(x)$ непрерывную на $[a, b]$ и дифференцируемую на $(a, b)$. Подберем $k$ так, чтобы $h(a)$ было равно $h(b)$:
+    \begin{gather*}
+        \begin{cases}
+            h(a) = f(a) - kg(a) \\
+            h(b) = f(b) - kg(b) \\
+            h(a) = h(b)
+        \end{cases} 
+        \Rightarrow f(b) - kg(b) - f(a) + kg(a) = 0 \Rightarrow k = \frac{f(b) - f(a)}{g(b) - g(a)}
+    \end{gather*}
+    По т. Ролля $\, \exists \, c \in (a, b): h'(c) = 0$
+    \[ h'(c) = f'(c) - kg'(c) = 0 \Rightarrow f'(c) = \frac{f(b) - f(a)}{g(b) - g(a)} g'(c) \Rightarrow \frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)} \]
+\end{proof}

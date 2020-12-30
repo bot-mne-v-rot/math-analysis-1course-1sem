@@ -1,1 +1,57 @@
 \section{Следствия теоремы Лагранжа. Характеристика монотонности дифференцируемых функций}
+\textbf{Следствия из т. Лагранжа:}
+\begin{enumerate}
+    \item Пусть
+    \begin{itemize}
+        \item $f$ непрерывна на $\langle a, b \rangle$ и дифференцируема на $(a, b)$
+        \item $|f'(x)| \leqslant M$ при всех $x \in (a, b)$
+    \end{itemize}
+    Тогда $|f(x) - f(y)| \leqslant M|x - y| \quad \forall x, y \in \langle a, b \rangle$
+    \begin{proof}
+        Будем считать, что $x < y$. Посмотрим на отрезок $[x, y]$. $f$ непрерывна на $[x, y]$ и дифференцируема на $(x, y)$. 
+
+        $\Rightarrow \exists \, c \in (x, y) : f(y) - f(x) = f'(c)(y - x)$
+
+        $\Rightarrow |f(y) - f(x)| = |f'(c)||y - x| \leqslant M|y - x|$
+    \end{proof}
+    \begin{notice}
+        Такая функция $f$ называется липшицевой с константой $M$.
+    \end{notice}
+    \item Пусть
+    \begin{itemize}
+        \item $f$ непрерывна на $\langle a, b \rangle$ и дифференцируема на $(a, b)$
+        \item $f'(x) \geqslant 0$ при всех $x \in (a, b)$
+    \end{itemize}
+    Тогда $f$ нестрого монотонно возрастает.
+    \begin{proof}
+        Возьмем $x, \, y \in \langle a, b \rangle$, причем $x < y$. 
+        Посмотрим на отрезок $[x, y]$. $f$ непрерывна на $[x, y]$ и дифференцируема на $(x, y)$. 
+
+        $\Rightarrow \exists \, c \in (x, y) : f(y) - f(x) = \underbrace{f'(c)}_{\geqslant 0}\underbrace{(y - x)}_{> 0} \Rightarrow f(y) \geqslant f(x)$
+    \end{proof}
+    \item Если $f'(x) > 0$ при всех $x \in (a, b)$, то $f$ строго монотонно возрастает.
+    \item Если $f'(x) \leqslant 0$ при всех $x \in (a, b)$, то $f$ нестрого монотонно убывает.
+    \item Если $f'(x) < 0$ при всех $x \in (a, b)$, то $f$ строго монотонно убывает.
+    \item Если $f'(x) = 0$ при всех $x \in (a, b)$, то $f$ постоянна.
+\end{enumerate}
+
+\begin{theorem-non}
+    Пусть $f: \langle a, b \rangle \to \mathbb{R}$ непрерывна на $\langle a, b \rangle$ и дифференцируема на $(a, b)$.
+
+    Тогда
+    \begin{enumerate}
+        \item $f$ нестрого монотонно возрастает $\Leftrightarrow$ $f'(x) \geqslant 0 \;\; \forall x \in (a, b)$
+        \item $f$ нестрого монотонно убывает $\Leftrightarrow$ $f'(x) \leqslant 0 \;\; \forall x \in (a, b)$
+    \end{enumerate}
+\end{theorem-non}
+\begin{proof}
+    Докажем первый пункт, второй аналогично.
+
+    $\quad \Leftarrow:$ доказано выше
+
+    $\quad \Rightarrow:$ 
+    \[ f'(x) = f_+'(x) = \lim_{y \to x+} \frac{f(y) - f(x)}{y - x} = \lim \frac{\geqslant 0}{> 0} = \lim (\geqslant 0) \geqslant 0 \]
+\end{proof}
+\begin{notice}
+    $f$ строго возрастает $\nRightarrow f' > 0$. Например: $f(x) = x^3, \; f'(0) = 0$
+\end{notice}
