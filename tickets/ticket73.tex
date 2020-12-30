@@ -1,1 +1,48 @@
 \section{Теорема Дарбу. Следствие}
+\begin{theorem-non}
+    Теорема Дарбу
+
+    Пусть 
+    \begin{itemize}
+        \item $f: [a, b] \to \mathbb{R}$ и дифференцируема везде
+        \item $C$ лежит между $f'(a)$ и $f'(b)$
+    \end{itemize}
+    Тогда $\exists \, c \in (a, b) : f'(c) = C$.
+\end{theorem-non}
+\begin{proof}
+    Будем считать, что $f'(a) < f'(b)$.
+
+    \underline{Случай $C = 0$}:
+
+    $\quad f'(a) < 0 < f'(b)$
+
+    $\quad$По т. Вейерштрасса $\exists \, c \in [a, b] : f(c) = \min_{x \in [a, b]} f(x)$. 
+    
+    $\quad$Если $c \in (a, b)$, то по т. Ферма $f'(c) = 0$. Покажем, что иначе быть не может.
+
+    $\quad$Пусть $c = a$. Тогда $f'(a) = \lim\limits_{x \to a+} \frac{f(x) - f(a)}{x - a} = \lim \frac{\geqslant 0}{> 0} \geqslant 0$. Противорчечие, так как $f'(a) < 0$.
+
+    $\quad$Пусть $c = b$. Тогда $f'(b) = \lim\limits_{x \to b-} \frac{f(x) - f(b)}{x - b} = \lim \frac{\geqslant 0}{< 0} \leqslant 0$. Противорчечие, так как $f'(b) > 0$.
+
+    $\quad \Rightarrow c \in (a, b) \Rightarrow f'(c) = 0 = C$
+    
+    \underline{Общий случай}
+
+    $\quad$Введем $g(x) = f(x) - Cx$. 
+
+    $\quad g'(x) = f'(x) - C \Rightarrow g'(a) < 0$ и $g'(b) > 0 \Rightarrow$ по первому случаю $\exists \, c \in (a, b) : g'(c) = 0$
+    
+    $\quad \Rightarrow f'(c) = C$
+\end{proof}
+\begin{follow} 
+
+    $\quad$Пусть
+    \begin{itemize}
+        \item $f: \langle a, b \rangle \to \mathbb{R}$ дифференцируемая
+        \item $f'(x) \neq 0 \;\; \forall x \in \langle a, b \rangle$
+    \end{itemize}    
+    $\quad$Тогда $f$ строго монотонна.
+\end{follow}
+\begin{proof}
+    Если $\exists \, u \in \langle a, b \rangle : f'(u) > 0$ и $\exists \, v \langle a, b \rangle : f'(v) < 0$, то по т. Дарбу между $u$ и $v$ есть точка, где $f' = 0$. Поэтому $f'$ знакопостоянна $\Rightarrow f$ строго монотонна. 
+\end{proof}
