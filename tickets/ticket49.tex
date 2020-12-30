@@ -1,1 +1,68 @@
 \section{Теорема о стабилизации знака. Теорема о предельном переходе в неравенствах. Теорема о двух милиционерах. Арифметические действия с пределами функций}
+
+\begin{theorem-non}
+    Теорема о стабилизации знака
+$f : E \to \R, \, E \subset X, \, a$ -- предельная точка $E$
+
+Если $\lim\limits_{x \to a} f(x) = b \neq 0$, то $\exists \, r > 0$ такой, что знак функции в $\overset{\circ}{B}_r(a) \cap E$ тот же, что и у $b$.
+\end{theorem-non}
+\begin{proof}
+    Пусть $b > 0$ (случай $b < 0$ разбирается аналогично). Возьмем $\varepsilon = \frac{b}{2}$. 
+    Тогда $\exists \, \delta > 0$ такой, что если $x \in \overset{\circ}{B}_r(a) \cap E$, то $|f(x) - b| < \frac{b}{2}$,
+    а все такие $f(x)$ положительны.
+\end{proof}
+
+\begin{theorem-non}
+    Теорема о предельном переходе в неравенствах
+
+    $f, \, g : E \to \R, \, X \subset X, \, a$ -- предельная точка $E$ и $f(x) \leqslant g(x) \;\; \forall \, x$
+
+    Тогда если $b := \lim\limits_{x \to a} f(x)$ и $c := \lim\limits_{x \to a} g(x)$, то $b \leqslant c$.
+\end{theorem-non}
+\begin{proof}
+    Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$. 
+
+    Тогда $\lim f(x_n) = b$ и $\lim g(x_n) = c$. Кроме того $f(x_n) \leqslant g(x_n) \Rightarrow b \leqslant c$ (предельный переход для последовательностей).
+\end{proof}
+\begin{notice}
+    Строгий знак может не сохраниться. Например, $E = \R \setminus \{0\}, \, f(x) = 1$ и $g(x) = x^2 + 1$.
+\end{notice}
+
+\begin{theorem-non}
+    Теорема о двух миллиционерах
+
+    $f, \, g, \, h : E \to \R, \, E \subset X, \, a$ -- предельная точка $E$ и $f(x) \leqslant g(x) \leqslant h(x) \;\; \forall \, x$
+
+    Тогда если $\lim\limits_{x \to a} f(x) = \lim\limits_{x \to a} h(x) =: b$, то $\lim\limits_{x \to a} g(x) = b$.
+\end{theorem-non}
+\begin{proof}
+    Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$. 
+
+    Тогда $\lim f(x_n) = \lim h(x) = b$. Кроме того $f(x_n) \leqslant g(x_n) \leqslant h(x_n) \Rightarrow \lim g(x_n) = b \\ \Rightarrow \lim g(x) = b$
+    (теорема для последовательностей)
+\end{proof}
+
+\begin{theorem-non}
+    Теорема об арифметических действиях с пределами функций
+
+    $f, \, g : E \to \R^d, \, \lambda : E \to \R, \, a$ -- предельная точка $E$
+
+    $\lim\limits_{x \to a} f(x) = b, \, \lim\limits_{x \to a} g(x) = c$ и $\lim\limits_{x \to a} \lambda(x) = \mu$, где $b, \, c \in \R^d$, a $\mu \in \R$
+    \begin{enumerate}
+        \item $\lim\limits_{x \to a} (f(x) \pm g(x)) = b \pm c$
+        \item $\lim\limits_{x \to a} \lambda(x)f(x) = \mu b$
+        \item $\lim\limits_{x \to a} ||f(x)|| = ||b||$
+        \item $\lim\limits_{x \to a} <f(x), \, g(x)> \, = \, <b, \, c>$
+        \item Если $d = 1$ и $c \neq 0$, то $\lim\limits_{x \to a} \frac{f(x)}{g(x)} = \frac{b}{c}$
+    \end{enumerate}
+\end{theorem-non}
+\begin{proof}
+    Будет доказан только первый пункт, все остальные доказываются аналогично.
+
+    Проверим определение по Гейне. Возьмем последовательность $x_n \in E, \, x_n \neq a$ такую, что $\lim x_n = a$.
+    Тогда $\lim f(x_n) = b$ и $\lim g(x_n) = c$. \\
+    Для последовательностей мы знаем, что $\lim (f(x_n) \pm g(x_n)) = b \pm c$, следовательно $\lim\limits_{x \to a} (f(x) \pm g(x)) = b \pm c$.
+\end{proof}
+\begin{notice}
+    Для бесконечных пределов всё аналогично последовательностям.
+\end{notice}

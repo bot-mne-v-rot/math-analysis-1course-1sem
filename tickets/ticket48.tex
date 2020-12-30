@@ -1,1 +1,93 @@
-\section{Существованиепределавтерминахпоследовательностей. Локальная ограниченность функции, имеющей предел. Критерий Коши}
+\section{Существование предела в терминах последовательностей. Локальная ограниченность функции, имеющей предел. Критерий Коши}
+
+\begin{theorem-non}
+    Если в определении по Гейне все пределы существуют, то они равны между собой. 
+\end{theorem-non}
+\begin{proof}
+    Рассмотрим две последовательности $x_n \in E, \; x_n \neq a$ и $y_n \in E, \; y_n \neq a$ такие, что $\lim x_n = \lim y_n = a$. Покажем, что $\lim f(x_n) = \lim f(y_n)$
+    
+    Положим $b := \lim f(x_n)$ и $c := \lim f(y_n)$.
+
+    Возьмем последовательность $x_1, y_1, x_2, y_2, \dots := z_n$. Тогда $\lim z_n = a \Rightarrow \exists \, \lim f(z_n) =: d$.
+    
+    $f(x_n)$ -- подпоследовательность $f(z_n) \Rightarrow b = d$ \\
+    $f(y_n)$ -- подпоследовательность $f(z_n) \Rightarrow c = d$ \\
+    $\Rightarrow b = c$
+\end{proof}
+
+\begin{theorem-non}
+    $f : E \to Y, \; E \subset X, \; a$ -- предельная точка $E$ и $\lim\limits_{x \to a} f(x) = b$. 
+
+    Тогда для некоторого $r > 0$ $f$ ограничена на $B_r(a) \cap E$. 
+\end{theorem-non}
+\begin{proof}
+    Зафиксируем $\varepsilon = 1$ в определении по Коши. Найдем $\delta > 0$ такое, что если $x \in E$ и $0 < \rho_x(x, a) < \delta$, то $\rho_y(f(x), b) < 1$.
+
+    Рассмотрим $f$ на $B_{\delta}(a) \cap E$:
+    \[ \rho_y(f(x), b) < max \{1, \rho_y(f(a), b)\} \]
+    $\Rightarrow f$ ограничена на $B_{\delta}(a) \cap E$.
+\end{proof}
+\begin{notice}
+    Глобальной ограниченности нет. 
+
+    Рассмотрим $f(x) = \frac{1}{x}$. Тогда $\lim\limits_{x \to 1} f(x) = 1$, но $f$ очевидно не огранечена.
+\end{notice}
+
+\vspace{7mm}
+
+\begin{theorem-non}
+    Критерий Коши для отображений
+
+$f : E \to Y, \; E \subset X, \; a$ -- предельная точка $E$, и $Y$ -- полное. Тогда
+\[ \exists \, \lim_{x \to a} f(x) \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x, \, y \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(x), f(y)) < \varepsilon \]
+\end{theorem-non}
+
+\begin{proof} \quad \\
+    "$\Rightarrow$": Пусть $\lim\limits_{x \to a} f(x) = b$. Тогда из определения по Коши:
+    \begin{gather*}
+        \forall \, \varepsilon > 0 \;\; \exists \, \delta > 0 \;\; \forall \, x \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(x), b) < \frac{\varepsilon}{2} \\
+        \forall \, y \in (\overset{\circ}{B}_{\delta}(a) \cap E) \Rightarrow \rho_y(f(y), b) < \frac{\varepsilon}{2} \\
+        \Rightarrow \rho_y(f(x), f(x)) < \varepsilon
+    \end{gather*}
+    "$\Leftarrow$": Возьмем последовательность $x_n \in E, \; x_n \neq a$ такую, что $\lim x_n = a$. Хотим доказать, что $\lim f(x_n)$ существует. Покажем, что $f(x_n)$ -- фундаментальная последовательность.
+
+    Возьмем $\varepsilon > 0$. По нему $\delta > 0$ из критерия Коши, а по $\delta$ найдем $N$ из предела $\lim x_n = a$ (т.е. номер, начиная с которого $x_n$ будет лежать в $\delta$-окрестности $a$). Формально:
+    \begin{gather*}
+        \exists \, N \;\; \forall \, n \geqslant N \;\; \rho_x(x_n, a) < \delta \\
+        \forall \, m \geqslant N \;\; \rho_x(x_m, a) < \delta \\
+    \end{gather*}
+    Подставив $x_n$ и $x_m$ в критерий Коши, получаем, что $\rho_y(f(x_n), f(x_m)) < \varepsilon$
+    $\Rightarrow$ $f(x_n)$ -- фундаментальная $\Rightarrow \exists \, \lim f(x_n)$.
+\end{proof}
+
+\begin{theorem-non}
+    Критерий Коши для функций
+
+$f : E \to \R, \; E \subset \R, \, a$ -- предельная точка $E$
+\[ 
+\exists \, \lim_{x \to a} f(x) \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \,\delta > 0 : 
+\begin{cases} 
+    \forall \, x \in E : \, 0 < |x - a| < \delta \\
+    \forall \, y \in E : \, 0 < |y - a| < \delta \\
+\end{cases}    
+    \Rightarrow |f(x) - f(y)| < \varepsilon
+\]
+\end{theorem-non}
+\begin{notice}
+    Данный предел будет конечным. Для отображений это очевидно, там бесконечного предела нет по определению.
+\end{notice}
+
+\begin{conj}
+    Бесконечные пределы для функций
+\end{conj}
+Определение по Гейне никак не меняется. 
+
+Опредление по Коши:
+\[ \lim_{x \to a} f(x) = +\infty \Longleftrightarrow \forall \, u \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < |x - a| < \delta \Rightarrow f(x) > u \]
+\[ \lim_{x \to a} f(x) = -\infty \Longleftrightarrow \forall \, u \;\; \exists \, \delta > 0 : \; \forall \, x \in E : 0 < |x - a| < \delta \Rightarrow f(x) < u \]
+
+\begin{notice}
+    Также можно определить пределы в $+\infty$ и $-\infty$. Например:
+    \[ \lim_{x \to +\infty} f(x) = b \Longleftrightarrow \forall \, \varepsilon > 0 \;\; \exists \, u : \; \forall \, x \in E : x > u \Rightarrow |f(x) - b| < \varepsilon   \]
+    \[ \lim_{x \to -\infty} f(x) = +\infty \Longleftrightarrow \forall \, u \;\; \exists \, v : \; \forall \, x \in E : x < v \Rightarrow f(x) > u \]
+\end{notice}
