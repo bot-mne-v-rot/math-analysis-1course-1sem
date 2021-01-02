@@ -1,1 +1,115 @@
 \section{Характеристика выпуклых функций с помощью касательных. Критерии выпуклости в терминах первой и второй производных. Примеры}
+\begin{theorem-non}
+    Если $f$ дифференцируема на $\langle a, b \rangle$, то выпуклость $f$ на $\langle a, b \rangle \Longleftrightarrow
+    f(x) \geqslant f(x_0) + f'(x_0)(x - x_0) \qquad \forall x, x_0 \in \langle a, b \rangle $
+
+    \begin{tikzpicture}
+        \draw (3.98cm,0.2cm) node(t) {$x_0$}
+                (5.7cm,0.2cm) node(y) {$x$}
+                (4.8cm,0.2cm) node(y) {$u$};
+        \begin{axis}[
+            xmin=-3,   xmax=3,
+            ymin=-3,   ymax=3,
+            axis lines = left,
+            yticklabels={,,},
+            xticklabels={,,}
+        ]
+        %Below the red parabola is defined
+        \addplot [
+            domain=-10:10,
+            smooth,
+            color=red,
+        ]
+        {x^2/2 - 2};
+        %Here the blue parabloa is defined
+        \addplot [
+            smooth,
+            domain=-2:3,
+            color=blue,
+        ]
+        {x / 2 - 2.12};
+        \end{axis}
+        \filldraw[black] (5.7cm,2.85cm) circle(1.0pt)
+                (5.7cm,1.78cm) circle(1.0pt)
+                (3.98cm,1.07cm) circle(1.0pt);
+    \end{tikzpicture}
+
+    \begin{proof} \quad 
+
+        \begin{itemize}
+            \item[``$\Longrightarrow$'':] $x_0 < u < x$ \qquad 
+            $\frac{f(u) - f(x_0)}{u - x_0} \leqslant \frac{f(x) - f(x_0)}{x - x_0}$
+
+            $\frac{f(u) - f(x_0)}{u - x_0} \underset{u \rightarrow x_{0+}}{\longrightarrow}$
+            $f_{+}'(x_0) = f'(x_0) \Longrightarrow (x - x_0)f'(x_0) \leqslant f(x) - f(x_0)$
+
+            $x < u < x_0$ \qquad 
+            $\frac{f(x) - f(x_0)}{x - x_0} \leqslant \frac{f(u) - f(x_0)}{u - x_0}
+            \underset{u \rightarrow x_{0-}}{\longrightarrow}
+            f_{-}'(x_0) = f'(x_0)$
+            
+            $\Longrightarrow (x - x_0)f'(x_0) \leqslant f(x) - f(x_0)$
+
+            Для доказательства со строгим знаком и строгой монотоннсотью тут нужно плясать с 
+            \href{https://youtu.be/CAxh8kYEOlQ?t=6638}{бубном}. Пихнуть между $u$ и $x$ еще одну точку. Например $v$.
+            И тогда уже получить неравенство со строгими знаками: $\frac{f(u) - f(x_0)}{u - x_0} < \frac{f(v) - f(x_0)}{v - x_0}< \frac{f(x) - f(x_0)}{x - x_0}$
+            \item[``$\Longleftarrow$'':] $f(x_1) \geqslant f(x) + f'(x)(x_1 - x)$ \quad $\times (x_2 - x)$
+             
+            $f(x_2) \geqslant f(x) + f'(x)(x_2 - x)$ \quad $\times (x - x_1)$
+
+            $\Longrightarrow (x_2 - x)f(x_1) + (x - x_1)f(x_2) \geqslant
+            (x_2 - x)f(x) + (x - x_1)f(x) = (x_2 - x_1)f(x) \Longrightarrow f$ выпукла на $\langle a, b \rangle$
+        \end{itemize}
+    \end{proof}
+\end{theorem-non}
+\textbf{Критерий выпуклости} 
+
+\begin{enumerate}
+    \item $f$ непрерывна на $\langle a, b \rangle$ и дифференцируема на $(a, b)$
+    
+    $f$ - (строго) выпукла на $\langle a, b \rangle \Longleftrightarrow f'$ - (строго) монотонно возрастает на $(a, b)$
+    
+    \begin{proof} \quad 
+
+        \begin{enumerate}
+            \item[``$\Longrightarrow$'':] $f'(x_1) \leqslant \frac{f(x_2) - f(x_1)}{x_2 - x_1} \leqslant f'(x_2)$
+            \item[``$\Longleftarrow$'':] $\frac{f(u) - f(v)}{u - v} \overset{?}{\leqslant} \frac{f(v) - f(w)}{v - w}$
+            
+            Воспользуемся теоремой Лагранжа и скажем, что $\frac{f(u) - f(v)}{u - v} = f'(s)$, где $s \in (u, v)$ 
+
+            А также $\frac{f(v) - f(w)}{v - w} = f'(t)$, где $t \in (v, w)$ 
+
+            Ну а раз у нас строго монотонно возрастающая производная, мы знаем, что $f'(s) \leqslant f'(t)$
+        \end{enumerate}
+    \end{proof}
+
+    \item $f$ непрерывна на $\langle a, b \rangle$ и дважды дифференцируема на $(a, b)$
+    
+    $f$ - выпукла на $\langle a, b \rangle \Longleftrightarrow f'' \geqslant 0$ на $(a, b)$
+    
+    \begin{proof}
+        Первый пункт + критерий монотонности 
+    \end{proof}
+\end{enumerate}
+
+\notice \; Строгая выпуклость $\Longleftarrow f'' > 0$, но не наоборот \\
+Пример: $f(x) = x^4 \qquad f''(x) = 12x^2$
+
+\subsection*{Примеры.}
+\begin{enumerate}
+    \item $a^x$ строго выпуклая на $\R$ \qquad $a \neq 1, a > 0$
+    
+    $(a^x)'' = a^x(\ln{a})^2 > 0 \Longrightarrow a^x$ строго выпукла
+    \item $\ln{x}$ строго вогнутый на $(0, +\infty)$
+    
+    $(\ln{x})'' = (\frac{1}{x})' = - \frac{1}{x^2} < 0 \Longrightarrow - \ln{x}$ строго выпукла
+    \item $x^p$ на $(0, +\infty)$
+    
+    $(x^p)'' = p(p - 1)x^{p - 2}$ 
+
+    \begin{itemize}
+        \item[] если $p > 0$, то $(x^p)'' > 0 \Longrightarrow$ строго выпукла
+        \item[] если $p < 0$, то $(x^p)'' < 0 \Longrightarrow$ строго выпукла 
+        \item[] если $0 < p < 1$, то $(x^p)'' < 0 \Longrightarrow$ строго вогнута
+    \end{itemize}
+\end{enumerate}
