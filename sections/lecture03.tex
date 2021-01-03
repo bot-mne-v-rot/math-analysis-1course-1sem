@@ -1,2 +1,457 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Лекция за 20.11.20}
-\subsection{Тема}
+\subsection{Непрерывность функций}
+
+\begin{theorem-non}
+    О стабилизации знака
+\end{theorem-non}
+
+\begin{theorem-non}
+    Об арифметических действиях с непрерывными функциями
+\end{theorem-non}
+Пусть $f, g : E \rightarrow \mathbb{R}^d$, $E \subset X$, $a \in E$,
+$f$ и $g$ непрерывны в точке $a$. \\ $\lambda : 
+E \rightarrow \mathbb{R}$, $\lambda$ непрерывна в точке $a$.
+
+Тогда
+\begin{enumerate}
+    \item $f \pm g$ непрерывна в точке $a$;
+    \item $\lambda f$ непрерывна в точке $a$;
+    \item $\norm{f}$ непрерывна в точке $a$;
+    \item $<f, g>$ непрерывно в точке $a$;
+    \item если $d = 1$ и $g(a) \neq 0$, то $\frac{f}{g}$ непрерывна в
+    точке $a$.
+\end{enumerate}
+
+\begin{proof}
+    Смотреть теорему про арифметические действия с пределами функций.
+\end{proof}
+
+\follow
+\begin{enumerate}
+    \item Многочлен непрерывен во всех точках.
+    \item Рациональная функция непрерывна во всех точках, на которых
+    определена.
+\end{enumerate}
+
+\begin{proof} $ $
+
+    \begin{enumerate}
+        \item $f(x) = x$ непрерывна, поэтому моном вида $x^k$ непрерывен.
+        $f(x) = a$ непрерывна, поэтому моном вида $ax^k$ непрерывен.
+        Сумма непрерывных непрерывна, поэтому сумма мономов непрерывна.
+        Значит, многочлен непрерывен.
+
+        \item $f$ и $g$ многочлены $\Rightarrow$ $\frac{f}{g}$
+        непрерывна во всех точках $x$, где $g(x) \neq 0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem-non}
+    $\exp$ непрерывна во всех точках.
+\end{theorem-non}
+
+\begin{proof}
+    $\underset{x \rightarrow a}{\lim} \exp x \overset{?}{=} \exp a$.
+
+    $\underset{x \rightarrow a}{\lim} \exp x =
+    \underset{h \rightarrow 0}{\lim} \exp (h + a) =
+    \underset{h \rightarrow 0}{\lim} \exp h \exp a$
+
+    Необходимо д-ть, что $\underset{h \rightarrow 0}{\lim} \exp h = 1$. \\
+    $1 + h \leqslant \exp h \leqslant \frac{1}{1 - h}$ при $h < 1$ \\
+    При $h \rightarrow 0$, $1 + h \rightarrow 1$ и $\frac{1}{1 - h}
+    \rightarrow 1$.\\
+    Тогда по теореме о двух милиционерах $\exp h \rightarrow 1$.
+\end{proof}
+
+\begin{theorem-non}
+    О непрерывности композиции.
+\end{theorem-non}
+
+$f : D \rightarrow Y$, $g : E \rightarrow Z$, $D, E \subset X$,
+$f(D) \subset E$, $f$ непрерывна в точке $a \in D$, $g$ непрерывна в
+точке $f(a)$. Тогда $g \circ f$ непрерывна в точке $a$.
+
+\begin{proof} $ $
+    
+    Будем пользоваться определением непрерывности.
+
+    $\forall \varepsilon > 0 \,\,\, \exists \delta > 0 :
+    \forall y \in E \,\,\, \rho_Y (y, \,f(a)) < \delta \Rightarrow
+    \rho_Z (\, g(y), \, g(f(a)) \,) < \varepsilon$.
+
+    $\forall \delta > 0 \,\,\, \exists \gamma > 0 : 
+    \forall x \in D$ и $\rho_X(x, a) < \gamma \Rightarrow
+    \rho_Y (\, f(a), \, f(x) \, ) < \delta$
+
+    Берём $\varepsilon$, по нему ищем $\delta$, а по $\delta$ ищем
+    $\gamma$, тогда вместо $y$ подставляем $f(x)$ и получаем, что
+    всё хорошо.
+
+    $\forall \varepsilon > 0 \,\,\, \exists \gamma > 0 :
+    \forall x \in D$ и $\rho_X(x, a) < \gamma \Rightarrow
+    \rho_Z (\, g(f(x)), \, g(f(a)) \,) < \varepsilon$
+\end{proof}
+
+\notice Прямого аналога про пределы нет
+
+$\underset{x \rightarrow a}{\lim} f(x) = b$ и
+$\underset{y \rightarrow b}{\lim} \, g(y) = c$ $\nRightarrow$ 
+$\underset{x \rightarrow a}{\lim} \, g(f(x)) = c$
+
+\notice Но если $g$ непрерывна в точке $b$, то утверждение верно.
+
+\textbf{Пример.}
+
+$f(x) = x \sin \frac 1 x$, $-x \leqslant f(x) \leqslant x$, тогда
+$\underset{x \rightarrow 0}{\lim} f(x) = 0$
+
+$g(x) = \begin{cases}
+    0 \text{ при } x = 0, \\
+    1 \text{ при } x \neq 0
+\end{cases}$ тогда $\underset{x \rightarrow 0}{\lim} \, g(x) = 0$
+
+Но $\underset{x \rightarrow a}{\lim} \, g(f(x))$ не существует.
+
+$x_n := \frac {1}{\pi n} \rightarrow 0$, $f(x_n) \rightarrow 0$,
+$g(f(x_n)) = 0$.
+
+$y_n := \frac{1}{2 \pi n + \frac{\pi}{2}} \rightarrow 0$,
+$f(y_n) = y_n \neq 0$, $g(f(y_n)) = g(y_n) = 1$.
+
+\begin{theorem-non}
+\end{theorem-non}
+$f : E \rightarrow \mathbb{R}^d$, $a \in E$. \\
+Тогда $f$ непрерывна в точке $a$ $\Longleftrightarrow$ все координатные
+функции непрерывны в точке $a$.
+
+\begin{proof} Содержательный случай: $a$ -- предельная точка.
+
+    $f$ непрерывна в точке $a$ $\Longleftrightarrow$ $\lim f(x_n) = f(a)$
+    для любой последовательности точек $x_n \rightarrow a$
+    $\Longleftrightarrow$ $f_k(x_n) = f_k(a) \,\, \forall k = 1..d$
+    $\Longleftrightarrow f_k$ непрерывна в $a$
+
+\end{proof}
+
+\begin{theorem-non}
+\end{theorem-non}
+
+$f : X \rightarrow Y$ $X, Y$ -- топологические пространства.
+$f$ непрерывна во всех точках $X$ $\Longleftrightarrow$
+$\forall U \subset Y$ открытое $f^{-1}(U)$ открытое множество.
+
+\begin{proof} $ $
+
+    \textbf{``$\Longrightarrow$'':}
+
+    Возьмём $U$ -- открытое, и $a \in f^{-1}(U)$.
+    Докажем, что $a$ -- внутренняя точка $f^{-1}(U)$.
+    
+    $a \in f^{-1}(U) \Rightarrow f(a) \in U \Rightarrow \exists
+    \varepsilon > 0 : B_{\varepsilon}(a) \in U \Rightarrow
+    \exists \delta > 0 : f(B_{\delta}(a)) \subset B_{\varepsilon}(f(a))
+    \subset U \Rightarrow f(B_{\delta}(a)) \subset U \Rightarrow
+    B_{\delta}(a) \subset f^{-1}(U) \Rightarrow$ $a$ -- внутренняя точка
+    $f^{-1}(U)$.
+
+    \textbf{``$\Longleftarrow$'':}
+
+    Возьмём $U = B_\varepsilon (f(a))$, оно открыто $\Rightarrow$
+    $f^{-1}(U)$ -- открытое.
+
+    $a \in f^{-1}(U) \Rightarrow a$ -- внутренняя точка $\Rightarrow
+    \exists \delta > 0 : B_{\delta}(a) \subset f^{-1}(U) \Rightarrow
+    f(B_{\delta}(a)) \subset U = B_\varepsilon(f(a)) \Rightarrow f$
+    непрерывна в точке $a$.
+\end{proof}
+
+\begin{conj}
+    Пусть $f: E \rightarrow Y$, $E \subset X$. $f$ --- 
+    \textbf{ограниченная}, если $f(E)$ -- ограниченное мн-во.
+\end{conj}
+
+\begin{theorem-non}
+    Непрерывный образ компакта -- компакт.
+\end{theorem-non}
+\begin{proof} $ $
+
+    $f : X \rightarrow Y$ непрерывна во всех точках. $K \subset X$ --
+    компакт. 
+    
+    Докажем, что $f(K)$ -- компакт. 
+    
+    Пусть $f(K) \subset 
+    \bigcup \limits_{\alpha \in I} U_\alpha$, $U_\alpha$ -- открытое
+    $\Rightarrow K \subset \bigcup \limits_{\alpha \in I} f^{-1}(U_\alpha)$
+    , $f^{-1}(U_\alpha)$ -- открытое, т.к. $f$ непрерывна
+    $\xRightarrow{\text{комп. } K} \exists \alpha_1, \alpha_2, \dots,
+    \alpha_n : K \subset \bigcup_{j = 1}^{n} f^{-1}(U_{\alpha_n})
+    \Rightarrow f(K) \subset \bigcup_{j = 1}^{n} U_{\alpha_n}
+    \Rightarrow f(K)$ -- компакт.
+\end{proof}
+
+\follow
+\begin{enumerate}
+    \item Непрерывный образ компакта замкнут и ограничен.
+    \item \textbf{(теорема Вейерштрасса)} 
+    $f: K \rightarrow \R$, $K$ --
+    компакт, $f$ непрерывна на $K$. Тогда $\exists a, b \in K$, т.ч.
+    $f(a) \leqslant f(x) \leqslant f(b) \quad \forall x \in K$.
+
+    \begin{proof}
+        $f(K)$ -- компакт $\Rightarrow f(K)$ -- ограниченное множество
+        $\Rightarrow f$ -- ограниченная функция.
+        
+        Пусть $M := \sup \{ f(x) : x \in K \}$. Хотим доказать, что 
+        $\exists b \in K : f(b) = M$. Предположим, что такой точки
+        не существует. Тогда $f(x) < M \,\, \forall x \in K$.
+
+        $g(x) := \frac{1}{M - f(x)}$ -- непрерывная функция $\Rightarrow$
+        $g$ ограничена $\Rightarrow \exists M_0 : \forall x \in K \,\,
+        g(x) \leqslant M_0 \Rightarrow \frac{1}{M - f(x)} \leqslant M_0 \Rightarrow
+        \frac{1}{M_0} \leqslant M - f(x) \Rightarrow f(x) \leqslant M - 
+        \frac{1}{M_0} < M \Rightarrow M \neq \sup$. Противоречие.
+    \end{proof}
+\end{enumerate}
+
+\begin{theorem-non}\end{theorem-non}
+Пусть $f : K \rightarrow Y$ -- непрерывная биекция, $K \subset X$ -- 
+компакт. Тогда $f^{-1} : Y \rightarrow K$ непрерывно.
+
+\begin{proof} $ $
+
+    Надо проверить $(f^{-1})^{-1}(U) = f(U)$ открыто, если $U$ открыто.
+
+    $K \setminus U = K \cap (X \setminus U)$ замкнуто $\Rightarrow 
+    K \setminus U \subset K$ -- замкнутое подмн-во компакта $\Rightarrow
+    K \setminus U$ -- компакт $\Rightarrow f(K \setminus U)$ -- компакт,
+    т.к. $f$ непрерывна $\Rightarrow$ т.к. $f$ -- биекция, 
+    $f(K \setminus U) = f(K) \setminus f(U) = Y \setminus f(U)$ -- 
+    компакт $\Rightarrow Y \setminus f(U)$ замкнуто $\Rightarrow
+    f(U)$ открыто. 
+\end{proof}
+
+\begin{conj}
+    Пусть $f : E \rightarrow Y$, $E \subset X$. \\
+    $f$ \textbf{равномерно непрерывна} на $E$, если $\forall \varepsilon
+    > 0 \quad \exists \delta > 0 : \forall x, y \in E : \rho_X(x, y) <
+    \varepsilon \Rightarrow \rho_Y(f(x), f(y)) < \delta$.
+\end{conj}
+
+\textbf{Примеры:} $X = Y = \R$.
+\begin{enumerate}
+    \item $f(x) = x$ равномерно непрерывна.
+    \item $f(x) = \sin x$ равномерно непрерывна, т.к.
+    $\abs{\sin x - \sin y} \leqslant \abs{x - y}$.
+    \item $f(x) = x^2$ не является равномерно непрерывной, хотя
+    непрерывна во всех точках.
+    \item $f(x) = \frac{1}{x}$ не является равномерно непрерывной.
+\end{enumerate}
+
+\begin{theorem-non}
+    Кантора.
+\end{theorem-non}
+Пусть $f : K \rightarrow Y$ непрерывна, $K$ -- компакт. Тогда $f$ 
+равномерно непрерывна.
+
+\begin{proof} $ $
+
+    Зафиксируем $\varepsilon > 0$. Возьмём $y \in K$ и найдём $r_y > 0$,
+    т.ч. $f(B_{r_y}(y)) \subset B_{\varepsilon / 2}(f(y))$ по 
+    определению непрерывности. Тогда $K \subset \bigcup \limits_{y \in K}
+    B_{r_y}(y)$ -- покрытие открытыми множествами.
+
+    Пусть $\delta > 0$ -- число Лебега для этого покрытия, т.е.
+    $\forall x \in K \quad B_{\delta}(x)$ целиком попадает в какой-то
+    элемент этого покрытия.
+
+    Проверим, что это $\delta$ подходит, т.е. если $\rho(x, y) <
+    \delta$, то $\rho(f(x), f(y)) < \varepsilon$.
+
+    $\rho(x, y) < \delta \Rightarrow y \in f(x) \subset B_{r_a}(a)$
+    для некоторого $a \in K$ $\Rightarrow x, y \in B_{r_a}(a)
+    \Rightarrow f(x), f(y) \in f(B_{r_a}(a)) \subset B_{\varepsilon / 2}
+    (f(a)) \Rightarrow
+    \begin{cases}
+        \rho(f(x), f(a)) < \varepsilon / 2 \\
+        \rho(f(y), f(a)) < \varepsilon / 2
+    \end{cases}
+    \Rightarrow \rho(x, y) \leqslant \rho(f(x), f(a)) + \rho(f(y), f(a))
+    < \varepsilon$.
+\end{proof}
+
+\begin{conj}
+    $X$ -- векторное пространство. $\norm{\cdot}$ и $\vertiii{\cdot}$
+    -- нормы в $X$. Эти нормы \textbf{эквивалентны}, если $\exists
+    c_1, c_2 : c_1 \norm{x} \leqslant \vertiii{x} \leqslant c_2 \norm{x} \,\,
+    \forall x$.
+\end{conj}
+
+\notice 
+\begin{enumerate}
+    \item Нетрудно доказать, что это действительно является отношением
+    эквивалентости.
+    \item Сходимость по эквивалентным нормам равносильна. Т.е.
+    $\lim x_n = a$ по норме $\norm{\cdot}$ $\Leftrightarrow$ 
+    $\lim x_n = a$ по норме $\vertiii{\cdot}$.
+    \begin{proof} $ $
+
+        $\lim x_n = a$ по норме $\norm{\cdot} \Leftrightarrow
+        \lim \norm{x_n - a} = 0$\\
+        $\lim x_n = a$ по норме $\vertiii{\cdot} \Leftrightarrow
+        \lim \vertiii{x_n - a} = 0$\\
+        $0 \leqslant c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a} 
+        \leqslant c_2 \norm{x_n - a}$
+
+        ``$\Longrightarrow$'':
+
+        $\norm{x_n - a} \rightarrow 0$,
+        $c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a} 
+        \leqslant c_2 \norm{x_n - a}$ $\xRightarrow{\text{2 мил.}}$
+        $\vertiii{x_n - a} \rightarrow 0$.
+
+        ``$\Longleftarrow$'':
+
+        $\vertiii{x_n - a} \rightarrow 0$,
+        $0 \leqslant c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a}$ 
+        $\xRightarrow{\text{2 мил.}}$
+        $\norm{x_n - a} \rightarrow 0$.
+    \end{proof}
+\end{enumerate}
+
+\begin{theorem-non}
+    В $\R^d$ все нормы эквивалентны.
+\end{theorem-non}
+\begin{proof} $ $
+
+    Пусть $\norm{\cdot}$ -- стандартная норма в $\R^d$, $P(\cdot)$
+    -- другая норма в $\R^d$.
+
+    $x := \sum_{k = 1}^d x_k e_k$, где $e_k = (0, ..., 0, 
+    \overset{k\text{-e место}}{1}, 0, ..., 0)$.
+
+    $P(x - y) = P(\sum_{k = 1}^d (x_k - y_k) e_k) \leqslant
+    \sum_{k = 1}^d P((x_k - y_k) e_k) = \sum_{k = 1}^d \abs{x_k - y_k} 
+    P(e_k) \underset{\text{К-Б}}{\leqslant} \sqrt{\sum_{k = 1}^d 
+    (x_k - y_k)^2} \cdot \sqrt{\sum_{k = 1}^d P(e_k)^2} = \norm{x - y}
+    \underbrace{\sqrt{\sum_{k = 1}^d P(e_k)^2}}_{M} = M \norm{x - y}$.
+
+    $0 \leqslant P(x - y) \leqslant M \norm{x - y} \Rightarrow P$ -- 
+    непрерывная функция, $P(x) \leqslant M \norm{x}$. Доказали неравенство
+    с одной стороны.
+
+    Рассмотрим $K$ -- единичная сфера в $\R^d$ -- компакт $\Rightarrow$
+    найдётся $a \in K$, $a \neq \overline{0}$, т.ч. $0 < P(a) \leqslant P(x) 
+    \,\, \forall x \in K$ по теореме Вейерштрасса.
+
+    Возьмём $y\in \R^d, y \neq \overline{0} \Rightarrow y = \norm{y}
+    \cdot \frac{y}{\norm{y}} \Rightarrow P(y) = \norm{y} \cdot 
+    P(\frac{y}{\norm{y}}) \geqslant \norm{y} \cdot P(a)$, т.к. $\norm{a}
+    \leqslant 1$. Доказали неравенство с другой стороны.
+
+    $P(a) \norm{y} \leqslant P(y) \leqslant M \norm{y}$.
+\end{proof}
+
+\begin{conj}
+    $(X, \rho)$ -- метрическое пространство.
+    
+    $X$ -- \textbf{несвязное}, если существуют непустык открытые $U, V$, 
+    т.ч. $U \cap V = \varnothing$ и $X = U \cup V$.
+\end{conj}
+
+\notice $X$ -- несвязное, если существует $U$ -- непустое
+открытое, т.ч. $X \setminus U$ -- непустое открытое.
+
+\begin{conj}
+    $X$ -- \textbf{связное} $\Longleftrightarrow$ если $X = U \cup V$, 
+    $U, V$ -- открытые и $U \cap V = \varnothing$, то $U$ или $V$ пустое.
+\end{conj}
+
+\begin{conj}
+    $A \subset X$ -- \textbf{связное}, если $(A, \rho)$ -- связное.
+\end{conj}
+
+\notice $A$ -- связное $\Longleftrightarrow$ если $A \subset U \cup V$,
+$U, V$ -- открытые, $U \cap V = \varnothing$, то $A$ целиком содержится
+в $U$ или $V$.
+
+\begin{theorem-non}
+    Непрерывный образ связного множества -- связное множество.
+\end{theorem-non}
+\begin{proof} $ $
+
+    $f: X \rightarrow Y$ непрерывно, и $X$ связно. Пусть $f(X) \subset
+    U \cup V$, $U, V$ -- открытые и $U \cap V = \varnothing \Rightarrow
+    X \subset f^{-1}(U) \cup f^{-1}(V)$, $f^{-1}(U)$, $f^{-1}(V)$ --
+    открытые, т.к. $f$ непрерывно, $f^{-1}(U) \cap f^{-1}(V) =
+    \varnothing \Rightarrow X$ -- целиком лежит в одном из них.
+    НУО, $X \subset f^{-1}(U) \Rightarrow f(X) \subset U$.
+\end{proof}
+
+\begin{theorem-non}
+$[a, b] \subset \R$ -- связное множество.
+\end{theorem-non}
+т.е. если $[a, b] \subset U \cup V$, $U \cap V = \varnothing$, $U, V$
+открыты, то либо $[a, b] \subset U$, либо $[a, b] \subset V$.
+
+\begin{proof} $ $
+
+    Пусть $b \in V$. Посмотрим теперь на $[a, b] \cap U =: S$. Если 
+    $S$ пустое, значит весь отрезок $[a, b]$ накрывается мн-вом $V$,
+    что подходит под условие теоремы. Пусть $V \neq \varnothing$.
+
+    Пусть $y := \sup S$. $b$ -- верхняя граница $S$ $\Rightarrow$
+    $y \leqslant b \Rightarrow y \in [a, b]$.
+
+    Рассмотрим несколько случаев:
+    \begin{enumerate}
+        \item $\mathbf{y \in V}$:
+        
+        $V$ открыто $\Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \subset V$ для некоторого $\varepsilon > 0$. $V \cap U =
+        \varnothing \Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \cap U = \varnothing \Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \cap S = \varnothing \Rightarrow y - \varepsilon$ -- верхняя 
+        граница для $S$, но $y = \sup S$. Противоречие.
+
+        \item $\mathbf{y \in U}$:
+        
+        $y \in U, b \in V, y \leqslant b \Rightarrow y < b$. $U$ -- открытое 
+        $\Rightarrow (y - \varepsilon,\,\, y + \varepsilon) \subset U$ для 
+        некоторого $\varepsilon > 0$. Можно сузить этот интервал так,
+        чтобы $\varepsilon < b$.
+        
+        Тогда $\begin{cases}
+            [y, y + \varepsilon) \subset [a, b] \\
+            [y, y + \varepsilon) \subset U
+        \end{cases} \Rightarrow [y, y + \varepsilon) \subset S$,
+        но $y = \sup S$. Противоречие.
+    \end{enumerate}
+
+    Таким образом, $S = \varnothing$ и $[a, b] \subset V$.
+\end{proof}
+
+\begin{theorem-non}
+    Больцано-Коши.
+\end{theorem-non}
+$f : [a, b] \rightarrow \R$ непрерывна на $[a, b]$.
+$C$ лежит между $f(a)$ и $f(b)$. Тогда $\exists c \in (a, b) : f(c) = C$.
+
+\begin{proof} От противного. $C \notin f([a, b])$.
+
+    $[a, b] \subset \R$ -- связное мн-во. Т.к. непрерывный образ связного 
+    мн-ва -- связное мн-во, $f([a, b])$ -- связное. 
+
+    $U := (-\infty, C)$, $V := (C, +\infty)$ -- открытые мн-ва.
+    $U \cap V = \varnothing$. НУО, $f(a) < f(b) \Rightarrow
+    f(a) \in U, f(b) \in V$, т.к. $C$ лежит между $f(a)$ и $f(b)$
+    $\Rightarrow U \neq \varnothing, V \neq \varnothing$.
+
+    $f([a, b]) \subset U \cup V \Rightarrow$ либо $f([a, b]) \subset U$,
+    либо $f([a, b]) \subset V$ $\Rightarrow$ либо $f(b) \notin f([a, b])$,
+    либо $f(a) \notin f([a, b])$. Противоречие.
+
+\end{proof}
