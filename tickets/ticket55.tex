@@ -1,1 +1,53 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Равномерная непрерывность отображений. Примеры. Теорема Кантора для отображений метрических пространств.}
+
+
+\begin{conj}
+    Пусть $f : E \rightarrow Y$, $E \subset X$. \\
+    $f$ \textbf{равномерно непрерывна} на $E$, если $\forall \varepsilon
+    > 0 \quad \exists \delta > 0 : \forall x, y \in E : \rho_X(x, y) <
+    \varepsilon \Rightarrow \rho_Y(f(x), f(y)) < \delta$.
+\end{conj}
+
+\textbf{Примеры:} $X = Y = \R$.
+\begin{enumerate}
+    \item $f(x) = x$ равномерно непрерывна.
+    \item $f(x) = \sin x$ равномерно непрерывна, т.к.
+    $\abs{\sin x - \sin y} \leqslant \abs{x - y}$.
+    \item $f(x) = x^2$ не является равномерно непрерывной, хотя
+    непрерывна во всех точках.
+    \item $f(x) = \frac{1}{x}$ не является равномерно непрерывной.
+\end{enumerate}
+
+\begin{theorem-non}
+    Кантора.
+\end{theorem-non}
+Пусть $f : K \rightarrow Y$ непрерывна, $K$ -- компакт. Тогда $f$ 
+равномерно непрерывна.
+
+\begin{proof} $ $
+
+    Зафиксируем $\varepsilon > 0$. Возьмём $y \in K$ и найдём $r_y > 0$,
+    т.ч. $f(B_{r_y}(y)) \subset B_{\varepsilon / 2}(f(y))$ по 
+    определению непрерывности. Тогда $K \subset \bigcup \limits_{y \in K}
+    B_{r_y}(y)$ -- покрытие открытыми множествами.
+
+    Пусть $\delta > 0$ -- число Лебега для этого покрытия, т.е.
+    $\forall x \in K \quad B_{\delta}(x)$ целиком попадает в какой-то
+    элемент этого покрытия.
+
+    Проверим, что это $\delta$ подходит, т.е. если $\rho(x, y) <
+    \delta$, то $\rho(f(x), f(y)) < \varepsilon$.
+
+    $\rho(x, y) < \delta \Rightarrow y \in f(x) \subset B_{r_a}(a)$
+    для некоторого $a \in K$ $\Rightarrow x, y \in B_{r_a}(a)
+    \Rightarrow f(x), f(y) \in f(B_{r_a}(a)) \subset B_{\varepsilon / 2}
+    (f(a)) \Rightarrow
+    \begin{cases}
+        \rho(f(x), f(a)) < \varepsilon / 2 \\
+        \rho(f(y), f(a)) < \varepsilon / 2
+    \end{cases}
+    \Rightarrow \rho(x, y) \leqslant \rho(f(x), f(a)) + \rho(f(y), f(a))
+    < \varepsilon$.
+\end{proof}

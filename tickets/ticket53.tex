@@ -1,1 +1,51 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Непрерывность функций, действующих в $\R^d$. Характеристика непрерывности в терминах прообразов}
+
+
+\begin{theorem-non}
+\end{theorem-non}
+$f : E \rightarrow \mathbb{R}^d$, $a \in E$. \\
+Тогда $f$ непрерывна в точке $a$ $\Longleftrightarrow$ все координатные
+функции непрерывны в точке $a$.
+
+\begin{proof} Содержательный случай: $a$ -- предельная точка.
+
+    $f$ непрерывна в точке $a$ $\Longleftrightarrow$ $\lim f(x_n) = f(a)$
+    для любой последовательности точек $x_n \rightarrow a$
+    $\Longleftrightarrow$ $f_k(x_n) = f_k(a) \,\, \forall k = 1..d$
+    $\Longleftrightarrow f_k$ непрерывна в $a$
+
+\end{proof}
+
+\begin{theorem-non}
+\end{theorem-non}
+
+$f : X \rightarrow Y$ $X, Y$ -- топологические пространства.
+$f$ непрерывна во всех точках $X$ $\Longleftrightarrow$
+$\forall U \subset Y$ открытое $f^{-1}(U)$ открытое множество.
+
+\begin{proof} $ $
+
+    \textbf{``$\Longrightarrow$'':}
+
+    Возьмём $U$ -- открытое, и $a \in f^{-1}(U)$.
+    Докажем, что $a$ -- внутренняя точка $f^{-1}(U)$.
+    
+    $a \in f^{-1}(U) \Rightarrow f(a) \in U \Rightarrow \exists
+    \varepsilon > 0 : B_{\varepsilon}(a) \in U \Rightarrow
+    \exists \delta > 0 : f(B_{\delta}(a)) \subset B_{\varepsilon}(f(a))
+    \subset U \Rightarrow f(B_{\delta}(a)) \subset U \Rightarrow
+    B_{\delta}(a) \subset f^{-1}(U) \Rightarrow$ $a$ -- внутренняя точка
+    $f^{-1}(U)$.
+
+    \textbf{``$\Longleftarrow$'':}
+
+    Возьмём $U = B_\varepsilon (f(a))$, оно открыто $\Rightarrow$
+    $f^{-1}(U)$ -- открытое.
+
+    $a \in f^{-1}(U) \Rightarrow a$ -- внутренняя точка $\Rightarrow
+    \exists \delta > 0 : B_{\delta}(a) \subset f^{-1}(U) \Rightarrow
+    f(B_{\delta}(a)) \subset U = B_\varepsilon(f(a)) \Rightarrow f$
+    непрерывна в точке $a$.
+\end{proof}

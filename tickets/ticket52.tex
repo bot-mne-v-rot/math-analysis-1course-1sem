@@ -1,1 +1,121 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Арифметические действия с непрерывными функциями. Непрерывность многочленов и экспоненты. Теорема о непрерывности композиции. Предел композиции функций}
+
+\begin{theorem-non}
+    О стабилизации знака
+\end{theorem-non}
+
+\begin{theorem-non}
+    Об арифметических действиях с непрерывными функциями
+\end{theorem-non}
+Пусть $f, g : E \rightarrow \mathbb{R}^d$, $E \subset X$, $a \in E$,
+$f$ и $g$ непрерывны в точке $a$. \\ $\lambda : 
+E \rightarrow \mathbb{R}$, $\lambda$ непрерывна в точке $a$.
+
+Тогда
+\begin{enumerate}
+    \item $f \pm g$ непрерывна в точке $a$;
+    \item $\lambda f$ непрерывна в точке $a$;
+    \item $\norm{f}$ непрерывна в точке $a$;
+    \item $<f, g>$ непрерывно в точке $a$;
+    \item если $d = 1$ и $g(a) \neq 0$, то $\frac{f}{g}$ непрерывна в
+    точке $a$.
+\end{enumerate}
+
+\begin{proof}
+    Смотреть теорему про арифметические действия с пределами функций.
+\end{proof}
+
+\follow
+\begin{enumerate}
+    \item Многочлен непрерывен во всех точках.
+    \item Рациональная функция непрерывна во всех точках, на которых
+    определена.
+\end{enumerate}
+
+\begin{proof} $ $
+
+    \begin{enumerate}
+        \item $f(x) = x$ непрерывна, поэтому моном вида $x^k$ непрерывен.
+        $f(x) = a$ непрерывна, поэтому моном вида $ax^k$ непрерывен.
+        Сумма непрерывных непрерывна, поэтому сумма мономов непрерывна.
+        Значит, многочлен непрерывен.
+
+        \item $f$ и $g$ многочлены $\Rightarrow$ $\frac{f}{g}$
+        непрерывна во всех точках $x$, где $g(x) \neq 0$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem-non}
+    $\exp$ непрерывна во всех точках.
+\end{theorem-non}
+
+\begin{proof}
+    $\underset{x \rightarrow a}{\lim} \exp x \overset{?}{=} \exp a$.
+
+    $\underset{x \rightarrow a}{\lim} \exp x =
+    \underset{h \rightarrow 0}{\lim} \exp (h + a) =
+    \underset{h \rightarrow 0}{\lim} \exp h \exp a$
+
+    Необходимо д-ть, что $\underset{h \rightarrow 0}{\lim} \exp h = 1$. \\
+    $1 + h \leqslant \exp h \leqslant \frac{1}{1 - h}$ при $h < 1$ \\
+    При $h \rightarrow 0$, $1 + h \rightarrow 1$ и $\frac{1}{1 - h}
+    \rightarrow 1$.\\
+    Тогда по теореме о двух милиционерах $\exp h \rightarrow 1$.
+\end{proof}
+
+\begin{theorem-non}
+    О непрерывности композиции.
+\end{theorem-non}
+
+$f : D \rightarrow Y$, $g : E \rightarrow Z$, $D, E \subset X$,
+$f(D) \subset E$, $f$ непрерывна в точке $a \in D$, $g$ непрерывна в
+точке $f(a)$. Тогда $g \circ f$ непрерывна в точке $a$.
+
+\begin{proof} $ $
+    
+    Будем пользоваться определением непрерывности.
+
+    $\forall \varepsilon > 0 \,\,\, \exists \delta > 0 :
+    \forall y \in E \,\,\, \rho_Y (y, \,f(a)) < \delta \Rightarrow
+    \rho_Z (\, g(y), \, g(f(a)) \,) < \varepsilon$.
+
+    $\forall \delta > 0 \,\,\, \exists \gamma > 0 : 
+    \forall x \in D$ и $\rho_X(x, a) < \gamma \Rightarrow
+    \rho_Y (\, f(a), \, f(x) \, ) < \delta$
+
+    Берём $\varepsilon$, по нему ищем $\delta$, а по $\delta$ ищем
+    $\gamma$, тогда вместо $y$ подставляем $f(x)$ и получаем, что
+    всё хорошо.
+
+    $\forall \varepsilon > 0 \,\,\, \exists \gamma > 0 :
+    \forall x \in D$ и $\rho_X(x, a) < \gamma \Rightarrow
+    \rho_Z (\, g(f(x)), \, g(f(a)) \,) < \varepsilon$
+\end{proof}
+
+\notice Прямого аналога про пределы нет
+
+$\underset{x \rightarrow a}{\lim} f(x) = b$ и
+$\underset{y \rightarrow b}{\lim} \, g(y) = c$ $\nRightarrow$ 
+$\underset{x \rightarrow a}{\lim} \, g(f(x)) = c$
+
+\notice Но если $g$ непрерывна в точке $b$, то утверждение верно.
+
+\textbf{Пример.}
+
+$f(x) = x \sin \frac 1 x$, $-x \leqslant f(x) \leqslant x$, тогда
+$\underset{x \rightarrow 0}{\lim} f(x) = 0$
+
+$g(x) = \begin{cases}
+    0 \text{ при } x = 0, \\
+    1 \text{ при } x \neq 0
+\end{cases}$ тогда $\underset{x \rightarrow 0}{\lim} \, g(x) = 0$
+
+Но $\underset{x \rightarrow a}{\lim} \, g(f(x))$ не существует.
+
+$x_n := \frac {1}{\pi n} \rightarrow 0$, $f(x_n) \rightarrow 0$,
+$g(f(x_n)) = 0$.
+
+$y_n := \frac{1}{2 \pi n + \frac{\pi}{2}} \rightarrow 0$,
+$f(y_n) = y_n \neq 0$, $g(f(y_n)) = g(y_n) = 1$.
