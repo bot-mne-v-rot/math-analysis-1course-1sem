@@ -1,3 +1,5 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Теорема Больцано–Коши. Теорема о непрерывном образе отрезка}
 \begin{theorem-non}
     Больцано-Коши (Если функция непрерывна на отрезке $[a, b]$, то она принимает все значения между $f(a)$ и $f(b)$)
@@ -5,15 +7,20 @@
     $f: [a, b] \longrightarrow \R$ непрерывна на $[a, b], C$ лежит между $f(a)$ и $f(b)$
 
     Тогда $\exists c\in (a, b)$, т.ч. $f(c) = C$
-    \begin{proof}
-        Пойдем от противного, пусть такой точки $c$ не существует, тогда: 
+    \begin{proof} От противного. $C \notin f([a, b])$.
 
-        $U = f^{-1}(-\infty, C) \\
-        V = f^{-1}(C, +\infty)$
-
-        $U, V$ - открытые множества. Они не пересекаются
-
-        $[a, b] \subset (U \cup V)$ - противоречие со связностью множества $[a, b]$
+        $[a, b] \subset \R$ -- связное мн-во. Т.к. непрерывный образ связного 
+        мн-ва -- связное мн-во, $f([a, b])$ -- связное. 
+    
+        $U := (-\infty, C)$, $V := (C, +\infty)$ -- открытые мн-ва.
+        $U \cap V = \varnothing$. НУО, $f(a) < f(b) \Rightarrow
+        f(a) \in U, f(b) \in V$, т.к. $C$ лежит между $f(a)$ и $f(b)$
+        $\Rightarrow U \neq \varnothing, V \neq \varnothing$.
+    
+        $f([a, b]) \subset U \cup V \Rightarrow$ либо $f([a, b]) \subset U$,
+        либо $f([a, b]) \subset V$ $\Rightarrow$ либо $f(b) \notin f([a, b])$,
+        либо $f(a) \notin f([a, b])$. Противоречие.
+    
     \end{proof}
 \end{theorem-non}
 

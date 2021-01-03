@@ -1,1 +1,83 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Связность. Непрерывный образ связного множества. Связность отрезка}
+
+
+\begin{conj}
+    $(X, \rho)$ -- метрическое пространство.
+    
+    $X$ -- \textbf{несвязное}, если существуют непустык открытые $U, V$, 
+    т.ч. $U \cap V = \varnothing$ и $X = U \cup V$.
+\end{conj}
+
+\notice $X$ -- несвязное, если существует $U$ -- непустое
+открытое, т.ч. $X \setminus U$ -- непустое открытое.
+
+\begin{conj}
+    $X$ -- \textbf{связное} $\Longleftrightarrow$ если $X = U \cup V$, 
+    $U, V$ -- открытые и $U \cap V = \varnothing$, то $U$ или $V$ пустое.
+\end{conj}
+
+\begin{conj}
+    $A \subset X$ -- \textbf{связное}, если $(A, \rho)$ -- связное.
+\end{conj}
+
+\notice $A$ -- связное $\Longleftrightarrow$ если $A \subset U \cup V$,
+$U, V$ -- открытые, $U \cap V = \varnothing$, то $A$ целиком содержится
+в $U$ или $V$.
+
+\begin{theorem-non}
+    Непрерывный образ связного множества -- связное множество.
+\end{theorem-non}
+\begin{proof} $ $
+
+    $f: X \rightarrow Y$ непрерывно, и $X$ связно. Пусть $f(X) \subset
+    U \cup V$, $U, V$ -- открытые и $U \cap V = \varnothing \Rightarrow
+    X \subset f^{-1}(U) \cup f^{-1}(V)$, $f^{-1}(U)$, $f^{-1}(V)$ --
+    открытые, т.к. $f$ непрерывно, $f^{-1}(U) \cap f^{-1}(V) =
+    \varnothing \Rightarrow X$ -- целиком лежит в одном из них.
+    НУО, $X \subset f^{-1}(U) \Rightarrow f(X) \subset U$.
+\end{proof}
+
+\begin{theorem-non}
+$[a, b] \subset \R$ -- связное множество.
+\end{theorem-non}
+т.е. если $[a, b] \subset U \cup V$, $U \cap V = \varnothing$, $U, V$
+открыты, то либо $[a, b] \subset U$, либо $[a, b] \subset V$.
+
+\begin{proof} $ $
+
+    Пусть $b \in V$. Посмотрим теперь на $[a, b] \cap U =: S$. Если 
+    $S$ пустое, значит весь отрезок $[a, b]$ накрывается мн-вом $V$,
+    что подходит под условие теоремы. Пусть $V \neq \varnothing$.
+
+    Пусть $y := \sup S$. $b$ -- верхняя граница $S$ $\Rightarrow$
+    $y \leqslant b \Rightarrow y \in [a, b]$.
+
+    Рассмотрим несколько случаев:
+    \begin{enumerate}
+        \item $\mathbf{y \in V}$:
+        
+        $V$ открыто $\Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \subset V$ для некоторого $\varepsilon > 0$. $V \cap U =
+        \varnothing \Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \cap U = \varnothing \Rightarrow (y - \varepsilon,\,\, y + \varepsilon)
+        \cap S = \varnothing \Rightarrow y - \varepsilon$ -- верхняя 
+        граница для $S$, но $y = \sup S$. Противоречие.
+
+        \item $\mathbf{y \in U}$:
+        
+        $y \in U, b \in V, y \leqslant b \Rightarrow y < b$. $U$ -- открытое 
+        $\Rightarrow (y - \varepsilon,\,\, y + \varepsilon) \subset U$ для 
+        некоторого $\varepsilon > 0$. Можно сузить этот интервал так,
+        чтобы $\varepsilon < b$.
+        
+        Тогда $\begin{cases}
+            [y, y + \varepsilon) \subset [a, b] \\
+            [y, y + \varepsilon) \subset U
+        \end{cases} \Rightarrow [y, y + \varepsilon) \subset S$,
+        но $y = \sup S$. Противоречие.
+    \end{enumerate}
+
+    Таким образом, $S = \varnothing$ и $[a, b] \subset V$.
+\end{proof}

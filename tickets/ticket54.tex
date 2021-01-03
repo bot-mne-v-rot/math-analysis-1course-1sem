@@ -1,1 +1,70 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Непрерывный образ компакта. Теорема Вейерштрасса. Непрерывность обратного отображения}
+
+
+\begin{conj}
+    Пусть $f: E \rightarrow Y$, $E \subset X$. $f$ --- 
+    \textbf{ограниченная}, если $f(E)$ -- ограниченное мн-во.
+\end{conj}
+
+\begin{theorem-non}
+    Непрерывный образ компакта -- компакт.
+\end{theorem-non}
+\begin{proof} $ $
+
+    $f : X \rightarrow Y$ непрерывна во всех точках. $K \subset X$ --
+    компакт. 
+    
+    Докажем, что $f(K)$ -- компакт. 
+    
+    Пусть $f(K) \subset 
+    \bigcup \limits_{\alpha \in I} U_\alpha$, $U_\alpha$ -- открытое
+    $\Rightarrow K \subset \bigcup \limits_{\alpha \in I} f^{-1}(U_\alpha)$
+    , $f^{-1}(U_\alpha)$ -- открытое, т.к. $f$ непрерывна
+    $\xRightarrow{\text{комп. } K} \exists \alpha_1, \alpha_2, \dots,
+    \alpha_n : K \subset \bigcup_{j = 1}^{n} f^{-1}(U_{\alpha_n})
+    \Rightarrow f(K) \subset \bigcup_{j = 1}^{n} U_{\alpha_n}
+    \Rightarrow f(K)$ -- компакт.
+\end{proof}
+
+\follow
+\begin{enumerate}
+    \item Непрерывный образ компакта замкнут и ограничен.
+    \item \textbf{(теорема Вейерштрасса)} 
+    $f: K \rightarrow \R$, $K$ --
+    компакт, $f$ непрерывна на $K$. Тогда $\exists a, b \in K$, т.ч.
+    $f(a) \leqslant f(x) \leqslant f(b) \quad \forall x \in K$.
+
+    \begin{proof}
+        $f(K)$ -- компакт $\Rightarrow f(K)$ -- ограниченное множество
+        $\Rightarrow f$ -- ограниченная функция.
+        
+        Пусть $M := \sup \{ f(x) : x \in K \}$. Хотим доказать, что 
+        $\exists b \in K : f(b) = M$. Предположим, что такой точки
+        не существует. Тогда $f(x) < M \,\, \forall x \in K$.
+
+        $g(x) := \frac{1}{M - f(x)}$ -- непрерывная функция $\Rightarrow$
+        $g$ ограничена $\Rightarrow \exists M_0 : \forall x \in K \,\,
+        g(x) \leqslant M_0 \Rightarrow \frac{1}{M - f(x)} \leqslant M_0 \Rightarrow
+        \frac{1}{M_0} \leqslant M - f(x) \Rightarrow f(x) \leqslant M - 
+        \frac{1}{M_0} < M \Rightarrow M \neq \sup$. Противоречие.
+    \end{proof}
+\end{enumerate}
+
+\begin{theorem-non}\end{theorem-non}
+Пусть $f : K \rightarrow Y$ -- непрерывная биекция, $K \subset X$ -- 
+компакт. Тогда $f^{-1} : Y \rightarrow K$ непрерывно.
+
+\begin{proof} $ $
+
+    Надо проверить $(f^{-1})^{-1}(U) = f(U)$ открыто, если $U$ открыто.
+
+    $K \setminus U = K \cap (X \setminus U)$ замкнуто $\Rightarrow 
+    K \setminus U \subset K$ -- замкнутое подмн-во компакта $\Rightarrow
+    K \setminus U$ -- компакт $\Rightarrow f(K \setminus U)$ -- компакт,
+    т.к. $f$ непрерывна $\Rightarrow$ т.к. $f$ -- биекция, 
+    $f(K \setminus U) = f(K) \setminus f(U) = Y \setminus f(U)$ -- 
+    компакт $\Rightarrow Y \setminus f(U)$ замкнуто $\Rightarrow
+    f(U)$ открыто. 
+\end{proof}

@@ -1,1 +1,76 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Эквивалентные нормы. Эквивалентность норм в $\R^d$}
+
+
+\begin{conj}
+    $X$ -- векторное пространство. $\norm{\cdot}$ и $\vertiii{\cdot}$
+    -- нормы в $X$. Эти нормы \textbf{эквивалентны}, если $\exists
+    c_1, c_2 : c_1 \norm{x} \leqslant \vertiii{x} \leqslant c_2 \norm{x} \,\,
+    \forall x$.
+\end{conj}
+
+\notice 
+\begin{enumerate}
+    \item Нетрудно доказать, что это действительно является отношением
+    эквивалентости.
+    \item Сходимость по эквивалентным нормам равносильна. Т.е.
+    $\lim x_n = a$ по норме $\norm{\cdot}$ $\Leftrightarrow$ 
+    $\lim x_n = a$ по норме $\vertiii{\cdot}$.
+    \begin{proof} $ $
+
+        $\lim x_n = a$ по норме $\norm{\cdot} \Leftrightarrow
+        \lim \norm{x_n - a} = 0$\\
+        $\lim x_n = a$ по норме $\vertiii{\cdot} \Leftrightarrow
+        \lim \vertiii{x_n - a} = 0$\\
+        $0 \leqslant c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a} 
+        \leqslant c_2 \norm{x_n - a}$
+
+        ``$\Longrightarrow$'':
+
+        $\norm{x_n - a} \rightarrow 0$,
+        $c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a} 
+        \leqslant c_2 \norm{x_n - a}$ $\xRightarrow{\text{2 мил.}}$
+        $\vertiii{x_n - a} \rightarrow 0$.
+
+        ``$\Longleftarrow$'':
+
+        $\vertiii{x_n - a} \rightarrow 0$,
+        $0 \leqslant c_1 \norm{x_n - a} \leqslant \vertiii{x_n - a}$ 
+        $\xRightarrow{\text{2 мил.}}$
+        $\norm{x_n - a} \rightarrow 0$.
+    \end{proof}
+\end{enumerate}
+
+\begin{theorem-non}
+    В $\R^d$ все нормы эквивалентны.
+\end{theorem-non}
+\begin{proof} $ $
+
+    Пусть $\norm{\cdot}$ -- стандартная норма в $\R^d$, $P(\cdot)$
+    -- другая норма в $\R^d$.
+
+    $x := \sum_{k = 1}^d x_k e_k$, где $e_k = (0, ..., 0, 
+    \overset{k\text{-e место}}{1}, 0, ..., 0)$.
+
+    $P(x - y) = P(\sum_{k = 1}^d (x_k - y_k) e_k) \leqslant
+    \sum_{k = 1}^d P((x_k - y_k) e_k) = \sum_{k = 1}^d \abs{x_k - y_k} 
+    P(e_k) \underset{\text{К-Б}}{\leqslant} \sqrt{\sum_{k = 1}^d 
+    (x_k - y_k)^2} \cdot \sqrt{\sum_{k = 1}^d P(e_k)^2} = \norm{x - y}
+    \underbrace{\sqrt{\sum_{k = 1}^d P(e_k)^2}}_{M} = M \norm{x - y}$.
+
+    $0 \leqslant P(x - y) \leqslant M \norm{x - y} \Rightarrow P$ -- 
+    непрерывная функция, $P(x) \leqslant M \norm{x}$. Доказали неравенство
+    с одной стороны.
+
+    Рассмотрим $K$ -- единичная сфера в $\R^d$ -- компакт $\Rightarrow$
+    найдётся $a \in K$, $a \neq \overline{0}$, т.ч. $0 < P(a) \leqslant P(x) 
+    \,\, \forall x \in K$ по теореме Вейерштрасса.
+
+    Возьмём $y\in \R^d, y \neq \overline{0} \Rightarrow y = \norm{y}
+    \cdot \frac{y}{\norm{y}} \Rightarrow P(y) = \norm{y} \cdot 
+    P(\frac{y}{\norm{y}}) \geqslant \norm{y} \cdot P(a)$, т.к. $\norm{a}
+    \leqslant 1$. Доказали неравенство с другой стороны.
+
+    $P(a) \norm{y} \leqslant P(y) \leqslant M \norm{y}$.
+\end{proof}
