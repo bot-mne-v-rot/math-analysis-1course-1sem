@@ -1,1 +1,36 @@
 \section{Определение и простейшие свойства площади и квазиплощади}
+
+$\mathcal{F}$ - совокупность всех ограниченных подмножеств плоскости
+
+\begin{conj}
+    $\sigma: \mathcal{F} \to [0, +\infty)$ - площадь, если
+
+    1) $\sigma([a, b]\times[c, d]) = (b-a)(c-d)$
+
+    2) Если $E_1\cap E_2 = \varnothing$, то $\sigma(E_1 \cup E_2) = \sigma(E_1) \cup \sigma(E_2)$
+\end{conj}
+
+Свойство. Если $E \subset \widetilde{E}$, то
+$\sigma(E) \leq \sigma(\widetilde{E})$
+
+\begin{proof}
+    $\widetilde{E} = E \cup (\widetilde{E} \backslash E) \Rightarrow
+    \sigma(\widetilde{E}) = \sigma(E) + \sigma(\widetilde{E} \backslash E) \geq \sigma(E)$
+\end{proof}
+
+\begin{conj}
+    $\sigma: \mathcal{F} \to [0, +\infty)$ - квазиплощадь, если
+
+    1) $\sigma([a, b]\times[c, d]) = (b-a)(c-d)$
+
+    2) Если $E \subset \widetilde{E}$, то $\sigma(E) \leq \sigma(\widetilde{E})$
+
+    3) $\sigma(E) = \sigma(E_{-}) + \sigma(E_{+})$. $E_{-}$ и $E_{+}$ получаются
+    разбиением $E$ горизонтальной или вертикальной прямой.
+\end{conj}
+
+Свойства
+\begin{enumerate}
+    \item Площадь подмножества любого вертикального или горизонтального отрезка ноль (из пункта 1 определения)
+    \item $E_{-}$ и $E_{+}$ могут пересекаться (из прерыдущего свойства)
+\end{enumerate}

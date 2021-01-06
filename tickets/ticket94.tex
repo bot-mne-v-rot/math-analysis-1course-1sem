@@ -1,1 +1,57 @@
 \section{Пример квазиплощади, определенной на всех подмножествах плоскости}
+
+Примеры квазиплощади
+
+1)
+\[\sigma_1(E) = \inf\{\sum_{k=1}^{n}|P_k| : E \subset \overset{n}{\underset{k=1}{\cup}}\} \]
+
+$P_k$ - прямоугольники (конечное покрытие). $|P_k|$ - стандартная площадь прямоугольника.
+
+2)
+\[\sigma_1(E) = \inf\{\sum_{k=1}^{\infty}|P_k| : E \subset \overset{n}{\underset{k=1}{\cup}}\} \]
+
+То же самое, только счетное покрытие
+
+Замечание. $\sigma_1(E) \geq \sigma_2(E)$
+
+Упражнение. $E = ([0, 1] \cap \Q)^2$. Доказать, что $\sigma_1(E) = 1,\ \sigma_2(E) = 0$
+
+Упражнение. $\sigma_1,\ \sigma_2$ не меняются при параллельном переносе
+
+\begin{theorem}
+    $\sigma_1$ - квазиплощадь.
+\end{theorem}
+
+\begin{proof}
+    Свойство 2. Рассмотрим покрытие $\widetilde{E} \subset \overset{n}{\underset{k=1}{\cup}} P_k
+    \Rightarrow E \subset \overset{n}{\underset{k=1}{\cup}}$
+
+    Тогда инфимум для $E$ берется по большему множеству, значит он может быть только меньше
+
+    Свойство 3. $"\leq":$
+    \[E_{-} \subset \overset{n}{\underset{k=1}{\cup}} P_k,\ 
+    E_{+} \subset \overset{m}{\underset{j=1}{\cup}} Q_j\]
+
+    \[E \subset \overset{n}{\underset{k=1}{\cup}} P_k\ \cup\ \overset{m}{\underset{j=1}{\cup}} Q_j\]
+
+    \[\sigma_1(E) \leq \sum |P_k| + \sum |Q_j| \Rightarrow \sigma(E) \leq \inf
+    \{ \sum |P_k| \} + \sum |Q_j| = \sigma_1(E_{-}) + \sum |Q_j| \Rightarrow \]
+
+    \[ \Rightarrow \sigma_1(E) \leq \sigma_1(E_{-}) + \inf \{ \sum |Q_k| \} =
+    \sigma_1(E_{-}) + \sigma_1 + (E_{+}) \]
+
+    $"\geq"$
+
+    \[ \sigma_1(E_{-}) + \sigma_1(E_{+}) \leq \sum |P_k^{-}| + \sum |P_k^{+}| = \sum |P_k|\]
+
+    Переходим к $\inf$
+
+    \[ \sigma_1(E_{-}) + \sigma_1{E_{+}} \leq \sigma_1(E) \]
+
+    Свойство 1.
+
+    $"\leq"$ очевидно, так как в качестве покрытия можно взять сам прямоугольник
+
+    $"\geq"$. Если прямугольник уже идеально нарезан, то получилось равенство.
+    Для произвольного покрытия можем отрезать лишние куски, выкинуть повторяющиеся куски и получить идеальную нарезку.
+\end{proof}

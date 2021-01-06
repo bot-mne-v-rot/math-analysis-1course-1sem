@@ -1,1 +1,47 @@
 \section{Таблица интегралов. Арифметические действия с неопределенными интегралами. Линейность интеграла}
+\begin{conj}
+    Арифметические операции с множествами функций
+
+    $A+B := \{a+b: a \in A,\ b \in B\}$
+
+    $\lambda A := \{ \lambda a : a \in A\}$
+\end{conj}
+
+Таблица интегралов
+
+\begin{itemize}
+    \item $\int 0\ dx = C$
+    \item $\int x^p\ dx = \frac{x^{p+1}}{p+1} + C$ при $p \neq -1$
+    \item $\int \frac{1}{x}\ dx = \ln |x| + C$
+    \item $\int a^x\ dx = \frac{a^x}{\log a} + C$ при $a>0,\ a\neq 1$
+    \item $\int \sin x\ dx = -\cos x + C$
+    \item $\int \cos x\ dx = \sin x + C$
+    \item $\int \frac{1}{\cos^2 x}\ dx = \tg x + C$
+    \item $\int \frac{1}{\sin^2 x}\ dx = -\ctg x + C$
+    \item $\int \frac{1}{\sqrt{1-x^2}}\ dx = \arcsin x + C$
+    \item $\int \frac{1}{1+x^2}\ dx = \arctan x + C$
+    \item $\int \frac{1}{\sqrt{x^2\pm 1}}\ dx = \log|x+\sqrt{x^2\pm 1}| + C$
+    \item $\int \frac{1}{1-x^2}\ dx = \frac{1}{2}\log |\frac{1+x}{1-x}| + C$   
+\end{itemize}
+
+\begin{conj}
+    Арифметические действия с неопределенными интегралами
+
+    $f, g:<a, b> \to \R$ имеют первообразную. Тогда
+    \begin{itemize}
+        \item $f+g$ имеет первообразную и $\int(f+g) = \int f + \int g$
+        \item $\alpha f$ имеет первообразную и $\int \alpha f = \alpha f$, если $\alpha \neq 0$
+    \end{itemize}
+\end{conj}
+
+\begin{proof}
+    $F$ и $G$ первообразные $f, g$
+    1) $F+G$ - первообразная $f+g$ т.к. $(F+G)'=F'+G'=f+g$
+    2) $(\alpha F)' = \alpha F' = \alpha f$
+\end{proof}
+
+Следствие. Линейность интеграла.
+
+$f, g: <a, b> \to \R$ имеют первообразную, $\alpha, \beta \in \R,\ |\alpha|+|\beta|\neq 0$.
+
+Тогда $\int (\alpha f + \beta g) = \alpha \int f + \beta \int g$

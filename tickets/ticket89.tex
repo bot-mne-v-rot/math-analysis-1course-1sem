@@ -1,1 +1,110 @@
 \section{Неравенства Гёльдера, Коши–Буняковского и Минковского}
+
+\begin{theorem}
+    Неравенство Гёльдера. 
+    $a_k, b_k \geq 0,\ p, q > 1,\ \frac{1}{p}+\frac{1}{q} = $. Тогда
+    
+    \[ \sum_{k=1}^{n} a_k b_k \leq \left( \sum_{k=1}^{n} a_k^p\right)^\frac{1}{p} \left( \sum_{k=1}^{n} b_k^q\right)^\frac{1}{q} \]
+\end{theorem}
+
+\begin{proof}
+    При умножении всех $b$ на какую-то константу неравенство остается верным. Тогда можно считать, что $b_1^q+b_2^q+\cdots+b_n^q=1$
+
+    Это получается для каждой $b$ делением на $\sqrt[q]{b_1^q+b_2^q+\cdots+b_n^q}$
+
+    Тогда нужно доказать
+
+    \[ \left(\sum a_k b_k \right)^p \leq \sum a_k^p \]
+
+    Возьмем $f(x) = x^p$, она выпуклая. Хотим привести к виду
+
+    \[ f(\sum \lambda_k x_k) \leq \sum \lambda_k f(x_k) \]
+
+    $
+    \begin{cases}
+        \lambda_k x_k = a_k b_k
+        \lambda_k x_k^p = a_k^p
+    \end{cases}
+    $
+
+    Поделим вторую строчку на первую, тогда
+
+    \[ x_k^{p-1} = \frac{a_k^{p-1}}{b_k} \Rightarrow x_k = \frac{a_k}{b_k^{\frac{1}{p-1}}},\ 
+    \lambda_k = \frac{a_k b_k}{x_k} = b^{1+\frac{1}{p-1}} = b_k^q\]
+
+    Мы свели к неравенству Йенсена
+
+    $\frac{1}{p}+\frac{1}{q} = 1$ используется в последнем переходе, и без него было бы неверно, что сумма лямбд равна $1$
+
+    Замечание. Если $\frac{1}{p}+\frac{1}{q} = 1$ и $0 < p < 1$, то $q < 0$ и верно неравенство с обратным знаком
+
+\end{proof}
+
+\begin{theorem}
+    Неравенство Коши–Буняковского.
+
+    \[ (\sum_{k=1}^{n} a_k b_k)^2 \leq \sum_{k=1}^{n} a_k \cdot \sum_{k=1}^{n}b_k^2]\]
+\end{theorem}
+
+\begin{proof}
+    $p = q = 2$, тогда по неравенству Гёльдера
+    \[ |\sum a_kb_k| \leq \sum|a_kb_k| \leq \left(\sum|a_k|^2\right)^\frac{1}{2} \left(\sum|b_k|^2\right)^\frac{1}{2} =
+    \left(\sum|a_k|^2 \sum|b_k|^2\right)^\frac{1}{2}\]
+
+    Возводим самую левую и самую правую часть в квадрат и получаем искомое неравенство
+\end{proof} 
+
+\begin{theorem}
+    Неравенство Минковского
+
+    $a_k, b_k \geq 0,\ p \geq 1$. Тогда
+
+    \[ \left(\sum_{k=1}^{n}(a_k+b_k)^p\right)^\frac{1}{p} \leq \left(\sum_{k=1}^{n} a_k^p\right)^\frac{1}{p} +
+    \left(\sum_{k=1}^{n} b_k^p\right)^\frac{1}{p} \]
+\end{theorem}
+
+\begin{proof}
+    $p = 1$ очевидно. Пусть $p > 1$
+
+    \[ \sum_{k=1}^{n}(a_k+b_k)^p = \sum_{k=1}^{n}(a_k+b_k)(a_k+b_k)^{p-1} =
+    \sum_{k=1}^{n} a_k(a_k+b_k)^{p-1} + \sum_{k=1}^{n} b_k(a_k+b_k)^{p-1} \]
+
+    Подберем под это неравенство Гёльдера
+
+    $q = \frac{p}{p-1}$
+
+    \[ \sum_{k=1}^{n} a_k(a_k+b_k)^{p-1} \leq \left( \sum a_k^p \right)^\frac{1}{p} \left( \sum ((a_k+b_k)^{p-1})^q \right)^\frac{1}{q}
+    = \left( \sum a_k^p \right)^\frac{1}{p} \left( \sum (a_k+b_k)^p \right)^\frac{1}{q} \] 
+
+    Аналогично для второго слагаемого. Тогда продолжим нашу цепочку неравенств
+
+    \[ \sum_{k=1}^{n} a_k(a_k+b_k)^{p-1} + \sum_{k=1}^{n} b_k(a_k+b_k)^{p-1} \leq
+    \left( \sum a_k^p \right)^\frac{1}{p} \left( \sum (a_k+b_k)^p \right)^\frac{1}{q} + \left( \sum b_k^p \right)^\frac{1}{p} \left( \sum (a_k+b_k)^p \right)^\frac{1}{q} \]
+
+    Делим самую левую и самую правую часть на $\left( \sum (a_k+b_k)^p \right)^\frac{1}{q}$, 
+    получаем то что надо (при вычислении степеней не забывать, что $1/p + 1/q = 1$)
+
+
+\end{proof}
+
+\begin{theorem}
+    Следствие: $x_k, y_k, z_k \in \R,\ p \geq 1$. Тогда
+
+    \[ \left( \sum |x_k-y_k|^p \right)^\frac{1}{p} + \left( \sum |y_k-z_k|^p \right)^\frac{1}{p} \geq
+    \left( \sum |z_k-x_k|^p \right)^\frac{1}{p} \]
+    
+\end{theorem}
+
+\begin{proof}
+    $a_k = |x_k - y_k|,\ b_k = |y_k - z_k|$
+
+    \[ \left( \sum a^p \right)^\frac{1}{p} + \left( \sum b^p \right)^\frac{1}{p} 
+    \geq \left( \sum (a_k+b_k)^p \right)^\frac{1}{p} \geq \left( \sum |z_k-x_k|^p \right)^\frac{1}{p} \]
+    
+\end{proof}
+
+Замечание:
+
+$\rho(x, y) = \left( \sum |x_k-y_k|^p \right)^\frac{1}{p}$ - метрика
+
+$||x|| := \left( \sum |x_k|^p \right)^\frac{1}{p}$ - норма

@@ -1,1 +1,44 @@
 \section{Теоремы о замене переменной в неопределенном интеграле. Формула интегрирования по частям. Примеры}
+
+\begin{theorem}
+    Теорема о замене переменной в неопределенном интеграле
+
+    $f: <a, b> \to \R,\ \varphi: <c, d> \to <a, b>,\ f$
+    имеет первообразую $F$, $\varphi$ дифф. Тогда
+
+    \[ \int f(\varphi(t))\varphi'(t) dt = F(\varphi(t))+C \]
+\end{theorem}
+
+\begin{proof}
+    \[(F(\varphi(t)))' = F'(\varphi(t))\varphi'(t) = f(\varphi(t))\varphi'(t)\]
+\end{proof}
+
+Следствие для $\alpha \neq 0$
+
+\[\int f(\alpha x + \beta)\ dx = \frac{1}{\alpha} F(\alpha x + \beta) + C \]
+
+Пример. $f(x) = \frac{1}{1+x^2},\ \varphi(t) = t^2$
+
+$\int \frac{t\ dt}{1+t^4} = \int \frac{1}{2}f(\varphi(t))\varphi'(t)\ dt
+= \frac{1}{2} F(\varphi(t)) + C = \frac{1}{2} \arctan(x^2) + C$
+
+\begin{theorem}
+    Формула интегрирования по частям.
+
+    $f, g: <a, b> \to \R$ дифференцируемые, $f'g$ имеет первообразную. Тогда
+    $fg'$ тоже имеет первообразную и 
+    \[ \int fg' = fg - \int f'g \]
+\end{theorem}
+
+\begin{proof}
+    $H$ - первообразная для $f'g$. Надо доказать, что $\int fg' = fg - H + C$
+    
+    $(fg - H +C)' = f'g+fg'-f'g = fg'$ - то что надо
+\end{proof}
+
+Пример. \[\int \arctan x\ dx = \int f(x)g'(x)\ dx =
+f(x)g(x)-\int f'(x)g(x)\ dx = \arctan(x)x - \int \frac{x}{1+x^2}\ dx = \]
+
+\[ x\arctan x - \frac{1}{2} \log(1+x^2)\]
+
+$g(x) = x,\ f(x) = \arctan x$
