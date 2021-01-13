@@ -1,1 +1,80 @@
 \section{Покрытия. Компактность. Компактность в пространстве и в подпространстве. Простейшие свойства компактных множеств}
+
+\begin{conj}
+    $A, B_{\alpha}, \ {\alpha \in I}$ - множества. Множества $B_{\alpha}$ покрывают $A$
+    означает, что $A \subset \bigcup\limits_{\alpha \in I} B_{\alpha}$ \\
+    $B_{\alpha}$ - покрытие $A$
+\end{conj}
+
+\begin{conj}
+    Открытое покрытие - покрытие открытыми множествами
+\end{conj}
+
+\begin{conj}
+    $(X, \rho)$ - метрическое пространство. $K \subset X$.
+    $K$ - компакт, если из любого покрытия $K$ открытыми множествами можно выбрать конечное подпокрытие 
+    (Какое бы мы не взяли покрытие открытыми множествами, можно оставить конечное количество этих открытых множеств
+    и они все равно будут покрывать $K$)
+\end{conj}
+
+\textbf{Примеры:} 
+
+\begin{itemize}
+    \item[] Любой отрезок на прямой
+    \item[] Квадрат c границей и внутренностью в $\R^2$
+\end{itemize}
+
+\begin{theorem-non}
+    Простейшие свойства компактных множеств.
+
+    \begin{enumerate}
+        \item Если $K \subset Y \subset X$, то $K$ - компакт в $Y \Longleftrightarrow K$ - компакт в $X$ 
+        \begin{proof} \quad
+            
+            ``$\Longrightarrow$'': Пусть $G_{\alpha}$ - открытые множества в $X$, покрывающие $K$
+            $\Longrightarrow \mathcal{U}_{\alpha} = G_{\alpha}\cap Y$ - открытое множество в $Y$
+
+            $K \subset Y$ и $K \subset \bigcup G_{\alpha} \Longrightarrow K \subset Y \cap \bigcup G_{\alpha} =
+            \bigcup (Y \cap G_{\alpha}) = \bigcup \mathcal{U}_{\alpha}$, то есть $\mathcal{U}_{\alpha}$ - 
+            покрытие $K$ открытыми множествами в $Y \Longrightarrow \exists \ \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$, 
+            такие, что $K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \subset \bigcup\limits_{j = 1}^{n} G_{\alpha_j} \Longrightarrow 
+            G_{\alpha_1}, \dots, G_{\alpha_n}$ - конечное подпокрытие $K \Longrightarrow$ $K$ --- компакт в $X$
+
+            ``$\Longleftarrow$'': Рассмотрим покрытие $K$ множествами $\mathcal{U}_{\alpha}$, открытыми в $Y$. Тогда $\mathcal{U}_{\alpha} = G_{\alpha} \cap Y$, 
+            где $G_{\alpha}$ открыто в $X \Longrightarrow K \subset \bigcup \mathcal{U}_{\alpha} \subset \bigcup G_{\alpha} \Longrightarrow
+            G_{\alpha}$ - октрытое множество в $X \Longrightarrow \exists \ G_{\alpha_1}, G_{\alpha_2}, \dots, G_{\alpha_n}$ покрывающие $K \Longrightarrow
+            K \subset \bigcup\limits_{j=1}^{n} G_{\alpha_j} \Longrightarrow K = K \cap Y \subset 
+            Y \cap \bigcup\limits_{j=1}^{n} G_{\alpha_j} = \bigcup\limits_{j=1}^{n} Y \cap G_{\alpha_j} = \bigcup\limits_{j=1}^{n} \mathcal{U}_{\alpha_j}
+            \Longrightarrow \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$ покрывают $K \Longrightarrow K$ - компакт в $Y$  
+        \end{proof}
+        \item $K$ - компакт $\Longrightarrow K$ - замкнут и ограничен
+        \begin{proof} \quad
+
+            Проверим, что дополнение $K$ открыто. Возьмем $a \notin K$ и покажем, что 
+            $B_r(a) \subset X \setminus K$ для некоторого $r > 0$. Для $x \in K$ возьмем шарик $B_{\rho(x, a)/2}(x) =: \mathcal{U}_x$
+            - открытое множество $\mathcal{U}_x \cap B_{\rho(x, a)/2}(a) \neq \varnothing \Longrightarrow K \subset \bigcup\limits_{x \in K} \mathcal{U}_x$.
+            Так как $K$ - компакт, можно вырбрать $\mathcal{U}_{x_1}, \mathcal{U}_{x_2}, \dots, \mathcal{U}_{x_n}$, такие что $K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{x_j}
+            \quad \mathcal{U}_{x_j} \cap B_{r_j}(a) = \varnothing, \; r_j = \rho(x_j, a)/2$. Если $r = min \ r_j$, то $\mathcal{U}_{x_j} \cap B_{r}(a) = \varnothing \Longrightarrow K \cap B_r(a) = \varnothing 
+            \Longrightarrow B_r(a) \subset X \setminus K$ 
+
+            Теперь проверим ограниченность. Возьмем $a \in X$. Тогда $K \subset \bigcup\limits_{n = 1}^{\infty} B_n(a)$.
+            Если $x \in K$, то расстрояние между $x$ и $a$ будет конечным, а значит есть такой натуральный номер, который больше, 
+            чем это расстояние $\Longrightarrow x \in B_n(a)$. Так как $K$ - компакт, можно выбрать конечное подпокрытие 
+            $B_1(a), \dots, B_n(a) \qquad K \subset \bigcup\limits_{j = 1}^{n} B_j(a) = B_n(a) \Longrightarrow K$ содержится в каком то шаре $\Longrightarrow K$ - ограниченное множество 
+        \end{proof}
+        \item $K \subset \overset{\mathtt{\sim}}{K}$ и $\overset{\mathtt{\sim}}{K}$ - компакт. Если $K$ - замкнуто, то $K$ - компакт
+        (Замкнутое подмножество компакта - компакт)
+        \begin{proof} \quad
+
+            Покроем $K$ открытыми множествами. Пусть $K \subset \bigcup \mathcal{U}_{\alpha}$ - открытые множества. 
+            
+            Тогда $\overset{\mathtt{\sim}}{K} \subset (\underbrace{(X \setminus K)}_{\text{Откр. мн-во}} \cup \bigcup \mathcal{U}_{\alpha})$.
+            Так как $\overset{\mathtt{\sim}}{K}$ - компакт, можно выбрать конечное подпокрытие $X \setminus K: \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$
+
+            $\underset{\quad \rotatebox[origin=c]{120}{$ \subset $} K}{\overset{\mathtt{\sim}}{K}} \subset (X \setminus K) \cup \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \Longrightarrow K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \Longrightarrow K$ - компакт
+            
+        \end{proof}
+        
+    \end{enumerate}
+
+\end{theorem-non}
