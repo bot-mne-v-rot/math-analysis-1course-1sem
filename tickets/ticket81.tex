@@ -1,1 +1,25 @@
 \section{Иррациональность числа $e$}
+
+\begin{theorem-non}
+    $e$ --- иррационально    
+
+    \begin{proof}
+        $2 < e < 3 \Longrightarrow e$ --- не является целым.
+        
+        Пусть $e = \frac{m}{n}, \quad$ где $n \geqslant 2$ (т.к. $e$ --- не целое)
+        
+        Формула Тейлора с остатком в форме Лагранжа для $x_0 = 0, x = 1:$
+        \begin{center}
+            $e^1 = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \dots + \frac{1}{n!} + \frac{e^c}{(n+1)!}$ где $c \in (0,1)$ \\
+            $\underbrace{\frac{m}{n} \cdot n!}_{\text{целое}} = n! \cdot e = 
+            \underbrace{n! + n! + \frac{n!}{2!} + \frac{n!}{3!} + \dots + \frac{n!}{n!}}_{\text{целое}} + \frac{e^c}{n+1}$
+
+            $\Longrightarrow \frac{e^c}{n+1} \in \Z \Longrightarrow \frac{e^c}{n+1} \geqslant 1$ 
+
+            $\frac{e^c}{n + 1} \leqslant \frac{e}{3} < 1$ (т.к. $c \in (0,1), n \geqslant 2$) 
+        \end{center}
+        Противоречие $\Longrightarrow e$ --- иррационально. 
+
+    \end{proof}
+
+\end{theorem-non}
