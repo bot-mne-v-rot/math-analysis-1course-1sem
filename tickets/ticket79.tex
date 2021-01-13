@@ -1,1 +1,61 @@
 \section{Формулы Тейлора с остатком в форме Лагранжа. Следствия}
+
+\begin{theorem-non}
+    $f: <a, b> \rightarrow \R$
+
+    $n + 1$ раз дифференцируема на $<a, b>, \; x_0, x \in <a, b>$
+
+    Тогда существует $c$, лежащая между $x$ и $x_0$, т.ч.
+    $f(x) = T_{n,x_o} f(x) + \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (x - x_0)^{n+1}$
+
+    \begin{proof}
+        Зафиксируем $x$ и возьмём $M$, т.ч.
+        
+        \begin{gather*}
+            f(x) = T_{n,x_0} f(x) + M \cdot (x - x_0)^{n+1}
+        \end{gather*}
+
+        Введём вспомогательную функцию:
+        \begin{gather*}
+            g(t) := f(t) - T_{n, x_0}f(x) - M \cdot (t - x_0)^{n+1}
+            g^{(n+1)}(t) = f^{(n+1)}(t) - M \cdot (n + 1)!
+        \end{gather*}
+        
+        Надо доказать, что $g^{(n+1)}(c) = 0$ для некоторого $c \in (x_0, x)$ (НУО $x_0 < x$)
+
+        \begin{gather*}
+            g^{(k)}(x_0) = 0, \quad k = 0,1, \dots, n
+            g(x) = 0
+        \end{gather*}
+        
+        По т. Ролля$: \; \exists \; c_1 \in (x_0, x): \; g'(c_1) = 0$ \\
+        По т. Ролля для $g': \; \exists \; c_2 \in (x_0, c_1): \; g''(c_2) = 0$
+
+        $\dots$
+
+        По т. Ролля для $g^{(n)}: \; \exists \; c_{n+1} \in (x_0, c_n): \; g^{(n+1)}(c_{n+1}) = 0$
+
+    \end{proof}
+
+\end{theorem-non}
+
+\begin{follow}
+    \begin{enumerate}
+        \item Если $|f^{(n+1)}(t)| \leqslant M \; \forall t \in (x, x_0)$, то $|R_{n, x_0}f(x)| \leqslant \frac{M(x-x_0)^{n + 1}}{(n+1)!} = O((x - x_0)^{n + 1})$
+            \begin{proof}
+                $| \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (x - x_0)^{n+1} | \leqslant M \cdot \frac{|x-x_0|^{n+1}}{(n+1)!}$
+            \end{proof}
+        \item
+        Если \; $|f^{(n)}(t)| \leqslant M \; \forall n \in \N, \forall t \in <a, b>$, то \; $T_{n,x_0}f(x) \rightarrow f(x), \; n \rightarrow \infty$ \\
+
+        $\sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k \rightarrow f(x),$ т.е. $f(x) = \sum_{k=0}^{\infty} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k$
+            \begin{proof}
+
+                \begin{gather*}
+                    |f(x) - T_{n,x_0}f(x)| = |R_{n, x_0} f(x)| \leqslant \frac{M|x-x_0|^{n+1}}{(n+1)!} \stackrel{?}{\rightarrow} 0 \\
+                    \frac{k^n}{n!} \rightarrow 0
+                \end{gather*}
+
+            \end{proof}
+    \end{enumerate}
+\end{follow}
