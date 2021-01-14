@@ -7,7 +7,7 @@
     Пусть $f : E \rightarrow Y$, $E \subset X$. \\
     $f$ \textbf{равномерно непрерывна} на $E$, если $\forall \varepsilon
     > 0 \quad \exists \delta > 0 : \forall x, y \in E : \rho_X(x, y) <
-    \varepsilon \Rightarrow \rho_Y(f(x), f(y)) < \delta$.
+    \delta \Rightarrow \rho_Y(f(x), f(y)) < \varepsilon$.
 \end{conj}
 
 \textbf{Примеры:} $X = Y = \R$.
@@ -40,7 +40,7 @@
     Проверим, что это $\delta$ подходит, т.е. если $\rho(x, y) <
     \delta$, то $\rho(f(x), f(y)) < \varepsilon$.
 
-    $\rho(x, y) < \delta \Rightarrow y \in f(x) \subset B_{r_a}(a)$
+    $\rho(x, y) < \delta \Rightarrow y \in B_{\delta}(x) \subset B_{r_a}(a)$
     для некоторого $a \in K$ $\Rightarrow x, y \in B_{r_a}(a)
     \Rightarrow f(x), f(y) \in f(B_{r_a}(a)) \subset B_{\varepsilon / 2}
     (f(a)) \Rightarrow
@@ -48,6 +48,6 @@
         \rho(f(x), f(a)) < \varepsilon / 2 \\
         \rho(f(y), f(a)) < \varepsilon / 2
     \end{cases}
-    \Rightarrow \rho(x, y) \leqslant \rho(f(x), f(a)) + \rho(f(y), f(a))
+    \Rightarrow \rho(f(x), f(y)) \leqslant \rho(f(x), f(a)) + \rho(f(y), f(a))
     < \varepsilon$.
 \end{proof}
