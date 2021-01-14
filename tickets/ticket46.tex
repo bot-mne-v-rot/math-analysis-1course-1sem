@@ -5,7 +5,7 @@
 
     $E \subset A$ --- $\varepsilon$-сеть для $A$, если $\forall a \in A$ найдётся $e \in E$, т.ч. $\rho(a, e) < \varepsilon$
 
-    то есть $A \subset \bigcup_{e \in E} B_{\varepsilon}(e)$.
+    то есть $A \subset \bigcup\limits_{e \in E} B_{\varepsilon}(e)$.
 
 \end{conj}
 
@@ -52,12 +52,12 @@ $\varepsilon$ оно исходное множество представляе�
 
 \begin{proof}
     \begin{enumerate}
-        \item $\varepsilon = 1, A \subset \bigcup_{k=1}^{n} B_1(a_k) \subset B_r(a_1),$ где $r = 1 + max \{ \rho(a_1, a_j) \}, \; j = 2, \dots, n$
+        \item $\varepsilon = 1, A \subset \bigcup\limits_{k=1}^{n} B_1(a_k) \subset B_r(a_1),$ где $r = 1 + max \{ \rho(a_1, a_j) \}, \; j = 2, \dots, n$
         \item $A \subset R^d$ --- ограниченное множество $\Longrightarrow A \subset [-c, c]^d$ для некоторого $n$. \\
 
-        Вставить рисунок %таймкод: 1:50:08
+        \includegraphics[width=1.5in]{./images/T46_pic.png} %таймкод: 1:50:08
 
-        сторона маленького кубика $= \frac{2c}{n} \Longrightarrow$ его главная диагональ $= \sqrt{d} \cdot \frac{2c}{n} < \varepsilon$
+        Cторона маленького кубика $= \frac{2c}{n} \Longrightarrow$ его главная диагональ $= \sqrt{d} \cdot \frac{2c}{n} < \varepsilon$
 
         диагональ $< \varepsilon \Longrightarrow$ расстояние между любыми двумя точками кубика $< \varepsilon$
 
@@ -79,11 +79,12 @@ $\varepsilon$ оно исходное множество представляе�
         \item $X$ --- полное пространство, то замкнутое вполне ограниченное множество компактно.
     \end{enumerate}
 
-    \begin{proof}
+    \begin{proof} \quad  
+
         \begin{enumerate}
-            \item Берём $\varepsilon > 0$  и $K \subset \bigcup_{x \in K}B_{\varepsilon}(x)$ и выберем из него конечное подпокрытие:
+            \item Берём $\varepsilon > 0$  и $K \subset \bigcup\limits_{x \in K}B_{\varepsilon}(x)$ и выберем из него конечное подпокрытие:
             
-            $K \subset \bigcup_{j = 1}^n B_{\varepsilon}(x_j)$. Тогда $x_1, x_2, \dots, x_n$ конечная $\varepsilon$-сеть.
+            $K \subset \bigcup\limits_{j = 1}^n B_{\varepsilon}(x_j)$. Тогда $x_1, x_2, \dots, x_n$ конечная $\varepsilon$-сеть.
 
             \item 
             Будем проверять секвенциальную компактность.
