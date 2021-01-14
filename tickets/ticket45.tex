@@ -5,15 +5,15 @@
     
     Пусть $K$ - секвенциально компактное множество
     и $K \subset \bigcup \mathcal{U_{\alpha}}$, где $\mathcal{U_{\alpha}}$ --- открытые мн-ва. \\
-    Существует такое $\varepsilon > 0$, что $\forall x \in K$ шарик $B_{\varepsilon}(x)$ целиком покрывается каким-то $\mathcal{U_{\alpha}}$.
+    Тогда существует такое $\varepsilon > 0$, что $\forall x \in K$ шарик $B_{\varepsilon}(x)$ целиком покрывается каким-то $\mathcal{U_{\alpha}}$.
     \begin{proof}
         От противного. Пусть $\varepsilon = \frac{1}{n}$ не подходит. \\
          $B_{\frac{1}{n}}(x_n)$ не содержится целиком ни в одном из $\mathcal{U_{\alpha}}$.  \\
          Поскольку у нас секвенциальная компактность, выберем из $x_n$ сходящуюся подпоследовательность $x_{n_k} \rightarrow y \in K$.
-         Тогда $y \in \mathcal{U_{\alpha}}$ --- открытое множество, тогда $\exists \varepsilon > 0,$ т.ч. $B_{\varepsilon}(y) \subset \mathcal{U_{\alpha_0}}$. \\
+         Тогда $y \in \mathcal{U}_{{\alpha}_0}$ --- открытое множество, тогда $\exists \varepsilon > 0,$ т.ч. $B_{\varepsilon}(y) \subset \mathcal{U}_{{\alpha}_0}$. \\
          Так как $\varrho(x_{n_k},y)\rightarrow 0$, начиная с некоторого номера $\varrho(x_{n_k},y) < \frac{\varepsilon}{2}$ и $\frac{1}{n_k} < \frac{\varepsilon}{2}$, \\
-         тогда $B_{\frac{1}{n_k}}(x_{n_k}) \stackrel{?}{\subset} B_{\varepsilon}(y) \subset \mathcal{U_{\alpha_0}}$. \\
-         $B_{\frac{1}{n_k}}(x_{n_k}) \subset B_{\frac{\varepsilon}{2}(x_{n_k})} \stackrel{?}{\subset} \mathcal{U_{\alpha_0}}$ \\
+         тогда $B_{\frac{1}{n_k}}(x_{n_k}) \stackrel{?}{\subset} B_{\varepsilon}(y) \subset \mathcal{U}_{{\alpha}_0}$. \\
+         $B_{\frac{1}{n_k}}(x_{n_k}) \subset B_{\frac{\varepsilon}{2}(x_{n_k})} \subset \mathcal{U}_{{\alpha}_0}$ \\
          Возьмём $z \in B_{\frac{\varepsilon}{2}(x_{n_k})} \Longrightarrow 
          \begin{cases}
              \rho(x_{n_k},y) < \frac{\varepsilon}{2} \\
@@ -37,7 +37,7 @@
         Иначе $x_3 \in K \setminus (B_{\varepsilon}(x_1) \cup B_{\varepsilon}(x_2))$ и т.д.  \\
         Если в какой то момент процедура оборвалась, то нашлось конечное подпокрытие. \\
         Если он бесконечный, то $x_n \in K \setminus \bigcup\limits_{j = 1}^{n - 1} B_{\varepsilon}(x_j) \Longrightarrow x_n \notin B_{\varepsilon}(x_j)$ при $j < n$ 
-        $\Longrightarrow \rho(x_n, x_j) \geqslant \varepsilon \quad \forall n > j \Longrightarrow$ пусть $x_{n_k}$ --- сходящаяся подпоследовательность, значит $x_{n_k}$ --- фундоментальна, а это не так
+        $\Longrightarrow \rho(x_n, x_j) \geqslant \varepsilon \quad \forall n > j \Longrightarrow$ пусть $x_{n_k}$ --- сходящаяся подпоследовательность, значит $x_{n_k}$ --- фундаментальна, а это не так
         $\Longrightarrow$ у неё нет сходящайся подпоследовательности. Это противоречит секвенциальной компактности.
     \end{proof}
 
