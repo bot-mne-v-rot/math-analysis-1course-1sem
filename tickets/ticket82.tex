@@ -1,1 +1,46 @@
 \section{Локальные максимумы и минимумы. Необходимое условие экстремума}
+\begin{conj}
+    $f: E \to \mathbb{R}, \, a \in E$
+    \begin{itemize}
+        \item $a$ -- нестрогий локальный минимум, если
+        \[ \exists \, \delta > 0 : \forall x \in E \cap (a - \delta, a + \delta) \quad f(x) \geqslant f(a) \]
+        \item $a$ -- строгий локальный минимум, если
+        \[ \exists \, \delta > 0 : \forall x \in E \cap (a - \delta, a + \delta), \, x \neq a \quad f(x) > f(a) \]
+        \item $a$ -- нестрогий локальный максимум если
+        \[ \exists \, \delta > 0 : \forall x \in E \cap (a - \delta, a + \delta) \quad f(x) \leqslant f(a) \]
+        \item $a$ -- строгий локальный максимум, если
+        \[ \exists \, \delta > 0 : \forall x \in E \cap (a - \delta, a + \delta), \, x \neq a \quad f(x) < f(a) \]
+    \end{itemize}
+    Локальный экстремум -- локальный минимум или максимум.
+\end{conj}
+
+\begin{theorem-non}
+    Необходимое условие экстремума.
+
+    $f: \langle a, b \rangle \to \mathbb{R}, \, x_0 \in (a, b)$
+
+    Если $x_0$ -- точка экстремума и $f$ дифференцируема в точке $x_0$, то $f'(x_0) = 0$.
+\end{theorem-non}
+
+\begin{proof}
+    Пусть $x_0$ -- точка локального максимума (случай локального минимума разбирается аналогично).
+
+    Тогда $\exists \, \delta > 0$ такая, что если $x \in (x_0 - \delta, x_0 + \delta)$, то $f(x) \leqslant f(x_0)$.
+    Следовательно, функция $f$, суженная на интервал $(x_0 - \delta, x_0 + \delta)$, принимает в точке $x_0$ свое максимальное значение. 
+    Тогда по теореме Ферма $f'(x_0) = 0$. 
+\end{proof}
+
+\begin{notice}
+    \begin{itemize}
+        \item Обратное неверно. 
+        Например, $f(x) = x^3$.
+    
+        $f'(0) = 0$, но 0 не является точкой экстремума.
+        \item $f$ может быть не дифференцируема в точке экстремума.
+        Например, $f(x) = |x|$.
+
+        0 является точкой локального минимума, но $f$ не дифференцируема в 0.
+    \end{itemize}
+\end{notice}
+
+Если $f'(x_0) = 0$ или $f'(x_0)$ не существует, то $x_0$ -- точка, подозрительная на экстремум.
