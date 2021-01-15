@@ -5,7 +5,7 @@
     
     Пусть $K$ - секвенциально компактное множество
     и $K \subset \bigcup \mathcal{U_{\alpha}}$, где $\mathcal{U_{\alpha}}$ --- открытые мн-ва. \\
-    Существует такое $\varepsilon > 0$, что $\forall x \in K$ шарик $B_{\varepsilon}(x)$ целиком покрывается каким-то $\mathcal{U_{\alpha}}$.
+    Тогда существует такое $\varepsilon > 0$, что $\forall x \in K$ шарик $B_{\varepsilon}(x)$ целиком покрывается каким-то $\mathcal{U_{\alpha}}$.
     \begin{proof}
         От противного. Пусть $\varepsilon = \frac{1}{n}$ не подходит. \\
          $B_{\frac{1}{n}}(x_n)$ не содержится целиком ни в одном из $\mathcal{U_{\alpha}}$.  \\
@@ -37,7 +37,7 @@
         Иначе $x_3 \in K \setminus (B_{\varepsilon}(x_1) \cup B_{\varepsilon}(x_2))$ и т.д.  \\
         Если в какой то момент процедура оборвалась, то нашлось конечное подпокрытие. \\
         Если он бесконечный, то $x_n \in K \setminus \bigcup\limits_{j = 1}^{n - 1} B_{\varepsilon}(x_j) \Longrightarrow x_n \notin B_{\varepsilon}(x_j)$ при $j < n$ 
-        $\Longrightarrow \rho(x_n, x_j) \geqslant \varepsilon \quad \forall n > j \Longrightarrow$ пусть $x_{n_k}$ --- сходящаяся подпоследовательность, значит $x_{n_k}$ --- фундоментальна, а это не так
+        $\Longrightarrow \rho(x_n, x_j) \geqslant \varepsilon \quad \forall n > j \Longrightarrow$ пусть $x_{n_k}$ --- сходящаяся подпоследовательность, значит $x_{n_k}$ --- фундаментальна, а это не так
         $\Longrightarrow$ у неё нет сходящайся подпоследовательности. Это противоречит секвенциальной компактности.
     \end{proof}
 
