@@ -1,12 +1,12 @@
 \section{Арифметические свойства производных $n$-ого порядка. Производные $n$-ого порядка элементарных функций}
 
 \begin{theorem-non}
-    $f, g:<a,b> \rightarrow \mathbb{R}$ $n$ раз дифф. в точке $x \in <a,b>$. Тогда:
+    $f, g: \langle a,b \rangle \rightarrow \mathbb{R}$ $n$ раз дифференцируема в точке $x \in \langle a,b \rangle$. Тогда:
 
     \begin{enumerate}
-        \item $\alpha f + \beta g$ $n$ раз дифф. в $(.) \ x$ и $(\alpha f + \beta g)^{(n)} (x) = \alpha f^{(n)}(x) + \beta g^{(n)}(x)$ 
-        \item $fg$ $n$ раз дифф. в $(.) \ x$ и $(fg)^{(n)}(x) = \sum\limits_{k=0}^{n} C_n^k f^{(k)}(x) g^{(n-k)} (x)$
-        \item $(f(\alpha x + \beta))^{(n)} = \alpha f^{(n)}(\alpha x + \beta)$
+        \item $\alpha f + \beta g$ $n$ раз дифференцируема в $(.) \ x$ и $(\alpha f + \beta g)^{(n)} (x) = \alpha f^{(n)}(x) + \beta g^{(n)}(x)$ 
+        \item $fg$ $n$ раз дифференцируема в $(.) \ x$ и $(fg)^{(n)}(x) = \sum\limits_{k=0}^{n} C_n^k f^{(k)}(x) g^{(n-k)} (x)$
+        \item $(f(\alpha x + \beta))^{(n)} = \alpha^n f^{(n)}(\alpha x + \beta)$
     \end{enumerate}
 \end{theorem-non}
 \begin{proof}
@@ -14,7 +14,7 @@
     \begin{enumerate}
         \item Индукция: $n \longrightarrow n+1$
         
-        $(\alpha f + \beta g)^{(n+1)}(x) = (\alpha f + \beta g)^{(n)} (x))' = 
+        $(\alpha f + \beta g)^{(n+1)}(x) = ((\alpha f + \beta g)^{(n)} (x))' = 
         (\alpha f^{(n)}(x) + \beta g^{(n)}(x))' = \alpha (f^{(n)}(x))' + \beta (g^{(n)}(x))' = 
         \alpha f^{(n+1)}(x) + \beta g^{(n+1)}(x)$
 
@@ -23,14 +23,14 @@
         $(fg)^{(n+1)} = ((fg)^{(n)})' = (\sum\limits_{k=0}^{n} C_n^k f^{(k)} g^{(n-k)})' = 
         \sum\limits_{k=0}^{n} C_n^k (f^{(k)} g^{(n-k)})' = \sum\limits_{k=0}^{n} C_n^k (f^{(k + 1)} g^{(n-k)} + f^{(k)} g^{(n-k+1)}) =
         \sum\limits_{k=0}^{n} C_n^k f^{(k+1)} g^{(n-k)} + \sum\limits_{j=0}^{n} C_n^j f^{(j)} g^{(n-j+1)}$\\
-        Заменим $j= k+1$ и вытащим крайние слагаемые: $f^{(n+1)} + \sum\limits_{j=1}^{n} C_n^{j-1} f^{(j)} g^{(n+1-j)} + \sum\limits_{j=1}^{n} C_n^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}$\\
-        Так как из комбинаторики $C_n^j + C_n^{j-1} = C_{n+1}^j$: $f^{(n+1)} + \sum\limits_{j=1}^{n} C_{n+1}^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}$\\
+        Заменим $j= k+1$ и вытащим крайние слагаемые: $f^{(n+1)}g^{(0)} + \sum\limits_{j=1}^{n} C_n^{j-1} f^{(j)} g^{(n+1-j)} + \sum\limits_{j=1}^{n} C_n^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}f^{(0)}$\\
+        Так как из комбинаторики $C_n^j + C_n^{j-1} = C_{n+1}^j$: $f^{(n+1)}g^{(0)} + \sum\limits_{j=1}^{n} C_{n+1}^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}f^{(0)}$\\
         $= \sum\limits_{j=0}^{n+1} C_n^j f^{(j)}(x) g^{(n+1-j)} (x)$
 
         \item Индукция: $n \longrightarrow n+1$
         
         $(f(\alpha x + \beta))^{(n+1)} = ((f(\alpha x + \beta))^{(n)})' = (\alpha^n f^{(n)}(\alpha x + \beta))' = 
-        \alpha^{n+1} f^{(n+1)}(\alpha x + \beta)$
+        \alpha^{n+1} f^{(n+1)}(\alpha x + \beta)$ (производная сложной функции)
 
     \end{enumerate}
 \end{proof}
@@ -44,7 +44,7 @@
 
     \item $(\ln x)^{(n)} = ((\ln x)')^{(n-1)} = \frac{1}{x}^{(n-1)} = \frac{(-1)^{n-1} (n-1)!}{x^n}$
     \item $(a^x)^{(n)} = a^x (\ln a)^n$
-    \item $(\sin x)^(n) = sin(x + \pi/2)$
-    \item $(\cos x)^(n) = cos(x + \pi/2)$
+    \item $(\sin x)^{(n)} = \sin(x + \frac{\pi n}{2})$ (так как $(\sin x)' = \cos x = \sin (x + \frac{\pi}{2})$)
+    \item $(\cos x)^{(n)} = \cos(x + \frac{\pi n}{2})$ (так как $(\cos x)' = -\sin x = \cos (x + \frac{\pi}{2})$)
 \end{enumerate}
 

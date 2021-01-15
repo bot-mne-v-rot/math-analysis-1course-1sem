@@ -1,7 +1,7 @@
 \section{Определение производной $n$-ого порядка. Классы $C^n(E)$. Несовпадение классов $C^n(E)$}
 
 \begin{conj} 
-    $f: <a, b> \rightarrow \mathbb{R} \quad x_0 \in <a, b> \quad f$ дифф. в окрестности $(.) \ x_0$
+    $f: \langle a, b \rangle \rightarrow \mathbb{R} \quad x_0 \in \langle a, b \rangle \quad f$ дифференцируема в окрестности $(.) \ x_0$
 
     Тогда $(f')'(x_0)$ --- вторая производная функции $f$ в $(.) \ x_0$ (остальные производные определяются так же, важно существование всех предыдущих производных).
 \end{conj}
@@ -15,24 +15,24 @@
 \end{conj}
 \
 \begin{conj}
-    Множество непрерывно дифф. функций
+    Множество непрерывно дифференцируемых функций
 
     $C(E)$ --- множество функций $f: E \rightarrow \mathbb{R}$, непрерывных во всех $(.) \ E$
 
-    $C^n<a, b>$ --- множество функций $f:<a, b> \rightarrow \mathbb{R}$ $n$ раз непрерывно дифф. на $<a, b>$
+    $C^n \langle a, b \rangle$ --- множество функций $f: \langle a, b \rangle \rightarrow \mathbb{R}$ $n$ раз непрерывно дифференцируемых на $\langle a, b \rangle$
 
-    $C^\infty<a, b> := \bigcap\limits_{n=1}^{\infty} C^n<a,b>$ --- множество функций $f:<a, b> \rightarrow \mathbb{R}$ сколько угодно раз дифф. на $<a, b>$ (можно без оговорки про непрерывность, потому что все предыдущие и функция непрерывны)
+    $C^\infty \langle a, b \rangle := \bigcap\limits_{n=1}^{\infty} C^n \langle a, b \rangle$ --- множество функций $f: \langle a, b \rangle \rightarrow \mathbb{R}$ сколько угодно раз дифференцируемых на $\langle a, b \rangle$ (можно без оговорки про непрерывность, потому что все предыдущие и функция непрерывны)
 \end{conj}
 
 Поймем, что все эти $C$ не совпадают.
 \par\medskip
 \textbf{Пример:} $f(x) = x^{n+1/3} \quad f \in C^n(\mathbb{R})$ и $f \notin C^{n+1}(\mathbb{R})$
 
-$\quad f'(x) = (n + 1/3)x^{n-2/3}$
+$\quad f'(x) = (n + \frac{1}{3})x^{n-2/3}$
 
-$\quad f''(x) = (n+1/3)(n-2/3)x^{n-5/3}$
+$\quad f''(x) = (n + \frac{1}{3})(n - \frac{2}{3})x^{n-5/3}$
 
-$\quad f^{(n)}(x) = (n+1/3)(n-2/3) \dots 4/3 x^{1/3}$ непрерывна на $\mathbb{R}$
+$\quad f^{(n)}(x) = (n + \frac{1}{3})(n - \frac{2}{3}) \dots \frac{4}{3} x^{1/3}$ непрерывна на $\mathbb{R}$
 
 $\quad f^{(n+1)}(0) = +\infty \quad (x^{1/3})'$ в нуле $= +\infty$
 

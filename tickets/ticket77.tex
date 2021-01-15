@@ -4,34 +4,38 @@
 
     Пусть $f(x) = (x -x_0)^k$, тогда $f^{(m)}(x_0) =
     \begin{cases}
-        m! &\text{if $k=m$}\\
-        0 &\text{else}
+        m!, &\text{если $k=m$}\\
+        0, &\text{иначе}
     \end{cases}$
 \end{lemma}
-\begin{proof}
+
+\begin{proof}  
+    $\quad$ \\
     \begin{itemize}
-        \item $k \geq m$, тогда $f^{(m)}(x) = k(k-1) \dots (k-m+1)(x-x_0)^{k-m}$:
+        \item $k \geqslant m$, тогда $f^{(m)}(x) = k(k-1) \dots (k-m+1)(x-x_0)^{k-m}$
         \begin{itemize}
-            \item $k = m$, тогда $f^{(m)}(x) = k! = m!$
-            \item $k > m$, тогда $f^{(m)}(x) = c (x-x_0)^{k-m} \Longrightarrow f^{(m)}(x_0) = 0$
+            \item если $k = m$, то $f^{(m)}(x) = k! = m!$
+            \item если $k > m$, то $f^{(m)}(x) = c (x-x_0)^{k-m} \Longrightarrow f^{(m)}(x_0) = 0$
         \end{itemize}
         
         \item $k < m$, тогда $(f^{(k)})^{(m-k)} = (k!)^{(m-k)} = 0$
     \end{itemize}
 \end{proof}
-\
+
 \begin{theorem-non}
     Формула Тейлора для многочлена
 
-    $T$ --- многочлен, $deg T = n$. тогда
+    $T$ --- многочлен, $deg \, T \leqslant n$. 
 
-    $T(x) = \sum\limits_{k=0}^n \frac{T^{(k)}(x_0)}{k!} (x-x_0)^k$
+    Тогда $T(x) = \sum\limits_{k=0}^n \frac{T^{(k)}(x_0)}{k!} (x-x_0)^k$.
 \end{theorem-non}
-\begin{proof}
-    $T(x) = \sum\limits_{k = 0}^{n} c_k (x-x_0)^k$ \quad надо доказать, что $c_k = \frac{T^{(n)}(x_0)}{k!}$
+\begin{proof} $\quad$ \\
+    $T(x) = \sum\limits_{k = 0}^{n} c_k (x-x_0)^k$
+    
+    Надо доказать, что $c_k = \frac{T^{(n)}(x_0)}{k!}$.
 
     $T^{(m)}(x_0) = \left.\sum\limits_{k = 0}^{n} c_k ((x-x_0)^k)^{(m)} \right|_{x=x_0} = c_m \cdot m!$ (по лемме)
 
-    Тогда $c_m = \frac{T^{(m)}(x_0)}{m!}$
+    Тогда $c_m = \frac{T^{(m)}(x_0)}{m!}$.
 \end{proof}
 

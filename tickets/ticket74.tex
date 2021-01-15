@@ -10,20 +10,20 @@
         \item $g'(x) \neq 0 \quad \forall x \in (a, b)$
         \item $\lim\limits_{x \rightarrow b-} f(x) = \lim\limits_{x \rightarrow b-} g(x) = 0$
     \end{itemize}
-    Тогда если $\lim\limits_{x \rightarrow b-}\frac{f'(x)}{g'(x)} = l \in \mathbb{R}$, 
+    Тогда если $\lim\limits_{x \rightarrow b-}\frac{f'(x)}{g'(x)} = l \in \overline{\mathbb{R}}$, 
     то $\lim\limits_{x \rightarrow b-}\frac{f(x)}{g(x)} = l$
 \end{theorem-non}
 \begin{proof}
     Проверяем определение по Гейне. Берем последовательность $x_n \longrightarrow b$. Можно считать, что $x_n$ строго возрастает, 
     потому что предел не меняется от перестановки членов последовательности и её прорежения.
 
-    Надо проверить, то $\frac{f(x_n)}{g(x_n)} \longrightarrow l$.
+    Надо проверить, что $\frac{f(x_n)}{g(x_n)} \longrightarrow l$.
 
     Тогда по теореме Штольца посмотрим на $\frac{f(x_{n+1}) - f(x_n)}{g(x_{n+1}) - g(x_n)}$. Чтобы применилась т. Штольца, надо:
     \begin{itemize}
-        \item числитель и знаменатель стрем. к 0 ($\lim\limits_{x \rightarrow b-} f(x) = \lim\limits_{x \rightarrow b-} g(x) = 0$)
+        \item числитель и знаменатель стремятся к 0 ($\lim\limits_{x \rightarrow b-} f(x) = \lim\limits_{x \rightarrow b-} g(x) = 0$)
         \item знаменатель был строго монотонен ($g'(x) \neq 0 \quad \forall x \in (a, b)$, 
-        поэтому по следствию т. Дарбу $g$ строго монотонна, посл. аргументов тоже строго монотонна, тогда посл. значений тоже строго монотонна)
+        поэтому по следствию т. Дарбу $g$ строго монотонна, последовательность аргументов тоже строго монотонна, тогда последовательность значений тоже строго монотонна)
     \end{itemize}
 
     $\frac{f(x_{n+1}) - f(x_n)}{g(x_{n+1}) - g(x_n)} = \frac{f'(c_n)}{g'(c_n)}$ для некоторого $c_n \in (x_n, x_{n+1})$ (по теореме Коши)
@@ -60,7 +60,7 @@
         \item $g'(x) \neq 0 \quad \forall x \in (a, b)$
         \item $\lim\limits_{x \rightarrow b-} g(x) = +\infty$
     \end{itemize}
-    Тогда если $\lim\limits_{x \rightarrow b-}\frac{f'(x)}{g'(x)} = l \in \mathbb{R}$, 
+    Тогда если $\lim\limits_{x \rightarrow b-}\frac{f'(x)}{g'(x)} = l \in \overline{\mathbb{R}}$, 
     то $\lim\limits_{x \rightarrow b-}\frac{f(x)}{g(x)} = l$
 
 \end{theorem-non}
@@ -74,9 +74,9 @@
     \item $\lim\limits_{x \rightarrow +\infty} \frac{\ln x}{x^p} = 0$ при $p > 0$ (проверьте Лопиталем сами)
     \item $\lim\limits_{x \rightarrow +\infty} \frac{x^p}{a^x} = 0$ при $a > 1, \ p \in \mathbb{R}$
     \begin{proof}
-        При $p \leq 0$ очевидно.
+        При $p \leqslant 0$ очевидно.
 
-        $\frac{x^p}{a^x} = \frac{px^{p-1}}{a^x \ln a} = \frac{p}{\ln a} \cdot \frac{x^{p-1}}{a^x} \longrightarrow 0$ очевидно при $p \leq 1$
+        $\frac{x^p}{a^x} = \frac{px^{p-1}}{a^x \ln a} = \frac{p}{\ln a} \cdot \frac{x^{p-1}}{a^x} \longrightarrow 0$ очевидно при $p \leqslant 1$
 
         и так далее дифференцируем.
     \end{proof}
