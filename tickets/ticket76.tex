@@ -21,9 +21,12 @@
         \item Индукция: $(fg)' = f'g + fg' \quad n \longrightarrow n+1$
         
         $(fg)^{(n+1)} = ((fg)^{(n)})' = (\sum\limits_{k=0}^{n} C_n^k f^{(k)} g^{(n-k)})' = 
-        \sum\limits_{k=0}^{n} C_n^k (f^{(k)} g^{(n-k)})' = \sum\limits_{k=0}^{n} C_n^k (f^{(k + 1)} g^{(n-k)} + f^{(k)} g^{(n-k+1)}) =
+        \sum\limits_{k=0}^{n} C_n^k (f^{(k)} g^{(n-k)})' =$ 
+        
+        $\sum\limits_{k=0}^{n} C_n^k (f^{(k + 1)} g^{(n-k)} + f^{(k)} g^{(n-k+1)}) =
         \sum\limits_{k=0}^{n} C_n^k f^{(k+1)} g^{(n-k)} + \sum\limits_{j=0}^{n} C_n^j f^{(j)} g^{(n-j+1)}$\\
-        Заменим $j= k+1$ и вытащим крайние слагаемые: $f^{(n+1)}g^{(0)} + \sum\limits_{j=1}^{n} C_n^{j-1} f^{(j)} g^{(n+1-j)} + \sum\limits_{j=1}^{n} C_n^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}f^{(0)}$\\
+        Заменим $j= k+1$ и вытащим крайние слагаемые: $f^{(n+1)}g^{(0)} + \sum\limits_{j=1}^{n} C_n^{j-1} f^{(j)} g^{(n+1-j)} + \\
+        \sum\limits_{j=1}^{n} C_n^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}f^{(0)}$\\
         Так как из комбинаторики $C_n^j + C_n^{j-1} = C_{n+1}^j$: $f^{(n+1)}g^{(0)} + \sum\limits_{j=1}^{n} C_{n+1}^j f^{(j)} g^{(n+1-j)} + g^{(n+1)}f^{(0)}$\\
         $= \sum\limits_{j=0}^{n+1} C_n^j f^{(j)}(x) g^{(n+1-j)} (x)$
 
@@ -47,4 +50,3 @@
     \item $(\sin x)^{(n)} = \sin(x + \frac{\pi n}{2})$ (так как $(\sin x)' = \cos x = \sin (x + \frac{\pi}{2})$)
     \item $(\cos x)^{(n)} = \cos(x + \frac{\pi n}{2})$ (так как $(\cos x)' = -\sin x = \cos (x + \frac{\pi}{2})$)
 \end{enumerate}
-
