@@ -44,7 +44,7 @@
             где $G_{\alpha}$ открыто в $X \Longrightarrow K \subset \bigcup \mathcal{U}_{\alpha} \subset \bigcup G_{\alpha} \Longrightarrow
             G_{\alpha}$ - октрытое множество в $X \Longrightarrow \exists \ G_{\alpha_1}, G_{\alpha_2}, \dots, G_{\alpha_n}$ покрывающие $K \Longrightarrow
             K \subset \bigcup\limits_{j=1}^{n} G_{\alpha_j} \Longrightarrow K = K \cap Y \subset 
-            Y \cap \bigcup\limits_{j=1}^{n} G_{\alpha_j} = \bigcup\limits_{j=1}^{n} Y \cap G_{\alpha_j} = \bigcup\limits_{j=1}^{n} \mathcal{U}_{\alpha_j}
+            Y \cap \bigcup\limits_{j=1}^{n} G_{\alpha_j} = \bigcup\limits_{j=1}^{n} (Y \cap G_{\alpha_j}) = \bigcup\limits_{j=1}^{n} \mathcal{U}_{\alpha_j}
             \Longrightarrow \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$ покрывают $K \Longrightarrow K$ - компакт в $Y$  
         \end{proof}
         \item $K$ - компакт $\Longrightarrow K$ - замкнут и ограничен
@@ -52,9 +52,9 @@
 
             Проверим, что дополнение $K$ открыто. Возьмем $a \notin K$ и покажем, что 
             $B_r(a) \subset X \setminus K$ для некоторого $r > 0$. Для $x \in K$ возьмем шарик $B_{\rho(x, a)/2}(x) =: \mathcal{U}_x$
-            - открытое множество $\mathcal{U}_x \cap B_{\rho(x, a)/2}(a) \neq \varnothing \Longrightarrow K \subset \bigcup\limits_{x \in K} \mathcal{U}_x$.
+            - открытое множество $\mathcal{U}_x \cap B_{\rho(x, a)/2}(a) = \varnothing \Longrightarrow K \subset \bigcup\limits_{x \in K} \mathcal{U}_x$.
             Так как $K$ - компакт, можно выбрать $\mathcal{U}_{x_1}, \mathcal{U}_{x_2}, \dots, \mathcal{U}_{x_n}$, такие что $K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{x_j}
-            \quad \mathcal{U}_{x_j} \cap B_{r_j}(a) = \varnothing, \; r_j = \rho(x_j, a)/2$. Если $r = min \ r_j$, то $\mathcal{U}_{x_j} \cap B_{r}(a) = \varnothing \Longrightarrow K \cap B_r(a) = \varnothing 
+            \quad \mathcal{U}_{x_j} \cap B_{r_j}(a) = \varnothing, \; r_j = \rho(x_j, a)/2$. Если $r = \min{} \{ r_j \}$, то $\mathcal{U}_{x_j} \cap B_{r}(a) = \varnothing \Longrightarrow K \cap B_r(a) = \varnothing 
             \Longrightarrow B_r(a) \subset X \setminus K$ 
 
             Теперь проверим ограниченность. Возьмем $a \in X$. Тогда $K \subset \bigcup\limits_{n = 1}^{\infty} B_n(a)$.
@@ -69,7 +69,8 @@
             Покроем $K$ открытыми множествами. Пусть $K \subset \bigcup \mathcal{U}_{\alpha}$ - открытые множества. 
             
             Тогда $\overset{\mathtt{\sim}}{K} \subset (\underbrace{(X \setminus K)}_{\text{Откр. мн-во}} \cup \bigcup \mathcal{U}_{\alpha})$.
-            Так как $\overset{\mathtt{\sim}}{K}$ - компакт, можно выбрать конечное подпокрытие из $X \setminus K, \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$
+            
+            Так как $\overset{\mathtt{\sim}}{K}$ - компакт, можно выбрать конечное подпокрытие: $X \setminus K, \mathcal{U}_{\alpha_1}, \mathcal{U}_{\alpha_2}, \dots, \mathcal{U}_{\alpha_n}$
 
             $\underset{\quad \rotatebox[origin=c]{120}{$ \subset $} K}{\overset{\mathtt{\sim}}{K}} \subset (X \setminus K) \cup \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \Longrightarrow K \subset \bigcup\limits_{j = 1}^{n} \mathcal{U}_{\alpha_j} \Longrightarrow K$ - компакт
             
