@@ -30,9 +30,9 @@
     Тогда $T(x) = \sum\limits_{k=0}^n \frac{T^{(k)}(x_0)}{k!} (x-x_0)^k$.
 \end{theorem-non}
 \begin{proof} $\quad$ \\
-    $T(x) = \sum\limits_{k = 0}^{n} c_k (x-x_0)^k$
+    Разложим $T$ по степеням $(x - x_0)$: $T(x) = \sum\limits_{k = 0}^{n} c_k (x-x_0)^k$
     
-    Надо доказать, что $c_k = \frac{T^{(n)}(x_0)}{k!}$.
+    Надо доказать, что $c_k = \frac{T^{(k)}(x_0)}{k!}$.
 
     $T^{(m)}(x_0) = \left.\sum\limits_{k = 0}^{n} c_k ((x-x_0)^k)^{(m)} \right|_{x=x_0} = c_m \cdot m!$ (по лемме)
 
