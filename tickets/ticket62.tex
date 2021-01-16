@@ -11,9 +11,9 @@
     \begin{proof}
         $a^x = exp(x \ln{a}) \geqslant 1 + x \ln{a}$
 
-        $a^x = exp(x \ln{a}) = \frac{1}{exp(-x\ln{a})} \leqslant \frac{1}{1 - x \ln{a}}$
+        $a^x = exp(x \ln{a}) = \frac{1}{exp(-x\ln{a})} \leqslant \frac{1}{1 - x \ln{a}}$,
         \begin{itemize}
-            \item[] при $x < \frac{1}{\ln{a}}$, если $a > 1$
+            \item[] при $x < \frac{1}{\ln{a}}$, если $a > 1$ и 
             \item[] при $x > \frac{1}{\ln{a}}$, если $a < 1$ 
         \end{itemize}
 
@@ -38,7 +38,7 @@
 \begin{theorem-non}
     $\lim\limits_{x \rightarrow 0}{\frac{(1+x)^p - 1}{x}} = p$
     \begin{proof}
-        $(1+x)^p = exp(p \ln{1 + x}) = \frac{1}{exp(-p \ln{(1+x)})} \leqslant \frac{1}{1 - p \ln{(1+x)}}$ при $x$ близких к 0
+        $(1+x)^p = exp(p \ln{(1 + x)}) = \frac{1}{exp(-p \ln{(1+x)})} \leqslant \frac{1}{1 - p \ln{(1+x)}}$ при $x$ близких к 0
 
         Если $x > 0 \quad p \longleftarrow p\frac{ln(1+x)}{x} \leqslant \frac{(1+x)^p - 1}{x} \leqslant \left(\frac{1}{1 - p\ln{(1+x)}} - 1\right)\cdot \frac{1}{x} =
         \frac{p}{1 - p\ln{(1+x)}} \cdot \frac{\ln{(1+x)}}{x} \longrightarrow p$ 
