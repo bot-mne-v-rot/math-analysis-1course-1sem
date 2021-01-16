@@ -27,12 +27,12 @@
     \begin{proof} \quad
 
         \quad \underline{Строгая монотонность}: Пусть $f$ строго возрастает (с убыванием ситуация аналогичная, различие в знаках).
-        Докажем, что $x < y \Longleftrightarrow f(x) < f(y):$ \\ 
-        $x < y \Longrightarrow f(x) < f(y), \ x = y \Longrightarrow f(x) = f(y), \ 
-        x > y \Longrightarrow f(x) > f(y)$
+        Докажем, что $x < y \Longleftrightarrow f(x) < f(y)$ \\ 
+        $(x < y \Longrightarrow f(x) < f(y), \ x = y \Longrightarrow f(x) = f(y), \ 
+        x > y \Longrightarrow f(x) > f(y))$. Очевидно, подходит только первый вариант.
 
         \quad \underline{Непрерывность}: Пусть $y \in \langle m, M \rangle. f^{-1}$ строго монотонна. 
-        $A := \lim\limits_{u \rightarrow y-} f^{-1}(u) \leqslant B := f^{-1}(y) \leqslant \lim\limits_{u \rightarrow y+} f^{-1}(u) =: C$.
+        \[A := \lim\limits_{u \rightarrow y-} f^{-1}(u) \leqslant B := f^{-1}(y) \leqslant \lim\limits_{u \rightarrow y+} f^{-1}(u) =: C.\]
         Если оба равенства, то доказана непрерывность в точке $y$.
         
         Если один из знаком строгий, то $A < C$.
