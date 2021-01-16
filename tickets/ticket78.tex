@@ -1,1 +1,71 @@
 \section{Формулы Тейлора с остатком в форме Пеано (с леммой). Единственность многочлена Тейлора}
+
+\begin{lemma}
+    
+    $g$ дифф. $n$ раз в точке $x_0$ и $g(x_0) = g'(x_0) = \dots = g^{(n)}(x_0) = 0$
+
+    Тогда $g(x) = o((x - x_0)^n)$
+
+    \begin{proof}
+        
+        Надо доказать, что $\lim\limits_{x \to x_o} \frac{g(x)}{(x-x_0)^n} = 0$,
+        будем раскрывать по Лопиталю.
+        \begin{gather*}
+            \lim\limits_{x \to x_o} \frac{g(x)}{(x-x_0)^n} = \lim\limits_{x \to x_o} \frac{g'(x)}{n(x-x_0)^{n-1}} \\ 
+            = \lim\limits_{x \to x_o} \frac{g''(x)}{n(n-1)(x-x_0)^{n-2}} = \dots = \lim\limits_{x \to x_o} \frac{g^{(n-1)}(x)}{n!(x-x_0)}
+        \end{gather*}
+
+        Знаем, что $g^{(n-1)}(x) = g^{(n-1)}(x_0) + g^{(n)}(x_0) \cdot (x - x_0) + o(x - x_0)$, вспоминаем,
+        что у нас производные нули, и понимаем, что это всё равно $o(x - x_0)$, поделив это в пределе на $n!(x-x_0)$ мы получим $0$.
+
+    \end{proof}
+
+\end{lemma}
+
+
+\begin{theorem-non}
+    Формула Тейлора с остатком в форме Пеано
+
+    $f$ дифф. $n$ раз в точке $x_0$
+
+    Тогда 
+    \begin{gather*}
+        f(x) = T_{n, x_0} \cdot f(x) + o((x - x_0)^n) = \sum_{k=0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^n)
+    \end{gather*}
+
+    \begin{proof}
+
+            \begin{gather*}
+                g(x) := f(x) - T_{n, x_0} \cdot f(x) \\
+                g^{(m)}(x_0) = f^{(m)}(x_0) - (\sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k)^{(m)} |_{x = x_0} = \\
+                = f^{(m)}(x_0) - \frac{f^{(m)}(x_0)}{m!} \cdot m! = 0
+            \end{gather*}
+
+            Всё это работает при $m \leqslant n$.
+
+            Тогда по лемме $g(x) = o((x - x_0)^n)$
+    \end{proof}
+\end{theorem-non}
+
+\begin{follow}
+    Если $f$ дифф. $n$ раз в точке $x_0$ и $P$ --- многочлен степени $\leqslant n$, т.ч.
+    $f(x) = P(x) + o((x - x_0)^n)$ при $x \rightarrow x_0$, то $P(x) = T_{n,x_0} \cdot f(x)$
+
+    \begin{proof}
+        
+        \begin{gather*}
+            f(x) = P(x) + o((x - x_0)^n) = T_{n,x_0} \cdot f(x) + o((x - x_0)^n)  \\
+            \Longrightarrow Q(x) := T_{n, x_0} \cdot f(x) - P(x) = o((x - x_0)^n) \\
+            deg Q \leqslant n
+        \end{gather*}
+
+        $Q(x) = \sum_{k = 0}^{n} c_k \cdot (x - x_0)^k $
+        
+        Пусть $c_m \neq 0$, где $m$ --- наименьший такой индекс.
+
+        $Q(x) = c_m(x - x_0)^m + o((x - x_0)^m) = o((x - x_0)^n) \Longrightarrow c_m + o(1) = o((x - x_0)^{n - m})$
+
+        Противоречие.
+
+    \end{proof}
+\end{follow}
