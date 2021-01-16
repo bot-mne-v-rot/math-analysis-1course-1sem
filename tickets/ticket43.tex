@@ -3,7 +3,7 @@
 \begin{theorem-non}
     Теорема о пересечении семейства компактов.
 
-    $K_{\alpha}$ - семейство компактов, таких что пересечение любого их количества непусто.
+    $K_{\alpha}$ - семейство компактов, таких что пересечение любого их конечного количества непусто.
     Тогда $\bigcap K_{\alpha} \neq \varnothing$ --- пересечение всех непусто.
     
     \begin{proof}
@@ -11,7 +11,7 @@
         Тогда $K_{\alpha_0} \subset (X \setminus \bigcap\limits_{\alpha \neq \alpha_{0}} K_{\alpha}) = 
         \bigcup\limits_{\alpha \neq \alpha_{0}} \underbrace{(X \setminus K_{\alpha})}_\text{откр. мн-ва}$ --- покрытие $K_{\alpha_{0}}$ открытыми множествами \\
         $\Longrightarrow$ из него можно выделить конечное подпокрытие: $X \setminus K_{\alpha_{1}}, \dots, X \setminus K_{\alpha_{n}}$ \\
-        $\Longrightarrow K_{\alpha_0} \subset \bigcap\limits_{j=1}^{n}(X \setminus K_{\alpha_{j}}) = X \setminus \bigcap\limits_{j = 1}^{n}(K_{\alpha_{j}}) \Longrightarrow
+        $\Longrightarrow K_{\alpha_0} \subset \bigcup\limits_{j=1}^{n}(X \setminus K_{\alpha_{j}}) = X \setminus \bigcap\limits_{j = 1}^{n}(K_{\alpha_{j}}) \Longrightarrow
         \bigcap\limits_{j=0}^{n} K_{\alpha_{j}} = \varnothing$ противоречие. 
     \end{proof}
 

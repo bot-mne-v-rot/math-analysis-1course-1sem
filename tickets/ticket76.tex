@@ -1,6 +1,8 @@
 \section{Арифметические свойства производных $n$-ого порядка. Производные $n$-ого порядка элементарных функций}
 
 \begin{theorem-non}
+    Арифметические свойства производных $n$-ого порядка
+
     $f, g: \langle a,b \rangle \rightarrow \mathbb{R}$ $n$ раз дифференцируема в точке $x \in \langle a,b \rangle$. Тогда:
 
     \begin{enumerate}
@@ -15,10 +17,11 @@
         \item Индукция: $n \longrightarrow n+1$
         
         $(\alpha f + \beta g)^{(n+1)}(x) = ((\alpha f + \beta g)^{(n)} (x))' = 
-        (\alpha f^{(n)}(x) + \beta g^{(n)}(x))' = \alpha (f^{(n)}(x))' + \beta (g^{(n)}(x))' = 
-        \alpha f^{(n+1)}(x) + \beta g^{(n+1)}(x)$
+        (\alpha f^{(n)}(x) + \beta g^{(n)}(x))' = \alpha (f^{(n)}(x))' + \beta (g^{(n)}(x))' =$
+        
+        $\alpha f^{(n+1)}(x) + \beta g^{(n+1)}(x)$
 
-        \item Индукция: $(fg)' = f'g + fg' \quad n \longrightarrow n+1$
+        \item Индукция: база: $(fg)' = f'g + fg'$ \quad переход: $n \longrightarrow n+1$
         
         $(fg)^{(n+1)} = ((fg)^{(n)})' = (\sum\limits_{k=0}^{n} C_n^k f^{(k)} g^{(n-k)})' = 
         \sum\limits_{k=0}^{n} C_n^k (f^{(k)} g^{(n-k)})' =$ 
