@@ -12,12 +12,12 @@
     Производная экспоненты --- сама экспонента, в нуле это всегда единица.
     \end{flushleft}
     $\quad$ \\
-    $cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots + \frac{(-1)^n}{(2n)!} + o(x^{2n + 1})$
+    $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots + \frac{(-1)^n x^{2n}}{(2n)!} + o(x^{2n + 1})$
 
     \begin{flushleft}
     \textbf{Пояснение:}
 
-    $cos^{(k)}(0) = cos(0 + \frac{\pi \cdot k}{2})$
+    $\cos^{(k)}(0) = \cos(0 + \frac{\pi \cdot k}{2})$
 
     Коэффициенты:
     $\begin{cases}
@@ -27,12 +27,12 @@
     \end{cases}$
     \end{flushleft}
     $\quad$ \\
-    $sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} - \dots + \frac{(-1)^n \cdot x^{2n+1}}{(2n+1)!} + o(x^{2n+2})$
+    $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} - \dots + \frac{(-1)^n \cdot x^{2n+1}}{(2n+1)!} + o(x^{2n+2})$
 
     \begin{flushleft}
     \textbf{Пояснение:}
 
-    $sin^{(k)}(0) = sin(0 + \frac{\pi \cdot k}{2})$
+    $\sin^{(k)}(0) = \sin(0 + \frac{\pi \cdot k}{2})$
 
     Коэффициенты:
     $\begin{cases}
@@ -42,12 +42,12 @@
     \end{cases}$
     \end{flushleft}
     $\quad$ \\
-    $ln(1 + x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \dots + \frac{(-1)^{n-1} \cdot x^n}{n} + o(x^n)$
+    $\ln(1 + x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} - \dots + \frac{(-1)^{n-1} \cdot x^n}{n} + o(x^n)$
     
     \begin{flushleft}
     \textbf{Пояснение:}
 
-    $ln(1 + x)^{(k)} = \frac{(-1)^{k-1}}{(1 + x)^k} \cdot (k - 1)!$
+    $\ln(1 + x)^{(k)} = \frac{(-1)^{k-1}}{(1 + x)^k} \cdot (k - 1)!$
     
     в нуле $(-1)^{k-1} \cdot (k - 1)!$
     \end{flushleft}
@@ -67,8 +67,8 @@
 
 \begin{gather*}
     e^x = \sum_{n = 0}^{\inf} \frac{x^n}{n!}  \\
-    sin x = \sum_{n = 0}^{\inf} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \\
-    cos x = \sum_{n = 0}^{\inf} (-1)^n \frac{x^{2n}}{(2n)!} \\
+    \sin x = \sum_{n = 0}^{\inf} (-1)^n \frac{x^{2n+1}}{(2n+1)!} \\
+    \cos x = \sum_{n = 0}^{\inf} (-1)^n \frac{x^{2n}}{(2n)!} \\
 \end{gather*}
 
 \begin{proof}
@@ -77,9 +77,9 @@
     \item 
     По следствию $2$:
 
-    $f(x) = sin x, \quad f^{(n)}(x) = \pm sin x$ или $\pm cos x \Longrightarrow | f^{(n)}(x)| \leqslant 1 \quad \forall x$
+    $f(x) = \sin x, \quad f^{(n)}(x) = \pm \sin x$ или $\pm \cos x \Longrightarrow | f^{(n)}(x)| \leqslant 1 \quad \forall x$
 
-    то же самое для $f(x) = cos x$
+    то же самое для $f(x) = \cos x$
 
     \item 
     $f(x) = e^x, \quad f^{(n)}(x) = e^x$
