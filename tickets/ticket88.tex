@@ -1,61 +1,70 @@
 \section{Неравенство между средними степенными}
-\begin{theorem}
-    Неравенство между степенными
+\begin{theorem-non}
+    Неравенство между средними степенными
 
-    $x_1, x_2, \cdots, x_n > 0,\ p<q$. Тогда
+    $x_1, x_2, \dots, x_n > 0,\ p<q$. Тогда
 
-    \[M_p:=\left(\frac{x_1^p+x_2^p+\cdots+x_n^p}{n}\right)^\frac{1}{p} \leq 
-    \left(\frac{x_1^q+x_2^q+\cdots+x_n^q}{n}\right)^\frac{1}q =: M_q\]
-\end{theorem}
+    \[M_p:=\left(\frac{x_1^p+x_2^p+ \dots+x_n^p}{n}\right)^\frac{1}{p} \leqslant 
+    \left(\frac{x_1^q+x_2^q+\dots+x_n^q}{n}\right)^\frac{1}q =: M_q\]
+\end{theorem-non}
 
 \begin{proof}
-    $q = 1,\ p>0$ Д-ть $M_p \leq M_1$
+    \quad \\
+    \begin{itemize} 
+        \item Случай $q = 1,\ p>0$. 
+        
+        Докажем, что $M_p \leqslant M_1$.
 
-    \[\frac{x_1^p+x_2^p+\cdots x_n^p}{n} \leq \left(\frac{x_1+x_2+\cdots+x_n}{n}\right)^p\]
+        \[\frac{x_1^p+x_2^p+\cdots x_n^p}{n} \leqslant \left(\frac{x_1+x_2+\cdots+x_n}{n}\right)^p\]
+    
+        Это неравенство Йенсена для $f(x) = -x^p,\ p\in (0, 1),\ \lambda_1=\cdots=\lambda_n=\frac{1}{n}$
+        \item Случай: $0 < p < q$. 
+        
+        Пусть $r:=\frac{p}{q}$. Тогда по предыдущему пункту $M_r \leqslant M_1$.
+        
+        Подставим $x_1^q,\dots, x_n^q$.
+    
+        \[\left(\frac{(x_1^q)^r+\cdots+(x_n^q)^r}{n}\right  )^\frac{1}{r} \leqslant
+        \frac{x_1^q+x_n^q+\cdots+x_n^q}{n}\]
+    
+        \[\left(\frac{x_1^p+\cdots+x_n^p}{n}\right)^\frac{q}{p} \leqslant
+        \frac{x_1^q+x_2^q+\cdots+x_n^q}{n}\]
+    
+        Теперь просто возведем в степень $\frac{1}{q}$ и получим результат.
+        \item Случай: $p < q < 0$.
+        
+        По предыдущему пункту $M_{-q} \leqslant M_{-p}$. 
+        
+        Подставим $1/x_1, 1/x_2,\cdots, 1/x_n$
 
-    Это неравенство Йенсена для $f(x) = -x^p,\ p\in (0, 1),\ \lambda_1=\cdots=\lambda_n=\frac{1}{n}$
+        \[ \left(\frac{(1/x_1)^{-q}+\cdots+(1/x_n)^{-q}}{n}\right)^{-\frac{1}{q}} \leqslant
+        \left(\frac{(1/x_1)^{-p} + \cdots + (1/x_n)^{-p} }{n}\right)^{-\frac{1}{p}} \]
+    
+        Левая и правая части соответственно равны
+    
+        \[\left(\frac{x_1^q+\cdots+x_n^q}{n}\right)^{-\frac{1}{q}} \leqslant
+        \left(\frac{x_1^p+x_2^p+\cdots+x_n^p}{n}\right)^{-\frac{1}{p}}\]
+    
+        Теперь возведем в степень $-1$ и получим искомое неравенство.
+        \item Случай $p < 0 < q$. 
+        
+        Покажем, что  $M_p \leqslant $ среднее геометрическое $\leqslant M_q$
 
-    Случай: $0 < p < q$. Пусть $r:=\frac{q}{p}$ $M_r \leq M_1$
-
-    Подставим $x_1^q,\cdots, x_n^q$.
-
-    \[\left(\frac{(x_1^q)^r+\cdots+(x_n^q)^r}{n}\right  )^\frac{1}{r} \leq
-    \frac{x_1^q+x_n^q+\cdots+x_n^q}{n}\]
-
-    \[\left(\frac{x_1^q+\cdots+x_n^q}{n}\right)^\frac{q}{p} \leq
-    \frac{x_1^q+x_2^q+\cdots+x_n^q}{n}\]
-
-    Верно по предыдущему случаю, теперь просто возведем в степень $\frac{1}{q}$ и получим результат
-
-    Случай: $p < q < 0$ $M_{-q} \leq M_{-p}$. Подставим $1/x_1, 1/x_2,\cdots, 1/x_n$
-
-    \[ \left(\frac{(1/x_1)^{-q}+\cdots+(1/x_n)^{-q}}{n}\right)^{-\frac{1}{q}} \leq
-    \left(\frac{(1/x_1)^{-p} + \cdots + (1/x_n)^{-p} }{n}\right)^{-\frac{1}{p}} \]
-
-    Левая и правая части соответственно равны
-
-    \[\left(\frac{x_1^q+\cdots+x_n^q}{n}\right)^{-\frac{1}{q}} \leq
-    \left(\frac{x_1^p+x_2^p+\cdots+x_n^p}{n}\right)^{-\frac{1}{p}}\]
-
-    Теперь возведем в степень $-1$, знак неравенства поменяется и получится искомое.
-
-    Случай $p < 0 < q$. Покажем, что  $M_p \leq $ среднее геометрическое $\leq M_q$
-
-    \[M_p = \frac{x_1^p+\cdots + x_n^p}{n} \geq \sqrt[n]{x_1^p x_2^p \cdots x_n^p} 
-    = (\sqrt[n]{x_1x_2\cdots x_n})^p\]
-
-    Возводим в степень $\frac{1}{p}$, знак поменяется
-
-    \[M_q = \left(\frac{x_1^q+\cdots + x_n^q}{n}\right)^\frac{1}{q} \geq
-    \left(\sqrt[n]{x_1^qx_2^q\cdots x_n^q}\right)^\frac{1}{q} = \sqrt[n]{x_1x_2\cdots x_n}\]
-
-
+        \[M_p = \frac{x_1^p+\cdots + x_n^p}{n}) \geqslant \sqrt[n]{x_1^p x_2^p \dots x_n^p} 
+        = (\sqrt[n]{x_1x_2\cdots x_n})^p\]
+        \[ (\frac{x_1^p+\cdots + x_n^p}{n})^{\frac{1}{p}} \leqslant \sqrt[n]{x_1x_2\cdots x_n} \]
+    
+        Знак поменялся, так как $p < 0$.
+    
+        \[M_q = \left(\frac{x_1^q+\cdots + x_n^q}{n}\right)^\frac{1}{q} \geqslant
+        \left(\sqrt[n]{x_1^qx_2^q\cdots x_n^q}\right)^\frac{1}{q} = \sqrt[n]{x_1x_2\cdots x_n}\]
+    \end{itemize}
 \end{proof}
 
 \begin{theorem-non}
-    $\lim_{p \to 0} M_p = M_0$ (среднее геометрическое)
+    $\lim\limits_{p \to 0} M_p = M_0$ (среднее геометрическое)
     
-    $\lim_{p \to \infty} M_p = \max(x_1, x_2,\cdots, x_n)$
+    $\lim\limits_{p \to \infty} M_p = \max(x_1, x_2,\cdots, x_n)$
 
-    $\lim_{p \to -\infty} M_p = \min(x_1, x_2, \cdots, x_n)$
+    $\lim\limits_{p \to -\infty} M_p = \min(x_1, x_2, \cdots, x_n)$
 \end{theorem-non}
