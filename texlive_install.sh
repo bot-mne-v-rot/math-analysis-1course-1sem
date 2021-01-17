@@ -72,7 +72,8 @@ tlmgr install   \
   hyphsubst \
   datetime2-russian \
   bookmark \
-  pgfplots
+  pgfplots \
+  tikzsymbols
   
 
 # Keep no backups (not required, simply makes cache bigger)
