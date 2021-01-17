@@ -32,5 +32,21 @@ $\sigma(E) \leq \sigma(\widetilde{E})$
 Свойства
 \begin{enumerate}
     \item Площадь подмножества любого вертикального или горизонтального отрезка ноль (из пункта 1 определения)
-    \item $E_{-}$ и $E_{+}$ могут пересекаться (из прерыдущего свойства)
+    \item $E_{-}$ и $E_{+}$ могут пересекаться 
 \end{enumerate}
+
+\begin{proof}
+    Знаем, что $\sigma(E) = \sigma(E_-) + \sigma(E_+)$
+
+    Каждую половину можно снова расщепить по той же прямой и показать, что эту полоску 
+    можно добавлять или выкидывать сколько угодно раз.
+    Более формально:
+
+    $E_-' := \sigma(E_- \backslash l),\ 
+    E_-'' = E_- \cup (E \cap l)$
+
+    $E_-' \subset E_- \subset E_-''$
+
+    \[\sigma(E_-') \leq \sigma(E_-) \leq \sigma(E_-'') = \sigma(E_-') \sigma(E \cup l) = \sigma(E_-') \Rightarrow
+    \sigma(E_-) = \sigma(E_-') = \sigma(E_-'')\]
+\end{proof}
