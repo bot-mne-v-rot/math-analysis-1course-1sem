@@ -1,18 +1,18 @@
 \section{Неравенство Йенсена, неравенство о средних}
 
-\begin{theorem}
+\begin{theorem-non}
     Неравенство Йенсена.
     
-    $\lambda_1, \cdots, \lambda_n \geq 0$, 
+    $\lambda_1, \cdots, \lambda_n \geqslant 0$, 
     $\lambda_1+\cdots+\lambda_n = 1$
 
-    $f: <a, b> \to \R$ выпуклая
+    $f: \langle a, b \rangle \to \R$ выпуклая
 
-    $x_1,\cdots, x_n \in <a, b>$
+    $x_1,\cdots, x_n \in \langle a, b \rangle$
 
-    Тогда \[f(\lambda_1x_1+\cdots+\lambda_nx_n)\leq \lambda_1f(x_1)+
+    Тогда \[f(\lambda_1x_1+\cdots+\lambda_nx_n)\leqslant \lambda_1f(x_1)+
     \cdots+\lambda_nf(x_n) \]
-\end{theorem}
+\end{theorem-non}
 
 \begin{proof}
     Индукция. База $n = 2$ - определение выпуклости. Переход $n \to n+1$
@@ -20,45 +20,45 @@
     $ (1-\lambda_{n+1}) y:= \lambda_1x_1+\cdots+\lambda_n x_n$
 
     \[ f(\lambda_1x_1+\cdots+\lambda_n x_n + \lambda_{n+1}x_{n+1}) = f(\lambda_{n+1}x_{n+1} + (1-\lambda_{n+1})y)
-    \leq \lambda_{n+1}f(x_{n+1}) + (1-\lambda_{n+1})f(y) = \]
+    \leqslant \lambda_{n+1}f(x_{n+1}) + (1-\lambda_{n+1})f(y) = \]
 
     \[ \lambda_{n+1}f(x_{n+1}) + (1-\lambda_{n+1}) f \left( \frac{\lambda_1}{1-\lambda_{n+1}}x_1 + \frac{\lambda_2}{1-\lambda_{n+1}}x_2+
-    \cdots + \frac{\lambda_n}{1-\lambda_{n+1}}x_n \right) \leq \]
+    \cdots + \frac{\lambda_n}{1-\lambda_{n+1}}x_n \right) \leqslant \]
 
-    По индукционному предположению
+    Применим индукционное предположение. Можем так сделать, потому что $\sum\limits_{k = 1}^n \frac{\lambda_k}{1 - \lambda_{n + 1}} = 1$.
 
-    \[ \leq \lambda_{n+1}f(x_{n+1}) + (1-\lambda_{n+1}) \left( \frac{\lambda_1}{1-\lambda_{n+1}}f(x_1) + \frac{\lambda_2}{1-\lambda_{n+1}}f(x_2)+
+    \[ \leqslant \lambda_{n+1}f(x_{n+1}) + (1-\lambda_{n+1}) \left( \frac{\lambda_1}{1-\lambda_{n+1}}f(x_1) + \frac{\lambda_2}{1-\lambda_{n+1}}f(x_2)+
     \cdots + \frac{\lambda_n}{1-\lambda_{n+1}}f(x_n) \right) = \]
 
     \[ = \lambda_1f(x_1)+ \cdots+\lambda_nf(x_n) \]
 
-    Отдельно можно показать, что $a \leq y \leq b$ (там может быть отрезок или интервал, но на сутьэто не влияет)
+    Осталось показать, что $a \leq y \leq b$ (там может быть отрезок или интервал, но на суть это не влияет)
 
     Оценим иксы снизу и сверху как $a$ и $b$ соответственно
 
     \[ \lambda_1 a+\cdots+\lambda_n a \leq (1-\lambda_{n+1})\cdot y \leq \lambda_1 b+\cdots+\lambda_n b \]
 
-    Делим и получаем $a \leq y \leq b$
+    Делим и получаем $a \leqslant y \leqslant b$
 
     Графический смысл теоремы - центр масс лежит над графиком
     
 \end{proof}
 
-\begin{theorem}
+\begin{theorem-non}
     Неравенство о средних (AM-GM - arigthmetic mean, geometry mean)
 
-    $x_1, x_2, \cdots, x_n \geq 0$. Тогда
+    $x_1, x_2, \cdots, x_n \geqslant 0$. Тогда
 
-    $\sqrt[n]{x_1x_2\cdots x_n} \leq \frac{x_1+x_2+\cdots+x_n}{n}$
-\end{theorem}
+    $\sqrt[n]{x_1x_2\cdots x_n} \leqslant \frac{x_1+x_2+\dots+x_n}{n}$
+\end{theorem-non}
 
 \begin{proof}
-    Докажем, что \[\log (\sqrt[n]{x_1x_2\cdots x_n}) = \frac{1}{n}(\log x_1 + \log x_2 + \cdots + \log x_n) 
-    \leq \log (\frac{x_1+x_2+\cdots+x_n}{n})\]
+    Докажем, что \[\ln (\sqrt[n]{x_1x_2\dots x_n}) = \frac{1}{n}(\ln x_1 + \ln x_2 + \dots + \ln x_n) 
+    \leqslant \ln (\frac{x_1+x_2+\dots+x_n}{n})\]
 
     Будем считать, что все $x > 0$, так как если какой-то равен 0, то неравенство очевидно
 
     
-    Это неравенство Йенсена для $f(x) = -\log x$ - выпуклая.
-    $\lambda_1 = \lambda_2 = \cdots = \lambda_n = \frac{1}{n} $
+    Это неравенство Йенсена для $f(x) = -\ln x$ - выпуклая.
+    $\lambda_1 = \lambda_2 = \cdots = \lambda_n = \frac{1}{n} $.
 \end{proof}

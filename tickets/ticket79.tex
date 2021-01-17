@@ -1,9 +1,12 @@
+% !TEX root = ../MatanColloc02.tex
+
 \section{Формулы Тейлора с остатком в форме Лагранжа. Следствия}
 
 \begin{theorem-non}
     $f: \langle a, b \rangle \rightarrow \R$
 
-    $n + 1$ раз дифференцируема на $<a, b>, \; x_0, x \in <a, b>$
+    $n + 1$ раз дифференцируема на $(a, b), \; x_0, x \in 
+    \langle a, b \rangle$
 
     Тогда существует $c$, лежащая между $x$ и $x_0$, т.ч.
     $f(x) = T_{n,x_o} f(x) + \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (x - x_0)^{n+1}$
@@ -17,7 +20,7 @@
 
         Введём вспомогательную функцию:
         \begin{gather*}
-            g(t) := f(t) - T_{n, x_0}f(x) - M \cdot (t - x_0)^{n+1} \\
+            g(t) := f(t) - T_{n, x_0}f(t) - M \cdot (t - x_0)^{n+1} \\
             g^{(n+1)}(t) = f^{(n+1)}(t) - M \cdot (n + 1)!
         \end{gather*}
         

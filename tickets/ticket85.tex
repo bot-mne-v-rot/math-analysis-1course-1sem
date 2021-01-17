@@ -17,13 +17,13 @@
         \item $\frac{f(v) - f(u)}{v - u} \leqslant \frac{f(w) - f(u)}{w - u}$
 
         $\frac{f(v) - f(u)}{v - u} \leqslant \frac{f(w) - f(u)}{w - u} \Longleftrightarrow (w - u)
-        (f(v) - f(u)) \leqslant (v - u)(f(w) - f(u)) \Longleftrightarrow (w-u)f(u) \leqslant
-        ((w - u) - (v - u))f(u) + (v - u)f(w)$
+        (f(v) - f(u)) \leqslant (v - u)(f(w) - f(u)) \Longleftrightarrow (w-u)f(v) \leqslant
+        ((w - u) - (v - u))f(u) + (v - u)f(w) = (w - v)f(u) + (v - u)f(w)$ 
         \item $\frac{f(w) - f(u)}{w - u} \leqslant \frac{f(w) - f(v)}{w - v}$ \qquad
         Аналогично $(1)$
         \item $\frac{f(v) - f(u)}{v - u} \leqslant \frac{f(w) - f(v)}{w - v} \Longleftrightarrow (w - v)
         (f(v) - f(u)) \leqslant (v - u)(f(w) - f(u)) \Longleftrightarrow ((w - v) + (v - u))f(v) \leqslant (w - v)f(u) +
-        (v - u)f(w)$
+        (v - u)f(w) \Longleftrightarrow (w - u)f(v) \leqslant (w - v)f(u) + (v - u)f(w)$
     \end{enumerate}
 \end{proof}
 
@@ -34,14 +34,16 @@
     существуют $f_{\pm}'(x)$, причем $f_{-}'(x) \leqslant f_{+}'(x)$
 
     \begin{proof}
-        $\frac{f(u) - f(w)}{u - w} \leqslant \frac{f(v) - f(w)}{v - w} \leqslant \frac{f(x) - f(w)}{x - w} \leqslant \frac{f(y) - f(w)}{y - w}$
+        Пусть $u < v < w < x < y$ -- точки из $\langle a, b \rangle$. 
+        
+        Тогда $\frac{f(u) - f(w)}{u - w} \leqslant \frac{f(v) - f(w)}{v - w} \leqslant \frac{f(x) - f(w)}{x - w} \leqslant \frac{f(y) - f(w)}{y - w}$
 
         $g(u) := \frac{f(u) - f(w)}{u - w}$ возрастает на $\langle a, w)$ и ограничена сверху 
-        $\frac{(x) - f(w)}{x - w}$
+        $\frac{f(x) - f(w)}{x - w}$
 
         Тогда существует $f_{-}'(w) = \lim\limits_{u \longrightarrow w_{-}}{g(u)} \leqslant \frac{f(x) - f(w)}{x - w}$
 
-        $h(x) := \frac{f(x) - f(w)}{x - w}$ возрастает на $( w, b \rangle$ и ограничена сверху 
+        $h(x) := \frac{f(x) - f(w)}{x - w}$ возрастает на $( w, b \rangle$ и ограничена снизу 
         $f_{-}'(w) \Longrightarrow$ 
         
         сущестувет $f_{+}'(w) = \lim\limits_{x \longrightarrow w_{+}}{h(x)} \geqslant f_{-}'(w) $

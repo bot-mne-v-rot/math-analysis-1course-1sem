@@ -35,8 +35,8 @@
             xmin=-3,   xmax=3,
             ymin=-3,   ymax=3,
             axis lines = left,
-            xlabel = $x$,
-            ylabel = {$f(x)$},
+            %xlabel = $x$,
+            %ylabel = {$f(x)$},
             yticklabels={,,},
             xticklabels={,,}
         ]
@@ -47,7 +47,7 @@
             color=red,
         ]
         {x^2/2 - 2};
-        \addlegendentry{$x^2/2 - 2$}
+        \addlegendentry{$f(x) = x^2/2 - 2$}
         %Here the blue parabloa is defined
         \addplot [
             smooth,
@@ -55,7 +55,7 @@
             color=blue,
         ]
         {x / 2 - 1};
-        \addlegendentry{$\lambda f(x) + (1-\lambda)f(y)$}
+        \addlegendentry{$g(x) = f(u) + (x - u)\frac{f(w) - f(u)}{w - u}$}
         \end{axis}
         \filldraw[black] (2.29cm,1.41cm) circle(1.0pt)
                 (5.7cm,2.85cm) circle(1.0pt)
@@ -65,14 +65,25 @@
 
     $v = \lambda u + (1 - \lambda)w$
 
-    Точки $x$ и $y$ - точки пересечения графиков. Формулой для $z$ описывается любая точка 
-    из отрезка $(x,y)$. Формула $\lambda f(x) + (1-\lambda)f(y)$ описывает прямую, соединяющую 
-    точки пересечения графиков функций. Таким образом наше определение выпуклости 
-    говорит о том, что точка $f(z)$ на графике функции лежит ниже, чем хорда, соединяющая 
-    точки $f(x)$ и $f(y)$.
+    Точки $(u, f(u))$ и $(w, f(w))$ - точки пересечения графиков. Формулой для $v$ описывается любая точка 
+    из отрезка $(u, w)$. Формула $g(x) = f(u) + (x - u)\frac{f(w) - f(u)}{w - u}$ описывает прямую, соединяющую 
+    точки пересечения графиков функций. 
+    
+    Найдем $g(v)$:
+    \begin{equation*}
+        \begin{split}
+            g(v) &= f(u) + (v - u)\frac{f(w) - f(u)}{w - u} \\
+            &= f(u) + \frac{v - u}{w - u}(f(w) - f(u)) \\
+            &= f(u) - \frac{v - u}{w - u}f(u) + \frac{v - u}{w - u}f(w) \\
+            &= \frac{w - v}{w - u}f(u) + \frac{v - u}{w - u}f(w) 
+        \end{split} 
+    \end{equation*}
+    \[ \lambda = \frac{w - v}{w - u} \Rightarrow 1 - \lambda = \frac{v - u}{w - u} \Rightarrow g(v) = \lambda f(u) + (1 - \lambda)f(w) \]
 
-    Уравнение прямой, проходящей через точки $f(u), f(w)$ описывается как 
-    $f(u) + (x - y) \cdot \frac{f(w) - f(u)}{w - u}$
+
+    Таким образом наше определение выпуклости 
+    говорит о том, что точка $(v, f(v))$ на графике функции лежит ниже, чем хорда, соединяющая 
+    точки $(u, f(u))$ и $(w, f(w))$.
 \end{conj}
 
 \textbf{Пример.} $f(x) = x^2$  строго выпуклая 
