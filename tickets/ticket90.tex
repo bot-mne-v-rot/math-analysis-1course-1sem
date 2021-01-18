@@ -1,9 +1,9 @@
 \section{Определение первообразной и неопределенного интеграла. Общий вид первообразной. Примеры функций не имеющих первообразную \href{https://youtu.be/p9C57KDo1Yg?t=3244}{\Walley}}
 
 \begin{conj}
-    $f: <a, b> \to \R$. $F:<a, b> \to \R$ - первообразная $f$, если
+    $f: \langle a, b \rangle \longrightarrow \R$. $F: \langle a, b \rangle \longrightarrow \R$ - первообразная $f$, если
 
-    $F'(x) = f(x)\ \forall x\in <a, b>$
+    $F'(x) = f(x)\ \forall x\in \langle a, b \rangle$
 \end{conj}
 
 Не всякая функция имеет первообразную. Примеры
@@ -20,17 +20,17 @@
     \item По этому примеру можно понять, что не подходит любая функция, у которой есть "скачок"
 \end{itemize}
 
-\begin{theorem}
+\begin{theorem-non}
     Непрерывная на промежутке функция имеет первообразную. Доказательства еще не было
-\end{theorem}
+\end{theorem-non}
 
-\begin{theorem}
-    $f, F: <a, b> \to \R,\ F$ - первообразная, $f$
+\begin{theorem-non}
+    $f, F: \langle a, b \rangle \longrightarrow \R,\ F$ - первообразная, $f$
     \begin{itemize}
-        \item $F + c$ - первообразная $f$, где $C$ - любая константа
-        \item $\Phi: <a, b> \to \R$ - первообразная $f \Rightarrow$ $\Phi = F+C$ для некоторой $C$
+        \item $F + C$ - первообразная $f$, где $C$ - любая константа
+        \item $\Phi: \langle a, b \rangle \longrightarrow \R$ - первообразная $f \Rightarrow$ $\Phi = F+C$ для некоторой $C$
     \end{itemize}
-\end{theorem}
+\end{theorem-non}
 
 \begin{proof}
     1) $(F(x)+C)' = F'(x) = f(x)$

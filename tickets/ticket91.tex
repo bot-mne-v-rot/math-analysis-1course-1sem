@@ -13,7 +13,7 @@
     \item $\int 0\ dx = C$
     \item $\int x^p\ dx = \frac{x^{p+1}}{p+1} + C$ при $p \neq -1$
     \item $\int \frac{1}{x}\ dx = \ln |x| + C$
-    \item $\int a^x\ dx = \frac{a^x}{\log a} + C$ при $a>0,\ a\neq 1$
+    \item $\int a^x\ dx = \frac{a^x}{\log a} + C$ при $a \rangle0,\ a\neq 1$
     \item $\int \sin x\ dx = -\cos x + C$
     \item $\int \cos x\ dx = \sin x + C$
     \item $\int \frac{1}{\cos^2 x}\ dx = \tg x + C$
@@ -24,15 +24,13 @@
     \item $\int \frac{1}{1-x^2}\ dx = \frac{1}{2}\log |\frac{1+x}{1-x}| + C$   
 \end{itemize}
 
-\begin{conj}
-    Арифметические действия с неопределенными интегралами
+Арифметические действия с неопределенными интегралами
 
-    $f, g:<a, b> \to \R$ имеют первообразную. Тогда
+    $f, g: \langle a, b \rangle \longrightarrow \R$ имеют первообразную. Тогда
     \begin{itemize}
         \item $f+g$ имеет первообразную и $\int(f+g) = \int f + \int g$
         \item $\alpha f$ имеет первообразную и $\int \alpha f = \alpha f$, если $\alpha \neq 0$
     \end{itemize}
-\end{conj}
 
 \begin{proof}
     $F$ и $G$ первообразные $f, g$
@@ -40,8 +38,8 @@
     2) $(\alpha F)' = \alpha F' = \alpha f$
 \end{proof}
 
-Следствие. Линейность интеграла.
+\follow \; Линейность интеграла.
 
-$f, g: <a, b> \to \R$ имеют первообразную, $\alpha, \beta \in \R,\ |\alpha|+|\beta|\neq 0$.
+$f, g: \langle a, b \rangle \longrightarrow \R$ имеют первообразную, $\alpha, \beta \in \R,\ |\alpha|+|\beta|\neq 0$.
 
 Тогда $\int (\alpha f + \beta g) = \alpha \int f + \beta \int g$

@@ -1,13 +1,13 @@
 \section{Теоремы о замене переменной в неопределенном интеграле. Формула интегрирования по частям. Примеры \href{https://youtu.be/p9C57KDo1Yg?t=5408}{\Walley}}
 
-\begin{theorem}
+\begin{theorem-non}
     Теорема о замене переменной в неопределенном интеграле
 
-    $f: <a, b> \to \R,\ \varphi: <c, d> \to <a, b>,\ f$
-    имеет первообразую $F$, $\varphi$ дифф. Тогда
+    $f: \langle a, b \rangle \longrightarrow \R, \; \varphi: \langle c, d \rangle \longrightarrow \langle a, b \rangle,\ f$
+    имеет первообразую $F$, $\varphi$ дифференцируема. Тогда:
 
     \[ \int f(\varphi(t))\varphi'(t) dt = F(\varphi(t))+C \]
-\end{theorem}
+\end{theorem-non}
 
 \begin{proof}
     \[(F(\varphi(t)))' = F'(\varphi(t))\varphi'(t) = f(\varphi(t))\varphi'(t)\]
@@ -22,13 +22,13 @@
 $\int \frac{t\ dt}{1+t^4} = \int \frac{1}{2}f(\varphi(t))\varphi'(t)\ dt
 = \frac{1}{2} F(\varphi(t)) + C = \frac{1}{2} \arctan(x^2) + C$
 
-\begin{theorem}
+\begin{theorem-non}
     Формула интегрирования по частям.
 
-    $f, g: <a, b> \to \R$ дифференцируемые, $f'g$ имеет первообразную. Тогда
+    $f, g: \langle a, b \rangle \ \longrightarrow \R$ дифференцируемые, $f'g$ имеет первообразную. Тогда
     $fg'$ тоже имеет первообразную и 
     \[ \int fg' = fg - \int f'g \]
-\end{theorem}
+\end{theorem-non}
 
 \begin{proof}
     $H$ - первообразная для $f'g$. Надо доказать, что $\int fg' = fg - H + C$

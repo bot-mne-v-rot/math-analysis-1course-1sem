@@ -10,12 +10,12 @@ $\mathcal{F}$ - совокупность всех ограниченных по�
     2) Если $E_1\cap E_2 = \varnothing$, то $\sigma(E_1 \cup E_2) = \sigma(E_1) \cup \sigma(E_2)$
 \end{conj}
 
-Свойство. Если $E \subset \widetilde{E}$, то
-$\sigma(E) \leq \sigma(\widetilde{E})$
+\textbf{Свойство:} Если $E \subset \widetilde{E}$, то
+$\sigma(E) \leqslant \sigma(\widetilde{E})$
 
 \begin{proof}
-    $\widetilde{E} = E \cup (\widetilde{E} \backslash E) \Rightarrow
-    \sigma(\widetilde{E}) = \sigma(E) + \sigma(\widetilde{E} \backslash E) \geq \sigma(E)$
+    $\widetilde{E} = E \cup (\widetilde{E} \setminus E) \Rightarrow
+    \sigma(\widetilde{E}) = \sigma(E) + \sigma(\widetilde{E} \setminus E) \geqslant \sigma(E)$
 \end{proof}
 
 \begin{conj}
@@ -23,13 +23,13 @@ $\sigma(E) \leq \sigma(\widetilde{E})$
 
     1) $\sigma([a, b]\times[c, d]) = (b-a)(c-d)$
 
-    2) Если $E \subset \widetilde{E}$, то $\sigma(E) \leq \sigma(\widetilde{E})$
+    2) Если $E \subset \widetilde{E}$, то $\sigma(E) \leqslant \sigma(\widetilde{E})$
 
     3) $\sigma(E) = \sigma(E_{-}) + \sigma(E_{+})$. $E_{-}$ и $E_{+}$ получаются
     разбиением $E$ горизонтальной или вертикальной прямой.
 \end{conj}
 
-Свойства
+\textbf{Свойства:}
 \begin{enumerate}
     \item Площадь подмножества любого вертикального или горизонтального отрезка ноль (из пункта 1 определения)
     \item $E_{-}$ и $E_{+}$ могут пересекаться 
@@ -42,11 +42,11 @@ $\sigma(E) \leq \sigma(\widetilde{E})$
     можно добавлять или выкидывать сколько угодно раз.
     Более формально:
 
-    $E_-' := \sigma(E_- \backslash l),\ 
+    $E_-' := \sigma(E_- \setminus l),\ 
     E_-'' = E_- \cup (E \cap l)$
 
     $E_-' \subset E_- \subset E_-''$
 
-    \[\sigma(E_-') \leq \sigma(E_-) \leq \sigma(E_-'') = \sigma(E_-') \sigma(E \cup l) = \sigma(E_-') \Rightarrow
+    \[\sigma(E_-') \leqslant \sigma(E_-) \leqslant \sigma(E_-'') = \sigma(E_-') \sigma(E \cup l) = \sigma(E_-') \Rightarrow
     \sigma(E_-) = \sigma(E_-') = \sigma(E_-'')\]
 \end{proof}
