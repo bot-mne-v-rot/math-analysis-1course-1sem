@@ -6,15 +6,21 @@
 
         $m:= \inf\limits_{x \in \langle a, b \rangle}{f(x)}, \; M:= \sup\limits_{x \in \langle a, b \rangle}{f(x)}$
 
+        Обратите внимание, что мы берём $\inf$ и $\sup$, так как $\min$ и $\max$ никто не обещал.
+
+        Надо доказать, что $f (\langle a, b \rangle) \supset (m, M)$ (этого достаточно потому что мы точно знаем, что $f \langle a, b \rangle \subset [m, M]$)
+
         Случай $m = M$ тривиален. Пусть $m < y < M \Longrightarrow \begin{cases}
             \text{найдется } p \in \langle a, b \rangle, \text{ т.ч } f(p) > y \\
             \text{найдется } q \in \langle a, b \rangle, \text{ т.ч } f(q) < y
         \end{cases}$
 
+        Найдутся потому что $M$ --- наименьшая из верхних границ, а $y$ --- не верхняя граница. (Аналогично и с $m$).
+
         Посмотрим на $f$ на $[p, q]$. По т. Больцано-Коши она принимает на нем все промежуточные значения.
         В частности, и $y$.
         А так как $y$ мы брали произвольный, $y \in f(\langle a, b \rangle) \Longrightarrow \\
-        (m, M) \subset f(\langle a, b \rangle)$. Также мы знаем, что $f(\langle a, b \rangle) \subset f([a, b])$, что делает наше доказательство полным.
+        (m, M) \subset f(\langle a, b \rangle)$.
     \end{proof}
     \textbf{Пример:} $sin: (0, 2\pi) \longrightarrow \R$ \qquad Множество значений: $[-1, 1]$ 
 \end{theorem-non}

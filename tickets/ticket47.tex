@@ -55,12 +55,12 @@ $b \in \R$
 
     Зафиксируем $\varepsilon > 0$ и предположим, что для него не найдется $\delta > 0$.
 
-    Не подходит $\delta = 1$, т.е. найдется $x_1 \in E, \; x_1 \neq a$ такой, что $\rho_x(x_1, a) < 1$ и $\rho_y(f(x_1), b) \geqslant e$. \\
-    Не подходит $\delta = \frac{1}{2}$, т.е. найдется $x_2 \in E, \; x_2 \neq a$ такой, что $\rho_x(x_2, a) < \frac{1}{2}$ и $\rho_y(f(x_2), b) \geqslant e$. \\
+    Не подходит $\delta = 1$, т.е. найдется $x_1 \in E, \; x_1 \neq a$ такой, что $\rho_x(x_1, a) < 1$ и $\rho_y(f(x_1), b) \geqslant \varepsilon$. \\
+    Не подходит $\delta = \frac{1}{2}$, т.е. найдется $x_2 \in E, \; x_2 \neq a$ такой, что $\rho_x(x_2, a) < \frac{1}{2}$ и $\rho_y(f(x_2), b) \geqslant \varepsilon$. \\
     И так далее. В общем случае: \\
-    Не подходит $\delta = \frac{1}{n}$, т.е. найдется $x_n \in E, \; x_n \neq a$ такой, что $\rho_x(x_n, a) < \frac{1}{n}$ и $\rho_y(f(x_n), b) \geqslant e$. \\
+    Не подходит $\delta = \frac{1}{n}$, т.е. найдется $x_n \in E, \; x_n \neq a$ такой, что $\rho_x(x_n, a) < \frac{1}{n}$ и $\rho_y(f(x_n), b) \geqslant \varepsilon$. \\
     
-    Последовательность $x_n$ стремится к $a$, тогда последовательность $f(x_n)$ обязаана стремиться к $b$, но $\forall \, n \;\; \rho_y(f(x_n), b) \geqslant e$. 
+    Последовательность $x_n$ стремится к $a$, тогда последовательность $f(x_n)$ обязана стремиться к $b$, но $\forall \, n \;\; \rho_y(f(x_n), b) \geqslant \varepsilon$. 
     Следовательно, мы пришли к противоречию.
 \end{proof}
 
